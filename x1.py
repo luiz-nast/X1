@@ -218,7 +218,7 @@ app = FastAPI()
 
 @app.get("/")
 def index():
-    return FileResponse(WEB / "index.html")
+    return FileResponse(WEB / "index.html", headers={"Cache-Control": "no-cache"})  # always serve the latest UI
 
 
 @app.websocket("/ws")

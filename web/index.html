@@ -41,17 +41,22 @@ const WORKLET = `registerProcessor('pcm', class extends AudioWorkletProcessor {
   }
 });`;
 
-let ws, out, outAn, micAn, state = 'off', rate = 22050, level = 0;
+let ws, out, outAn, micAn, micOn = false, state = 'off', rate = 22050, level = 0;
 let sources = [], endAt = 0, holdUntil = 0;
 
-async function start() {
-  setState('listening');
-  ws = new WebSocket(`ws://${location.host}/ws`);
-  ws.binaryType = 'arraybuffer';
-  ws.onmessage = e => typeof e.data === 'string' ? onEvent(JSON.parse(e.data)) : play(e.data);
-  ws.onclose = () => { setState('off'); $('status').textContent = 'desconectado — recarregue a página'; };
-  out = new AudioContext();
-  outAn = out.createAnalyser(); outAn.connect(out.destination);
+// connect right away so typing works even without a microphone
+ws = new WebSocket(`ws://${location.host}/ws`);
+ws.binaryType = 'arraybuffer';
+ws.onmessage = e => typeof e.data === 'string' ? onEvent(JSON.parse(e.data)) : play(e.data);
+ws.onclose = () => { setState('off'); $('status').textContent = 'desconectado — recarregue a página'; };
+
+function audioOut() { // browsers only allow audio after a click or key press
+  if (!out) { out = new AudioContext(); outAn = out.createAnalyser(); outAn.connect(out.destination); }
+  out.resume();
+}
+
+async function startMic() {
+  micOn = true; audioOut(); setState('listening');
   const stream = await navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: true, noiseSuppression: true, autoGainControl: true } });
   const mic = new AudioContext({ sampleRate: 16000 });
   await mic.audioWorklet.addModule(URL.createObjectURL(new Blob([WORKLET], { type: 'text/javascript' })));
@@ -77,27 +82,30 @@ function play(buf) {
   s.buffer = ab; s.connect(outAn);
   const t = Math.max(out.currentTime, endAt);
   s.start(t); endAt = t + ab.duration;
-  sources.push(s);
-  s.onended = () => { sources = sources.filter(x => x !== s); holdUntil = performance.now() + 400; };
+  sources.push(s); $('status').textContent = LABEL.speaking;
+  s.onended = () => { sources = sources.filter(x => x !== s); holdUntil = performance.now() + 400; if (!sources.length) setState(state); };
 }
 
 function interrupt() {
   sources.forEach(s => { s.onended = null; s.stop(); });
   sources = []; endAt = 0; holdUntil = performance.now() + 400;
-  ws.send(JSON.stringify({ type: 'stop' }));
+  ws.send(JSON.stringify({ type: 'stop' })); setState(state);
 }
 
-function setState(s) { state = s; $('status').textContent = LABEL[s]; }
+function setState(s) { state = s === 'listening' && !micOn ? 'off' : s; if (!sources.length) $('status').textContent = LABEL[state]; } // while audio plays the label stays 'falando'
 function you(text, partial) { $('you').textContent = text; $('you').className = partial ? 'partial' : ''; }
-function toggle() { if (state === 'off' && !ws) start().catch(e => $('status').textContent = 'erro no microfone: ' + e.message); else if (sources.length) interrupt(); }
+function toggle() {
+  if (sources.length) interrupt();
+  else if (!micOn) startMic().catch(e => { micOn = false; setState('off'); $('status').textContent = 'erro no microfone: ' + e.message; });
+}
 
 cv.onclick = toggle;
 addEventListener('keydown', e => { if (e.code === 'Space' && e.target.tagName !== 'INPUT') { e.preventDefault(); toggle(); } });
 $('form').onsubmit = e => {
   e.preventDefault();
   const text = $('text').value.trim();
-  if (!text || !ws || ws.readyState !== 1) return;
-  ws.send(JSON.stringify({ type: 'text', text })); $('text').value = '';
+  if (!text || ws.readyState !== 1) return;
+  audioOut(); ws.send(JSON.stringify({ type: 'text', text })); $('text').value = '';
 };
 
 // --- orb ---
