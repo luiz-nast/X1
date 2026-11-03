@@ -8,7 +8,7 @@ from fastapi.testclient import TestClient
 
 import x1
 
-assert x1.wait_for(0.99, "eu queria saber se dá pra, tipo") == 3.0 and x1.wait_for(0.99, "e aí eu pensei em ahn") == 3.0
+assert x1.wait_for(0.99, "eu queria saber se dá pra, tipo") == 3.0 and x1.wait_for(0.99, "e aí eu pensei em ahn") == 3.0 and x1.wait_for(0.99, "") == 3.0
 assert x1.wait_for(0.99, "que horas são?") == 1.0 and x1.wait_for(0.2, "que horas são?") == 2.0
 assert x1.SENTENCE.split("Claro, senhor. Já está feito! E o res") == ["Claro, senhor.", "Já está feito!", "E o res"]
 
@@ -32,7 +32,7 @@ def timed(label, f, *a):
 done = np.concatenate([silence(.5), speak("Olá, X1. Que horas são agora em Brasília?"), silence(.5)])
 timed("smart-turn (finished)", x1.turn_done, done)
 timed("whisper warmup", x1.transcribe, done)
-assert "horas" in timed("whisper beam=5", x1.transcribe, done, 5).lower()
+assert "bras" in timed("whisper beam=5", x1.transcribe, done, 5).lower()  # Piper's synthetic voice trips "que horas"; check a stable word
 
 
 def converse(audio):

@@ -73,8 +73,8 @@ def turn_done(audio):
 def wait_for(p, text):
     """Seconds of silence before X1 may speak. Tuned on real NURC-SP dialogue, where smart-turn alone says
     "done" on 69% of mid-thought pauses: the words veto it, and its confidence only shortens the wait."""
-    if OPEN.search(text):
-        return 3.0  # "e…", "tipo", "ahn", "né": still thinking out loud
+    if not text or OPEN.search(text):
+        return 3.0  # "e…", "tipo", "ahn", "né", or a mumble Whisper couldn't read: still thinking out loud, keep the audio
     return 1.0 if p > 0.7 else 2.0
 
 
