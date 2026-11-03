@@ -8,6 +8,8 @@ from fastapi.testclient import TestClient
 
 import x1
 
+x1.load()
+
 assert x1.wait_for(0.99, "eu queria saber se dá pra, tipo") == 3.0 and x1.wait_for(0.99, "e aí eu pensei em ahn") == 3.0 and x1.wait_for(0.99, "") == 3.0
 assert x1.wait_for(0.99, "que horas são?") == 1.0 and x1.wait_for(0.2, "que horas são?") == 2.0
 assert x1.SENTENCE.split("Claro, senhor. Já está feito! E o res") == ["Claro, senhor.", "Já está feito!", "E o res"]

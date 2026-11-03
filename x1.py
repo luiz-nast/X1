@@ -2,7 +2,12 @@
 import asyncio
 import ctypes
 import json
+import os
 import re
+import shutil
+import subprocess
+import threading
+import webbrowser
 from collections import deque
 from datetime import datetime
 from pathlib import Path
@@ -27,7 +32,10 @@ from huggingface_hub import hf_hub_download
 from piper import PiperVoice
 
 LLM = "qwen3:1.7b"
-OLLAMA = "http://127.0.0.1:11434/api/chat"
+OLLAMA = "http://127.0.0.1:11434"
+PORT = 8731
+URL = f"http://x1.localhost:{PORT}"  # its own host, so the window gets its own app id (and the X1 icon in the dock)
+DATA = Path.home() / ".local/share/x1"  # install.sh puts the app, Ollama and the browser profile here
 SR, WIN = 16000, 512                  # Silero VAD window = 32 ms
 PAUSE = round(0.3 * SR / WIN)         # first short silence: judge the turn and start drafting the reply
 PARTIAL_EVERY = round(0.6 * SR / WIN) # live transcript refresh while the user talks
@@ -48,12 +56,30 @@ FILLERS = "Ahn... então, X1, eu acho que... hmm, tipo, sabe?"
 SENTENCE = re.compile(r"(?<=[.!?…:;])\s+|\n+")
 
 WEB = Path(__file__).parent / "web"
-whisper = WhisperModel("small", device="cuda", compute_type="int8_float16")
-vad = ort.InferenceSession(str(Path(faster_whisper.__file__).parent / "assets/silero_vad_v6.onnx"))
-turn = ort.InferenceSession(hf_hub_download("pipecat-ai/smart-turn-v3", "smart-turn-v3.2-cpu.onnx"))
-mel = FeatureExtractor(feature_size=80, chunk_length=8)
-voice = PiperVoice.load(hf_hub_download("rhasspy/piper-voices", "pt/pt_BR/faber/medium/pt_BR-faber-medium.onnx"),
-                        hf_hub_download("rhasspy/piper-voices", "pt/pt_BR/faber/medium/pt_BR-faber-medium.onnx.json"))
+READY = threading.Event()
+whisper = vad = turn = mel = voice = LOAD_ERROR = None
+
+
+def load():
+    """Load the speech models (~15 s; downloads them on first run). The window opens before this finishes."""
+    global whisper, vad, turn, mel, voice, LOAD_ERROR
+    try:
+        whisper = WhisperModel("small", device="cuda", compute_type="int8_float16")
+        vad = ort.InferenceSession(str(Path(faster_whisper.__file__).parent / "assets/silero_vad_v6.onnx"))
+        turn = ort.InferenceSession(hf_hub_download("pipecat-ai/smart-turn-v3", "smart-turn-v3.2-cpu.onnx"))
+        mel = FeatureExtractor(feature_size=80, chunk_length=8)
+        voice = PiperVoice.load(hf_hub_download("rhasspy/piper-voices", "pt/pt_BR/faber/medium/pt_BR-faber-medium.onnx"),
+                                hf_hub_download("rhasspy/piper-voices", "pt/pt_BR/faber/medium/pt_BR-faber-medium.onnx.json"))
+    except Exception as e:  # e.g. a CUDA/driver problem: the window shows it instead of "carregando…" forever
+        LOAD_ERROR = f"{type(e).__name__}: {e}"
+        raise
+    finally:
+        READY.set()
+
+
+def system_prompt():
+    now = datetime.now()
+    return f"{SYSTEM} Agora são {now:%H:%M} de {now:%d/%m/%Y}."
 
 
 def transcribe(audio, beam=1):
@@ -108,10 +134,10 @@ class Session:
             resumed = not s.buf or s.silence >= PAUSE
             if not s.buf:
                 s.buf = list(s.pre)
-            if s.task and s.run >= 4:  # they kept talking before X1 said a word: same thought, drop the draft
+            if s.task and s.run >= 4:  # they kept talking before X1 said a word: the user has priority, drop the draft
                 s.task.cancel()
                 s.task, resumed = None, True
-                if s.go.is_set():  # we had already committed and cleared the buffer: glue the audio back
+                if s.go.is_set() and s.prev is not None:  # a committed voice turn: same thought, glue its audio back
                     s.buf = [s.prev, *s.buf]
             if resumed:
                 await s.send(type="state", state="hearing")
@@ -165,21 +191,25 @@ class Session:
             text = str(m["text"]).strip()[:2000]
             await s.send(type="final", text=text)
             await s.send(type="state", state="thinking")
-            s.go = asyncio.Event()
+            s.go, s.prev = asyncio.Event(), None  # typed: there's no audio to glue back if they then speak
             s.go.set()
             s.task = asyncio.create_task(s.reply(text))
 
     async def reply(s, text):
         s.history.append({"role": "user", "content": text})
         s.spoke, said, pending = False, "", ""
-        system = f"{SYSTEM} Agora são {datetime.now():%H:%M} de {datetime.now():%d/%m/%Y}."
         body = {"model": LLM, "think": False, "keep_alive": -1, "options": {"num_ctx": 4096},
-                "messages": [{"role": "system", "content": system}, *s.history[-12:]]}
+                "messages": [{"role": "system", "content": system_prompt()}, *s.history[-12:]]}
         try:
-            async with httpx.AsyncClient(timeout=None) as http, http.stream("POST", OLLAMA, json=body) as r:
+            async with httpx.AsyncClient(timeout=None) as http, http.stream("POST", f"{OLLAMA}/api/chat", json=body) as r:
+                if r.is_error:
+                    raise httpx.HTTPError(f"{r.status_code} {(await r.aread()).decode()[:200]}")
                 async for line in r.aiter_lines():
                     if line:
-                        pending += json.loads(line).get("message", {}).get("content", "")
+                        m = json.loads(line)
+                        if "error" in m:
+                            raise httpx.HTTPError(m["error"])
+                        pending += m.get("message", {}).get("content", "")
                         *done, pending = SENTENCE.split(pending)  # speak each sentence as soon as it's complete
                         for sentence in done:
                             said += await s.say(sentence)
@@ -191,7 +221,9 @@ class Session:
                 said = ""
             raise
         except httpx.HTTPError as e:
-            await s.send(type="reply", text=f"[sem conexão com o Ollama: {e}]")
+            if not s.spoke:
+                s.history.pop()
+            await s.send(type="reply", text=f"[erro no Ollama: {e}]")
             await s.send(type="state", state="listening")
         finally:
             if said:
@@ -221,9 +253,20 @@ def index():
     return FileResponse(WEB / "index.html", headers={"Cache-Control": "no-cache"})  # always serve the latest UI
 
 
+active = None  # one session at a time: two windows would both listen and both answer
+
+
 @app.websocket("/ws")
 async def ws_endpoint(ws: WebSocket):
+    global active
     await ws.accept()
+    await asyncio.to_thread(READY.wait)
+    if LOAD_ERROR:
+        await ws.send_text(json.dumps({"type": "error", "text": f"falha ao carregar os modelos: {LOAD_ERROR}"}))
+        return
+    if active:
+        await active.close(code=4001)  # the newest window takes over
+    active = ws
     s = Session(ws)
     await s.send(type="hello", rate=voice.config.sample_rate)
     try:
@@ -235,7 +278,69 @@ async def ws_endpoint(ws: WebSocket):
     finally:
         if s.task:
             s.task.cancel()
+        if active is ws:
+            active = None
 
 
-if __name__ == "__main__":
-    uvicorn.run(app, host="127.0.0.1", port=8000)
+
+def ollama_exe():
+    return shutil.which("ollama") or str(DATA / "ollama/bin/ollama")
+
+
+def start_ollama():
+    """Start Ollama unless it's already up; returns the process we started, if any."""
+    try:
+        httpx.get(f"{OLLAMA}/api/version", timeout=1)
+        return None
+    except httpx.HTTPError:
+        pass
+    env = {**os.environ, "OLLAMA_FLASH_ATTENTION": "1", "OLLAMA_KV_CACHE_TYPE": "q8_0"}  # smaller KV cache: room for Whisper in 4 GB
+    return subprocess.Popen([ollama_exe(), "serve"], env=env, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+
+
+def allow_mic(profile):
+    """Pre-grant the mic to X1's page in its private Chrome profile: no prompt, and no warning-bar flags needed."""
+    prefs = profile / "Default/Preferences"
+    p = json.loads(prefs.read_text()) if prefs.exists() else {}
+    (p.setdefault("profile", {}).setdefault("content_settings", {}).setdefault("exceptions", {})
+     .setdefault("media_stream_mic", {}))[f"{URL},*"] = {"setting": 1}
+    prefs.parent.mkdir(parents=True, exist_ok=True)
+    prefs.write_text(json.dumps(p))
+
+
+def running():
+    try:
+        return httpx.get(f"http://127.0.0.1:{PORT}", timeout=1).is_success
+    except httpx.HTTPError:
+        return False
+
+
+if __name__ == "__main__":  # the desktop app: server + Ollama + an app window; closing the window shuts it all down
+    if Path("/etc/ssl/certs/ca-certificates.crt").exists():  # trust the system CAs (TLS-inspecting proxies) for model downloads
+        os.environ.setdefault("SSL_CERT_FILE", "/etc/ssl/certs/ca-certificates.crt")
+    if running():  # already open (clicking the icon focuses that window); a second one would be a second listener
+        raise SystemExit("O X1 já está aberto.")
+    chrome = next(filter(None, map(shutil.which, ("google-chrome", "google-chrome-stable", "chromium", "chromium-browser"))), None)
+    profile = Path.home() / "snap/chromium/common/x1" if chrome and chrome.startswith("/snap/") else DATA / "browser"  # snaps can't write ~/.local
+    window = [chrome, f"--app={URL}", f"--user-data-dir={profile}", "--no-first-run", "--no-default-browser-check",
+              "--autoplay-policy=no-user-gesture-required"]  # its own profile: a separate app, and the call returns when it closes
+    threading.Thread(target=load, daemon=True).start()
+    server = uvicorn.Server(uvicorn.Config(app, host="127.0.0.1", port=PORT, log_level="warning"))
+    threading.Thread(target=server.run, daemon=True).start()
+    ollama = start_ollama()
+    try:
+        if chrome:
+            allow_mic(profile)
+            subprocess.run(window)
+        else:  # shortcut: plain browser tab and no auto-shutdown, until we ship a webview for Chrome-less machines
+            webbrowser.open(URL)
+            threading.Event().wait()
+    finally:
+        try:  # free the GPU: unload the LLM (Ollama may be shared with other apps)
+            httpx.post(f"{OLLAMA}/api/generate", json={"model": LLM, "keep_alive": 0}, timeout=5)
+        except httpx.HTTPError:
+            pass
+        if ollama:
+            ollama.terminate()
+        server.should_exit = True
+    os._exit(0)  # don't wait on worker threads (e.g. one still waiting for models that failed to load)

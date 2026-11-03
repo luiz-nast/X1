@@ -2,7 +2,7 @@
 
 Um mini Jarvis local, com a voz como canal principal. Tudo roda na sua máquina: nenhum áudio ou texto vai pra nuvem.
 
-Testado numa GTX 1650 (4 GB) com 7 GB de RAM, no Linux. Com tudo carregado, usa ~1,9 GB de VRAM.
+Testado numa GTX 1650 (4 GB) com 7 GB de RAM, no Ubuntu. Com tudo carregado, usa ~1,9 GB de VRAM.
 
 ```
 navegador (microfone com cancelamento de eco + bolinha)  ⇄ WebSocket ⇄  x1.py
@@ -10,22 +10,31 @@ navegador (microfone com cancelamento de eco + bolinha)  ⇄ WebSocket ⇄  x1.p
   → política de espera → Qwen3 1.7B (Ollama), frase a frase → Piper pt_BR (voz) → navegador
 ```
 
-## Rodar
-
-Precisa de GPU NVIDIA (driver ≥ 550), [uv](https://docs.astral.sh/uv/), [Ollama](https://ollama.com), Chrome e ffmpeg (este só pro selftest).
+## Instalar
 
 ```bash
-OLLAMA_FLASH_ATTENTION=1 OLLAMA_KV_CACHE_TYPE=q8_0 ollama serve   # num terminal à parte
-ollama pull qwen3:1.7b
-uv run x1.py                                  # na primeira vez, baixa o Whisper, o smart-turn e a voz
-google-chrome --app=http://localhost:8000     # abre como aplicativo
+curl -fsSL https://raw.githubusercontent.com/luiz-nast/X1/master/install.sh | bash
 ```
 
-- Para ativar, toque na bolinha ou aperte Espaço.
-- Enquanto o X1 fala, Espaço ou um clique interrompe.
-- Também dá pra digitar.
+Depois é só abrir o **X1** pelo menu de aplicativos. Ele abre numa janela própria e começa a ouvir sozinho. Fechar a janela desliga tudo e libera a GPU.
 
-`uv run selftest.py` testa a cadeia inteira. Um dos casos é uma fala com "ahn" e uma pausa de 1,2 s no meio, que precisa sair como um turno só.
+O instalador:
+- coloca tudo em `~/.local/share/x1`;
+- usa o seu Ollama, se você já tiver um; senão, instala um ali dentro;
+- baixa o LLM e os modelos de voz e testa a GPU;
+- cria o atalho no menu.
+
+Rodar de novo atualiza. Precisa de GPU NVIDIA, Chrome (ou Chromium), `git`, `curl` e `zstd`.
+
+Para desinstalar:
+
+```bash
+rm -rf ~/.local/share/x1 ~/.local/share/applications/x1.desktop ~/.local/share/icons/hicolor/scalable/apps/x1.svg
+```
+
+- **Interromper:** aperte Espaço ou clique na bolinha.
+- **Digitar:** o campo embaixo da bolinha também funciona.
+- **Testar a cadeia inteira (para desenvolvimento):** `uv run selftest.py`. Inclui uma fala com "ahn" e uma pausa de 1,2 s no meio, que precisa sair como um turno só.
 
 ## Esperar você terminar de pensar
 

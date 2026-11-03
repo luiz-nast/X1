@@ -24,6 +24,7 @@ L = 1.5  # seconds X1 needs for its first audio anyway (transcribe + first LLM s
 PAUSE = x1.PAUSE * x1.WIN / x1.SR
 
 if not CACHE.exists():
+    x1.load()
     f = hf_hub_download("nilc-nlp/CORAA-NURC-SP-Audio-Corpus", "data/filtered/test-00002.parquet", repo_type="dataset")
     segs = sorted(pq.read_table(f).to_pylist(), key=lambda r: (r["audio_name"], float(r["start_time"])))
     rows = []
