@@ -2,12 +2,12 @@
 
 Um mini Jarvis local, com a voz como canal principal. Tudo roda na sua máquina: nenhum áudio ou texto vai pra nuvem.
 
-Testado numa GTX 1650 (4 GB) com 7 GB de RAM, no Ubuntu. Com tudo carregado, usa ~1,9 GB de VRAM.
+Testado numa GTX 1650 (4 GB) com 7 GB de RAM, no Ubuntu. Com tudo carregado, usa ~3,3 GB de VRAM.
 
 ```
 navegador (microfone com cancelamento de eco + bolinha)  ⇄ WebSocket ⇄  x1.py
   mic 16 kHz → Silero VAD → pausa de 0,3 s → smart-turn v3.2 (entonação) + Whisper small (palavras)
-  → política de espera → Qwen3 1.7B (Ollama), pedaço a pedaço → Piper pt_BR (voz) → navegador
+  → política de espera → Qwen3 4B Instruct (Ollama), pedaço a pedaço → Piper pt_BR (voz) → navegador
 ```
 
 ## Instalar
@@ -102,12 +102,50 @@ O LLM gera token a token. A voz sai em pedaços:
 
 Uma vírgula sem espaço depois (como em "3,5") não corta.
 
+## Qual cérebro (comparação de LLMs)
+
+Testei 6 modelos que cabem na GTX 1650 com uma bateria de 23 frases em português (`eval/llm.py`), um por vez na GPU. Os casos cobrem:
+- hora, data, contas e fatos;
+- armadilhas de alucinação: o "Nobel do Pelé", o placar de ontem, o telefone do dentista;
+- pedidos que ele não sabe cumprir (ligar a luz, criar lembrete);
+- estilo falado, fala "pensando alto", transcrição com erro e memória da conversa.
+
+Dois juízes independentes avaliaram cada resposta, e um terceiro desempatou as discordâncias (`eval/llm_judged*.json`).
+
+**Rodada 1** (prompt original):
+
+| modelo | acertos | alucinações | fala natural | 1º pedaço | tokens/s | VRAM |
+|---|---|---|---|---|---|---|
+| qwen3:1.7b (o anterior) | 13/23 | 7 | 13/23 | 0,24 s | 91 | 1,4 GB |
+| **qwen3:4b-instruct-2507** | **18/23** | **4** | **20/23** | 0,60 s | 35¹ | 2,6 GB |
+| granite4.1:3b | 17/23 | 4 | 18/23 | 0,41 s | 55 | 2,2 GB |
+| llama3.2:3b | 13/23 | 7 | 16/23 | 0,30 s | 60 | 2,2 GB |
+| phi4-mini:3.8b | 12/23 | 8 | 16/23 | 0,36 s | 39 | 2,6 GB |
+| lfm3:1.7b | 13/23 | 9 | 5/23 | 0,65 s | 95 | 1,1 GB |
+
+**Todos erraram nas mesmas coisas:** fingiam ligar a luz ou criar lembrete e inventavam placar e previsão do tempo. A causa era o prompt, que não dizia o que ele não sabe fazer. Uma frase no prompt resolveu quase tudo.
+
+**Rodada 2** (prompt com os limites), com os três melhores:
+
+| modelo | acertos | alucinações | fala natural |
+|---|---|---|---|
+| **qwen3:4b-instruct-2507** | **19/23** | 3 | 16/23 |
+| granite4.1:3b | 19/23 | 2 | 19/23 |
+| qwen3:1.7b | 13/23 | 6 | 17/23 |
+
+**Escolhido: `qwen3:4b-instruct-2507`.** Ele empata com o granite, mas os erros dele são leves: chamou Armstrong de "piloto" em vez de comandante e ofereceu avisar um horário. O granite erra conta simples nas duas rodadas (17 × 23 = 294). A diferença de velocidade some na voz, porque o TTS fala mais devagar que os dois geram texto.
+
+- **O que ainda escapa:** "me lembra às oito" (ele finge que vai lembrar), piada sem graça e um ou outro erro de concordância.
+- **O que a bateria pegou de quebra:** um modelo entrou em loop e gerou 38 mil tokens. Agora a resposta tem um teto (`MAX_TOKENS`).
+
+¹ Com todas as camadas na GPU, como o X1 roda (`num_gpu`), dá 45 tokens/s. Na bateria, o ajuste automático do Ollama tinha deixado 3 de 37 camadas na CPU.
+
 ## Por que esses modelos (medido nesta máquina)
 
 | peça | escolha | medido | descartado |
 |---|---|---|---|
 | fala → texto | faster-whisper `small` int8 (GPU) | ~0,5 s por frase, 390 MB | `large-v3-turbo`: 1,8 s por frase e estourou a RAM ao carregar |
-| cérebro | `qwen3:1.7b` sem thinking (Ollama) | 85 tokens/s, 1ª frase em ~0,45 s | `qwen3.5:2b`: 17 tokens/s nesta GPU, respostas piores |
+| cérebro | `qwen3:4b-instruct-2507` (Ollama, todas as camadas na GPU) | 45 tokens/s; 19/23 na bateria | os outros 5 da tabela acima; `qwen3.5:2b`: 17 tokens/s nesta GPU |
 | voz | Piper `pt_BR-faber-medium` (CPU) | ~0,2 s por frase | Kokoro: vozes pt-BR fracas e mais RAM |
 | fim de turno | Silero VAD + smart-turn v3.2 (CPU) | ~0,1 s | LiveKit turn-detector: 400 MB e licença restrita |
 

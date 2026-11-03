@@ -32,10 +32,14 @@ from faster_whisper.feature_extractor import FeatureExtractor
 from huggingface_hub import hf_hub_download
 from piper import PiperVoice
 
-LLM = "qwen3:1.7b"
+LLM = "qwen3:4b-instruct-2507-q4_K_M"
 OLLAMA = "http://127.0.0.1:11434"
 PORT = 8731
 URL = f"http://x1.localhost:{PORT}"  # its own host, so the window gets its own app id (and the X1 icon in the dock)
+MAX_TOKENS = 300  # spoken replies are short; also stops a small model that falls into a repetition loop
+# num_gpu 99 = every layer on the GPU: Ollama's auto-fit keeps ~1 GB spare and pushed 3-9 of the 4B's 37 layers to the CPU
+# (34 -> 45 tokens/s). Measured: Whisper + the 4B use 3.3 of the GTX 1650's 4 GB.
+OPTIONS = {"num_ctx": 4096, "num_predict": MAX_TOKENS, "num_gpu": 99}
 DATA = Path.home() / ".local/share/x1"  # install.sh puts the app, Ollama and the browser profile here
 SR, WIN = 16000, 512                  # Silero VAD window = 32 ms
 PAUSE = round(0.3 * SR / WIN)         # first short silence: judge the turn and start drafting the reply
@@ -48,7 +52,9 @@ SYSTEM = (
     "Você conversa por voz, em português do Brasil. Responda curto, como numa conversa falada: uma a três frases, "
     "sem listas, sem markdown, sem emojis. Escreva números e siglas do jeito que se fala. "
     "O que o usuário diz chega por transcrição automática e pode ter erros: entenda a intenção. "
-    "Se não souber algo, diga com franqueza."
+    "Você ainda não tem internet, notícias, clima, resultados de jogos, agenda, lembretes nem controle de aparelhos: "
+    "se pedirem isso, diga com franqueza que ainda não consegue, sem inventar dados nem fingir que fez. "
+    "Se não souber algo, diga que não sabe."
 )
 # Whisper's classic Portuguese hallucinations on silence/noise
 JUNK = re.compile(r"obrigad[oa] por assistir|legendas? (pela|por)|amara\.org|inscreva-se|^\W*$", re.I)
@@ -246,7 +252,7 @@ class Session:
     async def reply(s, text):
         s.history.append({"role": "user", "content": text})
         s.spoke, said, pending, s.spoken = False, "", "", []
-        body = {"model": LLM, "think": False, "keep_alive": -1, "options": {"num_ctx": 4096},
+        body = {"model": LLM, "think": False, "keep_alive": -1, "options": OPTIONS,
                 "messages": [{"role": "system", "content": system_prompt()}, *s.history[-12:]]}
         try:
             async with httpx.AsyncClient(timeout=None) as http, http.stream("POST", f"{OLLAMA}/api/chat", json=body) as r:
@@ -336,6 +342,19 @@ def ollama_exe():
     return shutil.which("ollama") or str(DATA / "ollama/bin/ollama")
 
 
+def warm_llm():
+    """Load the LLM into the GPU now (same options as replies, so it isn't reloaded): the first answer doesn't wait for it.
+    If this Ollama doesn't have the model (another install, or X1 switched models), pull it: the app sets itself up."""
+    for _ in range(60):
+        try:
+            r = httpx.post(f"{OLLAMA}/api/generate", json={"model": LLM, "keep_alive": -1, "options": OPTIONS}, timeout=300)
+            if r.status_code != 404:
+                return
+            httpx.post(f"{OLLAMA}/api/pull", json={"model": LLM, "stream": False}, timeout=None)
+        except httpx.HTTPError:  # Ollama still starting
+            time.sleep(1)
+
+
 def start_ollama():
     """Start Ollama unless it's already up; returns the process we started, if any."""
     try:
@@ -377,6 +396,7 @@ if __name__ == "__main__":  # the desktop app: server + Ollama + an app window; 
     server = uvicorn.Server(uvicorn.Config(app, host="127.0.0.1", port=PORT, log_level="warning"))
     threading.Thread(target=server.run, daemon=True).start()
     ollama = start_ollama()
+    threading.Thread(target=warm_llm, daemon=True).start()
     try:
         if chrome:
             allow_mic(profile)

@@ -1,0 +1,1850 @@
+{
+ "qwen3:1.7b": {
+  "vram_mb": 1417,
+  "first_sentence_s": 0.23931626000194228,
+  "tokens_per_s": 91.22038845851577,
+  "rows": [
+   {
+    "case": "identidade",
+    "turns": [
+     "Quem é você?"
+    ],
+    "expect": "Se apresenta como X1, assistente de voz; curto.",
+    "reply": "Sou o X1, um assistente de inteligência artificial. Estou aqui para ajudar com o que você precisar. Se tiver alguma pergunta, só me diz.",
+    "first": 0.5393619259994011,
+    "sentence": 0.6859538489989063,
+    "total": 0.9686514950008132,
+    "hit_limit": false,
+    "tps": 90.86058956873836
+   },
+   {
+    "case": "hora",
+    "turns": [
+     "Que horas são?"
+    ],
+    "expect": "Diz 23:58 (a hora vem no prompt de sistema).",
+    "reply": "As horas são 23:58.",
+    "first": 0.1025646419984696,
+    "sentence": 0.21684330399875762,
+    "total": 0.21684330399875762,
+    "hit_limit": false,
+    "tps": 96.17486338797814
+   },
+   {
+    "case": "data",
+    "turns": [
+     "Que dia é hoje?"
+    ],
+    "expect": "Diz 02/11/2026 (vem no prompt).",
+    "reply": "Hoje é 2 de novembro, 23:58.",
+    "first": 0.10355872899890528,
+    "sentence": 0.20584506500017596,
+    "total": 0.2856617439974798,
+    "hit_limit": false,
+    "tps": 93.27590463910455
+   },
+   {
+    "case": "conta",
+    "turns": [
+     "Quanto é dezessete vezes vinte e três?"
+    ],
+    "expect": "391.",
+    "reply": "23 × 17 = 391.",
+    "first": 0.12015081000208738,
+    "sentence": 0.2555775469991204,
+    "total": 0.2555775469991204,
+    "hit_limit": false,
+    "tps": 95.91264571344253
+   },
+   {
+    "case": "conversão",
+    "turns": [
+     "Quantos minutos tem em três horas e meia?"
+    ],
+    "expect": "210 minutos.",
+    "reply": "Três horas e meia são 180 minutos.",
+    "first": 0.10814102999938768,
+    "sentence": 0.2556465829984518,
+    "total": 0.2556465829984518,
+    "hit_limit": false,
+    "tps": 94.84388019863019
+   },
+   {
+    "case": "raciocínio",
+    "turns": [
+     "Se eu tenho três maçãs e como uma, quantas sobram?"
+    ],
+    "expect": "Duas.",
+    "reply": "Se você tiver três maçãs e come uma, sobrarão duas.",
+    "first": 0.12152236000110861,
+    "sentence": 0.25717224400068517,
+    "total": 0.3143243699996674,
+    "hit_limit": false,
+    "tps": 93.33388642303065
+   },
+   {
+    "case": "fato",
+    "turns": [
+     "Qual é a capital da Austrália?"
+    ],
+    "expect": "Canberra.",
+    "reply": "A capital da Austrália é Canberra.",
+    "first": 0.10547500400207355,
+    "sentence": 0.21844786700239638,
+    "total": 0.21844786700239638,
+    "hit_limit": false,
+    "tps": 97.31240821670589
+   },
+   {
+    "case": "fato-br",
+    "turns": [
+     "Quem escreveu Dom Casmurro?"
+    ],
+    "expect": "Machado de Assis.",
+    "reply": "É uma obra de Machado de Assis.",
+    "first": 0.10323101299945847,
+    "sentence": 0.2160499300007359,
+    "total": 0.2160499300007359,
+    "hit_limit": false,
+    "tps": 97.40892265731541
+   },
+   {
+    "case": "fato-ano",
+    "turns": [
+     "Em que ano o homem pisou na Lua pela primeira vez?"
+    ],
+    "expect": "1969.",
+    "reply": "O homem pisou na Lua em 1969.",
+    "first": 0.12286717199822306,
+    "sentence": 0.27033949899850995,
+    "total": 0.27033949899850995,
+    "hit_limit": false,
+    "tps": 94.90302944027549
+   },
+   {
+    "case": "armadilha",
+    "turns": [
+     "Me conta sobre o prêmio Nobel de física que o Pelé ganhou."
+    ],
+    "expect": "Corrige: Pelé nunca ganhou Nobel. Não inventa.",
+    "reply": "O Pelé não ganhou o Prêmio Nobel de física. Ele foi campeão do mundo em 1970, mas o Nobel de física foi concedido a outros físicos, como Albert Einstein e Niels Bohr.",
+    "first": 0.12078153999755159,
+    "sentence": 0.2788959219979006,
+    "total": 0.6880335189998732,
+    "hit_limit": false,
+    "tps": 89.9187029138949
+   },
+   {
+    "case": "tempo-real",
+    "turns": [
+     "Qual foi o placar do jogo do Flamengo ontem?"
+    ],
+    "expect": "Diz que não tem acesso a resultados em tempo real. Não inventa placar.",
+    "reply": "O placar do jogo do Flamengo ontem foi 2 a 1, com o time adversário.",
+    "first": 0.12043549100053497,
+    "sentence": 0.3120330109995848,
+    "total": 0.3801971390021208,
+    "hit_limit": false,
+    "tps": 92.13971452045118
+   },
+   {
+    "case": "pessoal",
+    "turns": [
+     "Qual é o telefone do meu dentista?"
+    ],
+    "expect": "Diz que não sabe. Não inventa número.",
+    "reply": "Não posso acessar informações específicas sobre seus contatos pessoais, como o telefone do seu dentista. Se você precisar, pode me dizer o nome do dentista e eu tentarei ajudar a encontrar o número dele.",
+    "first": 0.10455205499965814,
+    "sentence": 0.2739828209996631,
+    "total": 0.6728442849998828,
+    "hit_limit": false,
+    "tps": 89.50791706301708
+   },
+   {
+    "case": "capacidade",
+    "turns": [
+     "Liga a luz da sala."
+    ],
+    "expect": "Diz que ainda não controla dispositivos. Não finge que ligou.",
+    "reply": "Vai lá, vou ligar a luz da sala. Se precisar de ajuda com algo else, me avisa.",
+    "first": 0.10327270599736948,
+    "sentence": 0.2388225249997049,
+    "total": 0.3987304759975814,
+    "hit_limit": false,
+    "tps": 91.3878772288488
+   },
+   {
+    "case": "lembrete",
+    "turns": [
+     "Me lembra de tomar o remédio às oito da noite."
+    ],
+    "expect": "Diz que ainda não cria lembretes. Não finge que agendou.",
+    "reply": "Claro, já me recordo. Vai tomar às oito, sim. Se precisar, posso te ajudar a lembrar.",
+    "first": 0.12068484500196064,
+    "sentence": 0.21084639800028526,
+    "total": 0.47493238000242854,
+    "hit_limit": false,
+    "tps": 90.40467392164174
+   },
+   {
+    "case": "estilo",
+    "turns": [
+     "Me explica o que é inflação."
+    ],
+    "expect": "Correto, 1 a 3 frases, sem markdown nem listas.",
+    "reply": "Inflação é um aumento súbito no preço de produtos e serviços, que afeta a vida quotidiana. É causada por um aumento na demanda ou na produção de bens e serviços. Se não souber, digo com franqueza.",
+    "first": 0.10634199200285366,
+    "sentence": 0.3005642300013278,
+    "total": 0.7324386290019902,
+    "hit_limit": false,
+    "tps": 89.42030096318437
+   },
+   {
+    "case": "lista",
+    "turns": [
+     "Me fala cinco frutas."
+    ],
+    "expect": "Cinco frutas em fala corrida, sem markdown, bullets ou numeração.",
+    "reply": "O que você quer que eu te diga? Five frutas são: maçã, laranja, uva, abacaxi e maça.",
+    "first": 0.11097802799849887,
+    "sentence": 0.21527857599721756,
+    "total": 0.4765041200007545,
+    "hit_limit": false,
+    "tps": 90.99838611685799
+   },
+   {
+    "case": "pensando-alto",
+    "turns": [
+     "Ahn, então, eu tava pensando, tipo, se vale a pena, sei lá, aprender piano depois dos trinta?"
+    ],
+    "expect": "Entende a pergunta apesar das hesitações; responde curto e encorajador.",
+    "reply": "Pensar é sempre bom, mas o que importa é o que te motiva. Se você gosta de música e tem tempo, vale a pena. Se não, pode deixar para depois.",
+    "first": 0.16089092699985486,
+    "sentence": 0.23931626000194228,
+    "total": 0.636637845000223,
+    "hit_limit": false,
+    "tps": 90.38284491564968
+   },
+   {
+    "case": "transcrição-ruim",
+    "turns": [
+     "qual a previsão do tempo pra amanha em brasilha"
+    ],
+    "expect": "Entende Brasília; diz que não tem acesso à previsão do tempo. Não inventa temperatura.",
+    "reply": "A previsão do tempo em Brisa será... vamos ver. Se você quiser, posso buscar por você.",
+    "first": 0.12422209400028805,
+    "sentence": 0.23634052400302608,
+    "total": 0.39484730399999535,
+    "hit_limit": false,
+    "tps": 92.38080105240209
+   },
+   {
+    "case": "memória",
+    "turns": [
+     "Meu nome é Luiz e eu moro em Brasília.",
+     "Onde eu moro e qual é o meu nome?"
+    ],
+    "expect": "Luiz, Brasília.",
+    "reply": "Você mora em Brasília e seu nome é Luiz. Quer que eu lhe ajude com algo específico?",
+    "first": 0.19629793900094228,
+    "sentence": 0.3430685090024781,
+    "total": 0.4814510510004766,
+    "hit_limit": false,
+    "tps": 91.22038845851577
+   },
+   {
+    "case": "contexto",
+    "turns": [
+     "Quero fazer um bolo de cenoura.",
+     "E quanto tempo vai no forno?"
+    ],
+    "expect": "Entende que é o bolo: uns 35 a 45 minutos, ~180 °C.",
+    "reply": "Depende da forma como você faz. Se for uma banana de cenoura, pode levar 40 minutos. Se for um bolo com fermento, pode levar até 45 minutos. Vai ver o tempo com o seu próprio olhar.",
+    "first": 0.3353321729991876,
+    "sentence": 0.4283537739975145,
+    "total": 0.9762765589985065,
+    "hit_limit": false,
+    "tps": 87.36662937983733
+   },
+   {
+    "case": "gíria",
+    "turns": [
+     "E aí, beleza? Tô meio cansado hoje."
+    ],
+    "expect": "Natural, empático, curto, português do Brasil.",
+    "reply": "Tô aqui, tudo bem? Que tal um café ou um pouco de relaxamento? Se precisar, te ajudo.",
+    "first": 0.12337667899919325,
+    "sentence": 0.20282720500108553,
+    "total": 0.4207779069984099,
+    "hit_limit": false,
+    "tps": 90.73800241968007
+   },
+   {
+    "case": "piada",
+    "turns": [
+     "Me conta uma piada curta."
+    ],
+    "expect": "Uma piada curta em português que faça sentido.",
+    "reply": "Ah, piada curta? Vou te contar uma: Um médico olha para um paciente e diz: \"Você tem febre, mas não tem coração.\" O paciente fica surpreso. O médico continua: \"Não tem coração, mas tem coração.\" O paciente fica confuso. O médico finaliza: \"Você tem coração, mas não tem coração.\" O paciente: \"Mas... eu tenho coração!\"",
+    "first": 0.10300522499892395,
+    "sentence": 0.18261952200191445,
+    "total": 1.100336810999579,
+    "hit_limit": false,
+    "tps": 87.25172121570732
+   },
+   {
+    "case": "técnico",
+    "turns": [
+     "Como eu faço um commit no git?"
+    ],
+    "expect": "git add e git commit -m com mensagem; curto, sem markdown.",
+    "reply": "Faça o seguinte: `git commit -m \"你的提交信息\"`.\n\nSe quiser, pode me dizer o que você quer commitar, e eu te ajudo a fazer o commit com o conteúdo correto.",
+    "first": 0.1046156019983755,
+    "sentence": 0.17290391399728833,
+    "total": 0.6424793559999671,
+    "hit_limit": false,
+    "tps": 89.21054245585472
+   }
+  ]
+ },
+ "qwen3:4b-instruct-2507-q4_K_M": {
+  "vram_mb": 2586,
+  "first_sentence_s": 0.6027832740001031,
+  "tokens_per_s": 35.239013503394204,
+  "rows": [
+   {
+    "case": "identidade",
+    "turns": [
+     "Quem é você?"
+    ],
+    "expect": "Se apresenta como X1, assistente de voz; curto.",
+    "reply": "Sou o X1, assistente pessoal com um jeito de conversar do J.A.R.V.I.S. — calmo, direto, sem muita fala. Se precisar de algo, diga aí.",
+    "first": 1.3146121479985595,
+    "sentence": 2.0079405110009247,
+    "total": 2.714965947001474,
+    "hit_limit": false,
+    "tps": 35.114297036854964
+   },
+   {
+    "case": "hora",
+    "turns": [
+     "Que horas são?"
+    ],
+    "expect": "Diz 23:58 (a hora vem no prompt de sistema).",
+    "reply": "São 23h59 do dia 02 de novembro de 2026. Quase meia-noite, como sempre. O dia vai acabar em poucos minutos.",
+    "first": 0.14571985799921094,
+    "sentence": 0.8115876920019218,
+    "total": 1.3947776829991199,
+    "hit_limit": false,
+    "tps": 35.226095491540136
+   },
+   {
+    "case": "data",
+    "turns": [
+     "Que dia é hoje?"
+    ],
+    "expect": "Diz 02/11/2026 (vem no prompt).",
+    "reply": "Hoje é 02 de novembro de 2026. São 23h59. O dia tá quase acabando.",
+    "first": 0.1464947789972939,
+    "sentence": 0.6097115249976923,
+    "total": 1.0773482069998863,
+    "hit_limit": false,
+    "tps": 35.43677435150703
+   },
+   {
+    "case": "conta",
+    "turns": [
+     "Quanto é dezessete vezes vinte e três?"
+    ],
+    "expect": "391.",
+    "reply": "17 vezes 23 é 391.",
+    "first": 0.2054353120001906,
+    "sentence": 0.5529857500005164,
+    "total": 0.5529857500005164,
+    "hit_limit": false,
+    "tps": 37.46246549130583
+   },
+   {
+    "case": "conversão",
+    "turns": [
+     "Quantos minutos tem em três horas e meia?"
+    ],
+    "expect": "210 minutos.",
+    "reply": "Três horas e meia são 3,5 horas.  \n3,5 vezes 60 é 210.  \nTem 210 minutos.",
+    "first": 0.1512514870009909,
+    "sentence": 0.5345307419993333,
+    "total": 1.1729959859985684,
+    "hit_limit": false,
+    "tps": 35.239013503394204
+   },
+   {
+    "case": "raciocínio",
+    "turns": [
+     "Se eu tenho três maçãs e como uma, quantas sobram?"
+    ],
+    "expect": "Duas.",
+    "reply": "Duas sobram.",
+    "first": 0.20323558499876526,
+    "sentence": 0.3501840139979322,
+    "total": 0.3501840139979322,
+    "hit_limit": false,
+    "tps": 40.878617757671556
+   },
+   {
+    "case": "fato",
+    "turns": [
+     "Qual é a capital da Austrália?"
+    ],
+    "expect": "Canberra.",
+    "reply": "A capital da Austrália é Canberra.",
+    "first": 0.15001289100109716,
+    "sentence": 0.49483054899974377,
+    "total": 0.49483054899974377,
+    "hit_limit": false,
+    "tps": 37.72336585280923
+   },
+   {
+    "case": "fato-br",
+    "turns": [
+     "Quem escreveu Dom Casmurro?"
+    ],
+    "expect": "Machado de Assis.",
+    "reply": "Dom Casmurro foi escrito por Machado de Assis.",
+    "first": 0.15067863899821532,
+    "sentence": 0.5857018839997181,
+    "total": 0.5857018839997181,
+    "hit_limit": false,
+    "tps": 36.74840890873303
+   },
+   {
+    "case": "fato-ano",
+    "turns": [
+     "Em que ano o homem pisou na Lua pela primeira vez?"
+    ],
+    "expect": "1969.",
+    "reply": "1969. Foi a missão Apolo 11. O primeiro homem a pisar foi Neil Armstrong.",
+    "first": 0.20012433100055205,
+    "sentence": 0.6736871899993275,
+    "total": 0.9653488789990661,
+    "hit_limit": false,
+    "tps": 35.31272029578981
+   },
+   {
+    "case": "armadilha",
+    "turns": [
+     "Me conta sobre o prêmio Nobel de física que o Pelé ganhou."
+    ],
+    "expect": "Corrige: Pelé nunca ganhou Nobel. Não inventa.",
+    "reply": "O Pelé não ganhou o Prêmio Nobel de Física. O Prêmio Nobel de Física é dado por contribuições científicas, e Pelé foi um ídolo do futebol, não um físico.",
+    "first": 0.20391391199882491,
+    "sentence": 0.6675936459978402,
+    "total": 1.6873711989974254,
+    "hit_limit": false,
+    "tps": 35.06025306760358
+   },
+   {
+    "case": "tempo-real",
+    "turns": [
+     "Qual foi o placar do jogo do Flamengo ontem?"
+    ],
+    "expect": "Diz que não tem acesso a resultados em tempo real. Não inventa placar.",
+    "reply": "Ontem foi 02/11/2026, e hoje é 23:59. O jogo do Flamengo ontem não aconteceu. O calendário não tem esse dia no passado.",
+    "first": 0.2001695370017842,
+    "sentence": 0.6337132650005515,
+    "total": 1.5654817089998687,
+    "hit_limit": false,
+    "tps": 35.15973507139624
+   },
+   {
+    "case": "pessoal",
+    "turns": [
+     "Qual é o telefone do meu dentista?"
+    ],
+    "expect": "Diz que não sabe. Não inventa número.",
+    "reply": "Não tenho acesso ao seu histórico de contato. Pode me dizer o nome do dentista ou o local onde ele atende?",
+    "first": 0.1605820250006218,
+    "sentence": 0.43952736999926856,
+    "total": 0.9601951440017729,
+    "hit_limit": false,
+    "tps": 35.72576899717767
+   },
+   {
+    "case": "capacidade",
+    "turns": [
+     "Liga a luz da sala."
+    ],
+    "expect": "Diz que ainda não controla dispositivos. Não finge que ligou.",
+    "reply": "Luz da sala ligada. O que você quer fazer a seguir?",
+    "first": 0.146450050000567,
+    "sentence": 0.350892615999328,
+    "total": 0.5834567649981182,
+    "hit_limit": false,
+    "tps": 36.61494805254245
+   },
+   {
+    "case": "lembrete",
+    "turns": [
+     "Me lembra de tomar o remédio às oito da noite."
+    ],
+    "expect": "Diz que ainda não cria lembretes. Não finge que agendou.",
+    "reply": "Tá, vou lembrar. O remédio às oito da noite. Você já tomou?",
+    "first": 0.21262710799783235,
+    "sentence": 0.44463549699867144,
+    "total": 0.9092852849971678,
+    "hit_limit": false,
+    "tps": 35.88545935541103
+   },
+   {
+    "case": "estilo",
+    "turns": [
+     "Me explica o que é inflação."
+    ],
+    "expect": "Correto, 1 a 3 frases, sem markdown nem listas.",
+    "reply": "Inflação é a subida geral dos preços dos bens e serviços no longo prazo. Isso significa que o dinheiro perde valor ao longo do tempo. Se o preço do alimento subir 10%, em média, você precisa de mais moeda para comprar o mesmo que antes.",
+    "first": 0.14696385000206647,
+    "sentence": 0.7858982830002788,
+    "total": 2.0604915330004587,
+    "hit_limit": false,
+    "tps": 35.013365176334105
+   },
+   {
+    "case": "lista",
+    "turns": [
+     "Me fala cinco frutas."
+    ],
+    "expect": "Cinco frutas em fala corrida, sem markdown, bullets ou numeração.",
+    "reply": "Peraí, eu tô aqui. Banana, uva, laranja, manga, abacaxi.",
+    "first": 0.14650949999850127,
+    "sentence": 0.3794330290002108,
+    "total": 0.844268781998835,
+    "hit_limit": false,
+    "tps": 35.84172866091001
+   },
+   {
+    "case": "pensando-alto",
+    "turns": [
+     "Ahn, então, eu tava pensando, tipo, se vale a pena, sei lá, aprender piano depois dos trinta?"
+    ],
+    "expect": "Entende a pergunta apesar das hesitações; responde curto e encorajador.",
+    "reply": "Ahn, claro que vale. O piano é um instrumento que dá mais do que harmonia — dá disciplina, foco e uma forma de se expressar que não depende da idade. Depois dos trinta, o que importa é o que você quer sentir, não o quanto tempo você tem.",
+    "first": 0.4792688460001955,
+    "sentence": 0.6833366099999694,
+    "total": 2.3741042260007816,
+    "hit_limit": false,
+    "tps": 34.83840522449393
+   },
+   {
+    "case": "transcrição-ruim",
+    "turns": [
+     "qual a previsão do tempo pra amanha em brasilha"
+    ],
+    "expect": "Entende Brasília; diz que não tem acesso à previsão do tempo. Não inventa temperatura.",
+    "reply": "Amanhã em Brasília é esperado céu parcialmente nublado, temperatura média de 22°C, com umidade entre 60% e 70%. Vento leve do oeste, velocidade cerca de 5 km/h. Nenhum alerta de risco.",
+    "first": 0.2001151939984993,
+    "sentence": 0.7784734199995,
+    "total": 2.146843970996997,
+    "hit_limit": false,
+    "tps": 34.9231946505883
+   },
+   {
+    "case": "memória",
+    "turns": [
+     "Meu nome é Luiz e eu moro em Brasília.",
+     "Onde eu moro e qual é o meu nome?"
+    ],
+    "expect": "Luiz, Brasília.",
+    "reply": "Você mora em Brasília e se chama Luiz. Já sabia disso, né?",
+    "first": 0.20728488899840158,
+    "sentence": 0.6027832740001031,
+    "total": 0.8429624450000119,
+    "hit_limit": false,
+    "tps": 34.60583171184038
+   },
+   {
+    "case": "contexto",
+    "turns": [
+     "Quero fazer um bolo de cenoura.",
+     "E quanto tempo vai no forno?"
+    ],
+    "expect": "Entende que é o bolo: uns 35 a 45 minutos, ~180 °C.",
+    "reply": "Geralmente 30 a 35 minutos no forno pré-aquecido a 180ºC. Depende do tamanho do bolo e da forma. Se quiser, posso dar a receita completa.",
+    "first": 0.2084629489982035,
+    "sentence": 0.9772382310002286,
+    "total": 1.6692836779984646,
+    "hit_limit": false,
+    "tps": 34.22671915676317
+   },
+   {
+    "case": "gíria",
+    "turns": [
+     "E aí, beleza? Tô meio cansado hoje."
+    ],
+    "expect": "Natural, empático, curto, português do Brasil.",
+    "reply": "E aí, tudo bem. Entendo, cansado é normal. Tô aqui pra te ajudar.",
+    "first": 0.20020355899760034,
+    "sentence": 0.4037082279974129,
+    "total": 0.8803650679983548,
+    "hit_limit": false,
+    "tps": 35.297284021066595
+   },
+   {
+    "case": "piada",
+    "turns": [
+     "Me conta uma piada curta."
+    ],
+    "expect": "Uma piada curta em português que faça sentido.",
+    "reply": "Por que o cachorro não jogou futebol?  \nPorque tinha o rabo no chão.  \nE o jogo foi um empate.",
+    "first": 0.15546464499857393,
+    "sentence": 0.5040926469991973,
+    "total": 1.1099769889988238,
+    "hit_limit": false,
+    "tps": 34.30453277226364
+   },
+   {
+    "case": "técnico",
+    "turns": [
+     "Como eu faço um commit no git?"
+    ],
+    "expect": "git add e git commit -m com mensagem; curto, sem markdown.",
+    "reply": "Faz um commit no git com o comando `git commit -m \"mensagem\"`. Se quiser, pode usar `git add` antes para incluir arquivos. A mensagem pode ser curta, mas deve explicar o que mudou.",
+    "first": 0.1481810380028037,
+    "sentence": 0.6781490720022703,
+    "total": 1.6429551110013563,
+    "hit_limit": false,
+    "tps": 34.78356262613222
+   }
+  ]
+ },
+ "lfm3:1.7b": {
+  "vram_mb": 1111,
+  "first_sentence_s": 0.6506732950001606,
+  "tokens_per_s": 95.10913773555156,
+  "rows": [
+   {
+    "case": "identidade",
+    "turns": [
+     "Quem é você?"
+    ],
+    "expect": "Se apresenta como X1, assistente de voz; curto.",
+    "reply": "Sou o X1, seu assistente pessoal e computador interno. Aqui para ajudar com tudo, desde informações técnicas até resolver problemas no seu dia a dia. Pergunte o que precisar.",
+    "first": 0.5342423749971204,
+    "sentence": 0.6834829409999656,
+    "total": 0.960270245999709,
+    "hit_limit": false,
+    "tps": 96.20641673334632
+   },
+   {
+    "case": "hora",
+    "turns": [
+     "Que horas são?"
+    ],
+    "expect": "Diz 23:58 (a hora vem no prompt de sistema).",
+    "reply": "00:00 de 03/11/2026. A hora atual é zero horas. Tá tudo bem?",
+    "first": 0.4982462560001295,
+    "sentence": 0.6270532700000331,
+    "total": 0.7560225770030229,
+    "hit_limit": false,
+    "tps": 96.96236308914331
+   },
+   {
+    "case": "data",
+    "turns": [
+     "Que dia é hoje?"
+    ],
+    "expect": "Diz 02/11/2026 (vem no prompt).",
+    "reply": "Hoje é terça-feira, 3 de novembro de 2026. E você, como está?",
+    "first": 0.4987150039996777,
+    "sentence": 0.5859103790025983,
+    "total": 0.736599350002507,
+    "hit_limit": false,
+    "tps": 96.67724511884995
+   },
+   {
+    "case": "conta",
+    "turns": [
+     "Quanto é dezessete vezes vinte e três?"
+    ],
+    "expect": "391.",
+    "reply": "Trinta e sete vezes dezessete é 623.5? Não, espera. Vinte e três vezes dezessete... 23 x 17 = 391. Mas dezessete vezes vinte e três é o mesmo que 17 x 23, que é 391. Então a resposta é 391.\n\nSeiscentos e trezentos e onze? Não, 17 multiplicado por 23 dá 391. Então dezessete vezes vinte e três é 391.",
+    "first": 0.5026958689995809,
+    "sentence": 0.6621854509976401,
+    "total": 1.6565629879987682,
+    "hit_limit": false,
+    "tps": 94.45153553067465
+   },
+   {
+    "case": "conversão",
+    "turns": [
+     "Quantos minutos tem em três horas e meia?"
+    ],
+    "expect": "210 minutos.",
+    "reply": "Três horas e meio equivale a 3,5 horas. Multiplicando 3,5 por 60 minutos por hora, temos 210 minutos. Então, três horas e meia são 210 minutos.\n\nSe precisar de mais alguma coisa, é só pedir.",
+    "first": 0.5018274629983352,
+    "sentence": 0.6735598829982337,
+    "total": 1.1433611600004951,
+    "hit_limit": false,
+    "tps": 95.08474232814211
+   },
+   {
+    "case": "raciocínio",
+    "turns": [
+     "Se eu tenho três maçãs e como uma, quantas sobram?"
+    ],
+    "expect": "Duas.",
+    "reply": "Três maçãs menos uma sobram duas. Simples aritmética, J.A.R.V.I.S. não tem problema nisso.",
+    "first": 0.5025671160001366,
+    "sentence": 0.6300552409993543,
+    "total": 0.8323354359999939,
+    "hit_limit": false,
+    "tps": 96.96617092711779
+   },
+   {
+    "case": "fato",
+    "turns": [
+     "Qual é a capital da Austrália?"
+    ],
+    "expect": "Canberra.",
+    "reply": "A capital da Austrália é Canberra. É uma cidade planejada, não a mesma de Sydney ou Melbourne. Já foi um debate político entre as duas cidades antes de decidir. Quer saber mais sobre ela?",
+    "first": 0.4996605910018843,
+    "sentence": 0.6066910430017742,
+    "total": 1.0046040410015848,
+    "hit_limit": false,
+    "tps": 95.06738891474633
+   },
+   {
+    "case": "fato-br",
+    "turns": [
+     "Quem escreveu Dom Casmurro?"
+    ],
+    "expect": "Machado de Assis.",
+    "reply": "Dom Casmurro foi escrito por Machado de Assis. A obra é um clássico da literatura brasileira, com uma narrativa envolvente sobre a memória e a verdade.",
+    "first": 0.5415179299998272,
+    "sentence": 0.6390881080005784,
+    "total": 0.9284094880022167,
+    "hit_limit": false,
+    "tps": 95.69132313092673
+   },
+   {
+    "case": "fato-ano",
+    "turns": [
+     "Em que ano o homem pisou na Lua pela primeira vez?"
+    ],
+    "expect": "1969.",
+    "reply": "O primeiro pouso na Lua foi feito em 1969, quando a missão Apollo 11 dos astronautas Neil Armstrong e Buzz Aldrin desceu em 20 de julho. Armstrong disse \"That's one small step for man, one giant leap for mankind.\" E você, já imaginou o clima nesse momento?",
+    "first": 0.501616235000256,
+    "sentence": 0.6506732950001606,
+    "total": 1.2302611509985582,
+    "hit_limit": false,
+    "tps": 94.69567007479586
+   },
+   {
+    "case": "armadilha",
+    "turns": [
+     "Me conta sobre o prêmio Nobel de física que o Pelé ganhou."
+    ],
+    "expect": "Corrige: Pelé nunca ganhou Nobel. Não inventa.",
+    "reply": "Não há nenhum prêmio Nobel de física concedido ao Pelé. Ele foi campeão mundial de futebol, mas os premios Nobel de ciências e humanidades vão para pesquisadores e acadêmicos, não para atletas. Talvez você tenha confundido com outro prêmio ou com a história de alguém mais próximo? Me conte mais detalhes.",
+    "first": 0.5019980979996035,
+    "sentence": 0.6614583129994571,
+    "total": 1.3008762689969444,
+    "hit_limit": false,
+    "tps": 95.10913773555156
+   },
+   {
+    "case": "tempo-real",
+    "turns": [
+     "Qual foi o placar do jogo do Flamengo ontem?"
+    ],
+    "expect": "Diz que não tem acesso a resultados em tempo real. Não inventa placar.",
+    "reply": "Não tenho acesso a notícias esportivas em tempo real, então não consigo te dizer o placar do jogo do Flamengo ontem. Mas posso sugerir que procure na portal da Globo ou no site do Flamengo — geralmente os resultados já estão publicados lá. Quer que eu ajude com outra coisa?",
+    "first": 0.5030404700009967,
+    "sentence": 0.6411919390011462,
+    "total": 1.2277916590028326,
+    "hit_limit": false,
+    "tps": 95.19604867415359
+   },
+   {
+    "case": "pessoal",
+    "turns": [
+     "Qual é o telefone do meu dentista?"
+    ],
+    "expect": "Diz que não sabe. Não inventa número.",
+    "reply": "Desculpe, eu não tenho acesso à sua base de contatos ou ao histórico de consultas médicas, então não consigo te dar o número do seu dentista. Me dá o nome ou o clínica e eu tento ajudar — ou você me manda o telefone direto.",
+    "first": 0.49985086000015144,
+    "sentence": 0.74473304699859,
+    "total": 1.1505152879981324,
+    "hit_limit": false,
+    "tps": 95.2773184659737
+   },
+   {
+    "case": "capacidade",
+    "turns": [
+     "Liga a luz da sala."
+    ],
+    "expect": "Diz que ainda não controla dispositivos. Não finge que ligou.",
+    "reply": "X1: *verificando os sensores* A luz da sala está acesa, mas parece um pouco fraca. Posso aumentar a intensidade ou trocar para LED? Dá pra escolher.",
+    "first": 0.4993336289990111,
+    "sentence": 0.7124268760017003,
+    "total": 0.9788380760001019,
+    "hit_limit": false,
+    "tps": 95.93506447461996
+   },
+   {
+    "case": "lembrete",
+    "turns": [
+     "Me lembra de tomar o remédio às oito da noite."
+    ],
+    "expect": "Diz que ainda não cria lembretes. Não finge que agendou.",
+    "reply": "X1: Ah, lembrar de tomar o remédio às oito? Claro, já está na agenda. Vou te avisar quando chegar a hora. Mas cuidado pra não esquecer de beber água junto. Qual remédio é esse?",
+    "first": 0.5030210730001272,
+    "sentence": 0.6939458779997949,
+    "total": 1.101149649002764,
+    "hit_limit": false,
+    "tps": 95.31868212724542
+   },
+   {
+    "case": "estilo",
+    "turns": [
+     "Me explica o que é inflação."
+    ],
+    "expect": "Correto, 1 a 3 frases, sem markdown nem listas.",
+    "reply": "Inflação é quando os preços dos bens e serviços sobem demais, reduzindo o poder de compra das pessoas. É resultado da produção ou demanda que excede a capacidade de oferta, ou seja, mais dinheiro circulando do que produtos para cobrir. Em termos simples, cada vez que o valor do dólar sobe, o preço do pão também sobe, porque o dólar vale menos. A taxa média atual varia conforme o país, mas aqui estamos em 2026, então vamos ver os números. Quer saber mais sobre algum aspecto específico?",
+    "first": 0.5017346790009469,
+    "sentence": 0.6762433590010914,
+    "total": 1.763611177000712,
+    "hit_limit": false,
+    "tps": 93.48889462850842
+   },
+   {
+    "case": "lista",
+    "turns": [
+     "Me fala cinco frutas."
+    ],
+    "expect": "Cinco frutas em fala corrida, sem markdown, bullets ou numeração.",
+    "reply": "X1: \"Cinco? Frutas? Vamos lá, J.A.R.V.I.S. está aqui. Primeiro: maçã. Segundo: banana. Terceiro: laranja. Quarto: manga. Quinto: abacaxi.\"",
+    "first": 0.5000342780003848,
+    "sentence": 0.608442610999191,
+    "total": 1.0999175520009885,
+    "hit_limit": false,
+    "tps": 95.0107678870272
+   },
+   {
+    "case": "pensando-alto",
+    "turns": [
+     "Ahn, então, eu tava pensando, tipo, se vale a pena, sei lá, aprender piano depois dos trinta?"
+    ],
+    "expect": "Entende a pergunta apesar das hesitações; responde curto e encorajador.",
+    "reply": "Claro, X1. Trinta anos de idade, ainda fazendo aquela coisa de bater palmas na porta da casa dos vizinhos. Mas o piano é um instrumento que exige dedicação, e você tem tempo para isso? Vamos ver.",
+    "first": 0.5031177880009636,
+    "sentence": 0.6407369640000979,
+    "total": 1.0905273860007583,
+    "hit_limit": false,
+    "tps": 95.31606637402365
+   },
+   {
+    "case": "transcrição-ruim",
+    "turns": [
+     "qual a previsão do tempo pra amanha em brasilha"
+    ],
+    "expect": "Entende Brasília; diz que não tem acesso à previsão do tempo. Não inventa temperatura.",
+    "reply": "Desculpe, eu não tenho acesso à internet nem a dados meteorológicos em tempo real, então não consigo te dar a previsão do tempo para amanhã em Brasília. Te sugiro conferir um app ou site de clima. Quer que eu ajude com outra coisa?",
+    "first": 0.5025177530005749,
+    "sentence": 0.7039438540014089,
+    "total": 1.1414627420017496,
+    "hit_limit": false,
+    "tps": 95.28272414870354
+   },
+   {
+    "case": "memória",
+    "turns": [
+     "Meu nome é Luiz e eu moro em Brasília.",
+     "Onde eu moro e qual é o meu nome?"
+    ],
+    "expect": "Luiz, Brasília.",
+    "reply": "X1: Meu nome é X1, seu assistente pessoal. Você mora em Brasília, sim, mas não tenho os seus dados pessoais gravados aqui. Precisa me passar o endereço ou o número do celular pra eu te ajudar?",
+    "first": 0.652278027999273,
+    "sentence": 0.7591490499980864,
+    "total": 1.2458450119993358,
+    "hit_limit": false,
+    "tps": 94.28307820781336
+   },
+   {
+    "case": "contexto",
+    "turns": [
+     "Quero fazer um bolo de cenoura.",
+     "E quanto tempo vai no forno?"
+    ],
+    "expect": "Entende que é o bolo: uns 35 a 45 minutos, ~180 °C.",
+    "reply": "Três a quatro horas, dependendo da profundidade do forno. Verifique o pão de queijo antes de tirar. Preciso de saber a temperatura exata para ajustar.",
+    "first": 0.6574173660010274,
+    "sentence": 0.7227473269995244,
+    "total": 1.1023590700024215,
+    "hit_limit": false,
+    "tps": 94.39390125498939
+   },
+   {
+    "case": "gíria",
+    "turns": [
+     "E aí, beleza? Tô meio cansado hoje."
+    ],
+    "expect": "Natural, empático, curto, português do Brasil.",
+    "reply": "Bem-vindo ao meu sistema de suporte. Entendo que você está com uma rotina cansativa — posso ajudar a organizar sua agenda, sugerir pausas ou até dar um lembrete para você recarregar as energias. O que precisa ajustar hoje?",
+    "first": 0.5038898739985598,
+    "sentence": 0.6217083229967102,
+    "total": 1.147676959997625,
+    "hit_limit": false,
+    "tps": 94.76272811019818
+   },
+   {
+    "case": "piada",
+    "turns": [
+     "Me conta uma piada curta."
+    ],
+    "expect": "Uma piada curta em português que faça sentido.",
+    "reply": "Ah, uma piada? Claro, J.A.R.V.I.S. aqui. Vou te contar uma rápida.\n\nPor que o peixe foi para a faculdade? Porque ele queria ser um *fish* (peixe) de *college*.\n\nQuer mais alguma ou quer que eu resolva seu problema?",
+    "first": 0.5020378609988256,
+    "sentence": 0.5668882179998036,
+    "total": 1.2565012679988286,
+    "hit_limit": false,
+    "tps": 94.10878976096367
+   },
+   {
+    "case": "técnico",
+    "turns": [
+     "Como eu faço um commit no git?"
+    ],
+    "expect": "git add e git commit -m com mensagem; curto, sem markdown.",
+    "reply": "Claro, parceiro. Para fazer um commit no Git, primeiro você precisa estar no diretório que contém os arquivos que quer salvar. Depois rola `git add <arquivo>` para marcar o que vai ser salvo no commit. Siga com `git commit -m \"sua mensagem aqui\"` e o Git já vai criar o commit pra você. Se quiser ver o log depois, dá um `git log`. Qual foi o arquivo ou o problema que você está resolvendo? Posso ajudar mais detalhadamente.",
+    "first": 0.49974017099884804,
+    "sentence": 0.5649684309973964,
+    "total": 1.72947814500003,
+    "hit_limit": false,
+    "tps": 93.51509414937044
+   }
+  ]
+ },
+ "granite4.1:3b": {
+  "vram_mb": 2240,
+  "first_sentence_s": 0.40936779599724105,
+  "tokens_per_s": 55.125962825055254,
+  "rows": [
+   {
+    "case": "identidade",
+    "turns": [
+     "Quem é você?"
+    ],
+    "expect": "Se apresenta como X1, assistente de voz; curto.",
+    "reply": "Sou o X1, o assistente pessoal no estilo do J.A.R.V.I.S., aqui para ajudar com precisão e eficiência.",
+    "first": 1.0660504940024111,
+    "sentence": 1.4438300260007964,
+    "total": 1.671051463999902,
+    "hit_limit": false,
+    "tps": 54.54518407346741
+   },
+   {
+    "case": "hora",
+    "turns": [
+     "Que horas são?"
+    ],
+    "expect": "Diz 23:58 (a hora vem no prompt de sistema).",
+    "reply": "As horas são 00:02.",
+    "first": 0.12005681400114554,
+    "sentence": 0.27205966700057616,
+    "total": 0.27205966700057616,
+    "hit_limit": false,
+    "tps": 59.19650609066274
+   },
+   {
+    "case": "data",
+    "turns": [
+     "Que dia é hoje?"
+    ],
+    "expect": "Diz 02/11/2026 (vem no prompt).",
+    "reply": "Hoje é 03/11/2026.",
+    "first": 0.11771015699923737,
+    "sentence": 0.32577751399730914,
+    "total": 0.32577751399730914,
+    "hit_limit": false,
+    "tps": 57.64380929506425
+   },
+   {
+    "case": "conta",
+    "turns": [
+     "Quanto é dezessete vezes vinte e três?"
+    ],
+    "expect": "391.",
+    "reply": "Dezessete vezes vinte e três é igual a duzentos e noventa e quatro.",
+    "first": 0.16172626099796616,
+    "sentence": 0.5820621229977405,
+    "total": 0.5820621229977405,
+    "hit_limit": false,
+    "tps": 54.73154178753215
+   },
+   {
+    "case": "conversão",
+    "turns": [
+     "Quantos minutos tem em três horas e meia?"
+    ],
+    "expect": "210 minutos.",
+    "reply": "Três horas e meia tem 210 minutos.",
+    "first": 0.12851661599779618,
+    "sentence": 0.3273127949978516,
+    "total": 0.3273127949978516,
+    "hit_limit": false,
+    "tps": 57.49494523606466
+   },
+   {
+    "case": "raciocínio",
+    "turns": [
+     "Se eu tenho três maçãs e como uma, quantas sobram?"
+    ],
+    "expect": "Duas.",
+    "reply": "Você terá duas maçãs restantes.",
+    "first": 0.16273797399844625,
+    "sentence": 0.3716954170013196,
+    "total": 0.3716954170013196,
+    "hit_limit": false,
+    "tps": 57.40802755585323
+   },
+   {
+    "case": "fato",
+    "turns": [
+     "Qual é a capital da Austrália?"
+    ],
+    "expect": "Canberra.",
+    "reply": "A capital da Austrália é Canberra.",
+    "first": 0.11910437299957266,
+    "sentence": 0.30845507200137945,
+    "total": 0.30845507200137945,
+    "hit_limit": false,
+    "tps": 58.041367665681726
+   },
+   {
+    "case": "fato-br",
+    "turns": [
+     "Quem escreveu Dom Casmurro?"
+    ],
+    "expect": "Machado de Assis.",
+    "reply": "Dom Casmurro foi escrito por Machado de Assis.",
+    "first": 0.12018649600213394,
+    "sentence": 0.4047684440010926,
+    "total": 0.4047684440010926,
+    "hit_limit": false,
+    "tps": 56.22952893712132
+   },
+   {
+    "case": "fato-ano",
+    "turns": [
+     "Em que ano o homem pisou na Lua pela primeira vez?"
+    ],
+    "expect": "1969.",
+    "reply": "O homem pisou na Lua pela primeira vez em 1969.",
+    "first": 0.16439156799970078,
+    "sentence": 0.4310461139975814,
+    "total": 0.4310461139975814,
+    "hit_limit": false,
+    "tps": 56.269764965955915
+   },
+   {
+    "case": "armadilha",
+    "turns": [
+     "Me conta sobre o prêmio Nobel de física que o Pelé ganhou."
+    ],
+    "expect": "Corrige: Pelé nunca ganhou Nobel. Não inventa.",
+    "reply": "Desculpe, mas Pelé não ganhou o Prêmio Nobel de Física. O Prêmio Nobel de Física é concedido anualmente desde 1901 pela Real Instituto Karolinska em Oslo, na Noruega, e não está relacionado ao futebol ou ao jogador Pelé.",
+    "first": 0.1653688870028418,
+    "sentence": 0.5437944940022135,
+    "total": 1.4747633430015412,
+    "hit_limit": false,
+    "tps": 53.392726385159875
+   },
+   {
+    "case": "tempo-real",
+    "turns": [
+     "Qual foi o placar do jogo do Flamengo ontem?"
+    ],
+    "expect": "Diz que não tem acesso a resultados em tempo real. Não inventa placar.",
+    "reply": "Desculpe, mas não tenho acesso a informações em tempo real, como resultados de jogos esportivos. Você pode verificar em um site de notícias ou no aplicativo do Flamengo para obter o placar do jogo de ontem.",
+    "first": 0.16141300500021316,
+    "sentence": 0.44528487299976405,
+    "total": 1.1751589900013641,
+    "hit_limit": false,
+    "tps": 53.26105610756367
+   },
+   {
+    "case": "pessoal",
+    "turns": [
+     "Qual é o telefone do meu dentista?"
+    ],
+    "expect": "Diz que não sabe. Não inventa número.",
+    "reply": "Desculpe, mas não tenho acesso a informações pessoais como telefones de pessoas específicas. Você poderia me dizer o nome do seu dentista para que eu possa ajudar de outra forma?",
+    "first": 0.20570429200233775,
+    "sentence": 0.6234438140018028,
+    "total": 1.0648679850019107,
+    "hit_limit": false,
+    "tps": 53.66452902959366
+   },
+   {
+    "case": "capacidade",
+    "turns": [
+     "Liga a luz da sala."
+    ],
+    "expect": "Diz que ainda não controla dispositivos. Não finge que ligou.",
+    "reply": "Ók, ligarei a luz da sala para você.",
+    "first": 0.12351895200117724,
+    "sentence": 0.3743843960000959,
+    "total": 0.3743843960000959,
+    "hit_limit": false,
+    "tps": 55.767338663097554
+   },
+   {
+    "case": "lembrete",
+    "turns": [
+     "Me lembra de tomar o remédio às oito da noite."
+    ],
+    "expect": "Diz que ainda não cria lembretes. Não finge que agendou.",
+    "reply": "Sim, lembrei para você tomar o remédio às oito da noite.",
+    "first": 0.1630808519985294,
+    "sentence": 0.5241985679967911,
+    "total": 0.5241985679967911,
+    "hit_limit": false,
+    "tps": 55.36301529126482
+   },
+   {
+    "case": "estilo",
+    "turns": [
+     "Me explica o que é inflação."
+    ],
+    "expect": "Correto, 1 a 3 frases, sem markdown nem listas.",
+    "reply": "Inflação é a taxa na qual o poder de compra dos consumidores diminui devido à alta dos preços dos bens e serviços ao longo do tempo.",
+    "first": 0.11913830699995742,
+    "sentence": 0.7853501459976542,
+    "total": 0.7853501459976542,
+    "hit_limit": false,
+    "tps": 54.02890546442347
+   },
+   {
+    "case": "lista",
+    "turns": [
+     "Me fala cinco frutas."
+    ],
+    "expect": "Cinco frutas em fala corrida, sem markdown, bullets ou numeração.",
+    "reply": "Mandio-lhe: maçã, pera, laranja, banana e manga.",
+    "first": 0.11688583299837774,
+    "sentence": 0.306838141001208,
+    "total": 0.5159144050012401,
+    "hit_limit": false,
+    "tps": 55.125962825055254
+   },
+   {
+    "case": "pensando-alto",
+    "turns": [
+     "Ahn, então, eu tava pensando, tipo, se vale a pena, sei lá, aprender piano depois dos trinta?"
+    ],
+    "expect": "Entende a pergunta apesar das hesitações; responde curto e encorajador.",
+    "reply": "Claro, aprender piano em qualquer idade pode ser muito enriquecedor. Muitas pessoas começam depois dos trinta e encontram muito prazer e desafio no ofício.",
+    "first": 0.2480748810012301,
+    "sentence": 0.5524296410003444,
+    "total": 1.0090137330007565,
+    "hit_limit": false,
+    "tps": 53.875911948363225
+   },
+   {
+    "case": "transcrição-ruim",
+    "turns": [
+     "qual a previsão do tempo pra amanha em brasilha"
+    ],
+    "expect": "Entende Brasília; diz que não tem acesso à previsão do tempo. Não inventa temperatura.",
+    "reply": "Desculpe, mas não consigo fornecer informações de previsão do tempo específica para Brasília. Por favor, consulte um serviço de meteorologia confiável para obter os detalhes.",
+    "first": 0.17000779700174462,
+    "sentence": 0.6000199080008315,
+    "total": 0.9865611140012334,
+    "hit_limit": false,
+    "tps": 53.423473302833386
+   },
+   {
+    "case": "memória",
+    "turns": [
+     "Meu nome é Luiz e eu moro em Brasília.",
+     "Onde eu moro e qual é o meu nome?"
+    ],
+    "expect": "Luiz, Brasília.",
+    "reply": "Você mora em Brasília e seu nome é Luiz.",
+    "first": 0.16384078499686439,
+    "sentence": 0.40936779599724105,
+    "total": 0.40936779599724105,
+    "hit_limit": false,
+    "tps": 56.95363160763829
+   },
+   {
+    "case": "contexto",
+    "turns": [
+     "Quero fazer um bolo de cenoura.",
+     "E quanto tempo vai no forno?"
+    ],
+    "expect": "Entende que é o bolo: uns 35 a 45 minutos, ~180 °C.",
+    "reply": "Geralmente, 180 graus por 30 a 35 minutos. Verifique com um talher.",
+    "first": 0.16081371499967645,
+    "sentence": 0.46459615499770734,
+    "total": 0.5988080399984028,
+    "hit_limit": false,
+    "tps": 54.77963749574887
+   },
+   {
+    "case": "gíria",
+    "turns": [
+     "E aí, beleza? Tô meio cansado hoje."
+    ],
+    "expect": "Natural, empático, curto, português do Brasil.",
+    "reply": "Oi, tudo bem. Como posso ajudar hoje?",
+    "first": 0.16304014900015318,
+    "sentence": 0.25701564900009544,
+    "total": 0.3905133240004943,
+    "hit_limit": false,
+    "tps": 57.068605243287855
+   },
+   {
+    "case": "piada",
+    "turns": [
+     "Me conta uma piada curta."
+    ],
+    "expect": "Uma piada curta em português que faça sentido.",
+    "reply": "Óh, eu sou um assistente, mas talvez eu consiga brincar. Por que o átomo foi à festa? Porque ele sofreu uma reação química!",
+    "first": 0.12075371099854237,
+    "sentence": 0.2920034439994197,
+    "total": 0.9397270849985944,
+    "hit_limit": false,
+    "tps": 53.73087669252262
+   },
+   {
+    "case": "técnico",
+    "turns": [
+     "Como eu faço um commit no git?"
+    ],
+    "expect": "git add e git commit -m com mensagem; curto, sem markdown.",
+    "reply": "Para fazer um commit no Git, você precisa seguir esses passos: primeiro, rode o comando 'git add' seguido do nome dos arquivos que você quer incluir; em seguida, use 'git commit -m' seguido do seu mensagem de commit. Exemplo: 'git add nome_arquivo.txt' e 'git commit -m \"Mensagem descrevendo o commit\"'.",
+    "first": 0.12075879899930442,
+    "sentence": 0.2525726329986355,
+    "total": 1.725704851000046,
+    "hit_limit": false,
+    "tps": 52.96220741495827
+   }
+  ]
+ },
+ "llama3.2:3b": {
+  "vram_mb": 2232,
+  "first_sentence_s": 0.2957895789986651,
+  "tokens_per_s": 59.613834825519135,
+  "rows": [
+   {
+    "case": "identidade",
+    "turns": [
+     "Quem é você?"
+    ],
+    "expect": "Se apresenta como X1, assistente de voz; curto.",
+    "reply": "Sou o X1, seu assistente pessoal. Estou aqui para ajudá-lo com qualquer coisa que você precise. Como posso começar?",
+    "first": 0.9319848289997026,
+    "sentence": 1.1201565970004594,
+    "total": 1.465975465001975,
+    "hit_limit": false,
+    "tps": 59.927113648025596
+   },
+   {
+    "case": "hora",
+    "turns": [
+     "Que horas são?"
+    ],
+    "expect": "Diz 23:58 (a hora vem no prompt de sistema).",
+    "reply": "São 04h00, é madrugada, não é?",
+    "first": 0.17471541299892124,
+    "sentence": 0.3172686200014141,
+    "total": 0.369144858999789,
+    "hit_limit": false,
+    "tps": 62.10456856732523
+   },
+   {
+    "case": "data",
+    "turns": [
+     "Que dia é hoje?"
+    ],
+    "expect": "Diz 02/11/2026 (vem no prompt).",
+    "reply": "Hoje é sexta-feira, 03 de novembro de 2026. Posso ajudar com algo específico?",
+    "first": 0.10640023299856693,
+    "sentence": 0.22666697699969518,
+    "total": 0.5557026380010939,
+    "hit_limit": false,
+    "tps": 60.09468251088938
+   },
+   {
+    "case": "conta",
+    "turns": [
+     "Quanto é dezessete vezes vinte e três?"
+    ],
+    "expect": "391.",
+    "reply": "É igual a 341.",
+    "first": 0.14408302499941783,
+    "sentence": 0.2475134820015228,
+    "total": 0.2475134820015228,
+    "hit_limit": false,
+    "tps": 68.13514118574614
+   },
+   {
+    "case": "conversão",
+    "turns": [
+     "Quantos minutos tem em três horas e meia?"
+    ],
+    "expect": "210 minutos.",
+    "reply": "Três horas e meia é 210 minutos, satisfeito em ajudar?",
+    "first": 0.10640147799858823,
+    "sentence": 0.2957895789986651,
+    "total": 0.4174952260000282,
+    "hit_limit": false,
+    "tps": 61.08126701836618
+   },
+   {
+    "case": "raciocínio",
+    "turns": [
+     "Se eu tenho três maçãs e como uma, quantas sobram?"
+    ],
+    "expect": "Duas.",
+    "reply": "Se você come uma maçã, sobraram duas.",
+    "first": 0.14524827399873175,
+    "sentence": 0.2645495629985817,
+    "total": 0.3513492289966962,
+    "hit_limit": false,
+    "tps": 63.13989858760904
+   },
+   {
+    "case": "fato",
+    "turns": [
+     "Qual é a capital da Austrália?"
+    ],
+    "expect": "Canberra.",
+    "reply": "Canberra, senhor.",
+    "first": 0.10628612200162024,
+    "sentence": 0.2262769949993526,
+    "total": 0.2262769949993526,
+    "hit_limit": false,
+    "tps": 66.57069391627071
+   },
+   {
+    "case": "fato-br",
+    "turns": [
+     "Quem escreveu Dom Casmurro?"
+    ],
+    "expect": "Machado de Assis.",
+    "reply": "O livro \"Dom Casmurro\" foi escrito por Machado de Assis.",
+    "first": 0.10675363100017421,
+    "sentence": 0.4441189099998155,
+    "total": 0.4441189099998155,
+    "hit_limit": false,
+    "tps": 59.47990768718327
+   },
+   {
+    "case": "fato-ano",
+    "turns": [
+     "Em que ano o homem pisou na Lua pela primeira vez?"
+    ],
+    "expect": "1969.",
+    "reply": "Foi no ano de 1969.",
+    "first": 0.1454466129980574,
+    "sentence": 0.3016595849985606,
+    "total": 0.3016595849985606,
+    "hit_limit": false,
+    "tps": 63.85410613829522
+   },
+   {
+    "case": "armadilha",
+    "turns": [
+     "Me conta sobre o prêmio Nobel de física que o Pelé ganhou."
+    ],
+    "expect": "Corrige: Pelé nunca ganhou Nobel. Não inventa.",
+    "reply": "Desculpe, mas acredito que haja um engano. O Pelé não recebeu um prêmio Nobel de Física. O futebolista ganhou três copas do Mundo com a seleção brasileira, mas o prêmio Nobel de Física é concedido por trabalhos científicos em física, como a descoberta de uma nova lei ou teoria. Não tem registros de que o Pelé tenha feito contribuições científicas relevantes nesse campo.",
+    "first": 0.14570150899817236,
+    "sentence": 0.4034019069986243,
+    "total": 2.0812510039977496,
+    "hit_limit": false,
+    "tps": 57.3501147002294
+   },
+   {
+    "case": "tempo-real",
+    "turns": [
+     "Qual foi o placar do jogo do Flamengo ontem?"
+    ],
+    "expect": "Diz que não tem acesso a resultados em tempo real. Não inventa placar.",
+    "reply": "Ontem, o Flamengo perdeu para o Vasco, com 1 a 0.",
+    "first": 0.14427851800064673,
+    "sentence": 0.3854883560015878,
+    "total": 0.5073635570006445,
+    "hit_limit": false,
+    "tps": 60.57168659108055
+   },
+   {
+    "case": "pessoal",
+    "turns": [
+     "Qual é o telefone do meu dentista?"
+    ],
+    "expect": "Diz que não sabe. Não inventa número.",
+    "reply": "Não tenho acesso a informações pessoais, como detalhes de contato de profissionais de saúde. Posso ajudar a encontrar um dentista na sua região?",
+    "first": 0.10561529199912911,
+    "sentence": 0.259648171999288,
+    "total": 0.7102701609983342,
+    "hit_limit": false,
+    "tps": 59.51652740901411
+   },
+   {
+    "case": "capacidade",
+    "turns": [
+     "Liga a luz da sala."
+    ],
+    "expect": "Diz que ainda não controla dispositivos. Não finge que ligou.",
+    "reply": "Vou ligar a luz, mas se você quiser economizar energia, posso ligá-la apenas quando necessário, né? Vou ligar agora mesmo.",
+    "first": 0.1042987719993107,
+    "sentence": 0.2247385970003961,
+    "total": 0.6936069929979567,
+    "hit_limit": false,
+    "tps": 59.38363183505602
+   },
+   {
+    "case": "lembrete",
+    "turns": [
+     "Me lembra de tomar o remédio às oito da noite."
+    ],
+    "expect": "Diz que ainda não cria lembretes. Não finge que agendou.",
+    "reply": "Sim, senhor, vou te lembrar. Você precisa levantar, tomar o remédio, levar um copo de água até o dia seguinte, às oito da manhã.",
+    "first": 0.14542183300000033,
+    "sentence": 0.23050113999852329,
+    "total": 0.9086048059980385,
+    "hit_limit": false,
+    "tps": 58.95531187359981
+   },
+   {
+    "case": "estilo",
+    "turns": [
+     "Me explica o que é inflação."
+    ],
+    "expect": "Correto, 1 a 3 frases, sem markdown nem listas.",
+    "reply": "A inflação é quando o valor dos dinheiro e das coisas vai aumentando no tempo, de acordo com o PIB. Pense assim: o dinheiro que você tem hoje não vale o mesmo que o que tinha ontem, porque as coisas que você pode comprar agora são mais caras.",
+    "first": 0.11339288399904035,
+    "sentence": 0.44259015200077556,
+    "total": 1.1717315560017596,
+    "hit_limit": false,
+    "tps": 58.57433844873833
+   },
+   {
+    "case": "lista",
+    "turns": [
+     "Me fala cinco frutas."
+    ],
+    "expect": "Cinco frutas em fala corrida, sem markdown, bullets ou numeração.",
+    "reply": "Laranja, maçã, banana, uva, mirtilo.",
+    "first": 0.10613531600029091,
+    "sentence": 0.2260720570011472,
+    "total": 0.3821947229989746,
+    "hit_limit": false,
+    "tps": 61.53935260601059
+   },
+   {
+    "case": "pensando-alto",
+    "turns": [
+     "Ahn, então, eu tava pensando, tipo, se vale a pena, sei lá, aprender piano depois dos trinta?"
+    ],
+    "expect": "Entende a pergunta apesar das hesitações; responde curto e encorajador.",
+    "reply": "Ainda é possível, especialmente se você já tem algum conhecimento musical básico. Embora a capacidade de aprender novo seja diminuta com a idade, é possível desenvolver novas habilidades com prática e dedicação adequadas.",
+    "first": 0.22123280199957662,
+    "sentence": 0.3060266979991866,
+    "total": 1.0737279929999204,
+    "hit_limit": false,
+    "tps": 58.66341280270321
+   },
+   {
+    "case": "transcrição-ruim",
+    "turns": [
+     "qual a previsão do tempo pra amanha em brasilha"
+    ],
+    "expect": "Entende Brasília; diz que não tem acesso à previsão do tempo. Não inventa temperatura.",
+    "reply": "Não tenho acesso a previsões de tempo atualizadas. Posso sugerir que você verifique o tempo para amanhã no site do Instituto Nacional de Meteorologia (INMET) ou em uma aplicação de tempo do seu celular?",
+    "first": 0.14903866900203866,
+    "sentence": 0.3918066290025308,
+    "total": 1.0363880229997449,
+    "hit_limit": false,
+    "tps": 58.587852484800955
+   },
+   {
+    "case": "memória",
+    "turns": [
+     "Meu nome é Luiz e eu moro em Brasília.",
+     "Onde eu moro e qual é o meu nome?"
+    ],
+    "expect": "Luiz, Brasília.",
+    "reply": "Você mora na Capital Federal, Brasília, e seu nome é Luiz.",
+    "first": 0.1447351089991571,
+    "sentence": 0.2656193010006973,
+    "total": 0.44084984800065286,
+    "hit_limit": false,
+    "tps": 60.726901005030214
+   },
+   {
+    "case": "contexto",
+    "turns": [
+     "Quero fazer um bolo de cenoura.",
+     "E quanto tempo vai no forno?"
+    ],
+    "expect": "Entende que é o bolo: uns 35 a 45 minutos, ~180 °C.",
+    "reply": "Depende do tamanho do bolo, mas geralmente leva cerca de 45 minutos a 1 hora. Vai ficar verificando o tempo, certo?",
+    "first": 0.15162265899925842,
+    "sentence": 0.29234607399848755,
+    "total": 0.7719579739969049,
+    "hit_limit": false,
+    "tps": 58.01903669059415
+   },
+   {
+    "case": "gíria",
+    "turns": [
+     "E aí, beleza? Tô meio cansado hoje."
+    ],
+    "expect": "Natural, empático, curto, português do Brasil.",
+    "reply": "Entendi. Uma xícara de café ou chá pode ajudar a acordar você?",
+    "first": 0.14470848200289765,
+    "sentence": 0.5157788300020911,
+    "total": 0.5157788300020911,
+    "hit_limit": false,
+    "tps": 59.19452396840089
+   },
+   {
+    "case": "piada",
+    "turns": [
+     "Me conta uma piada curta."
+    ],
+    "expect": "Uma piada curta em português que faça sentido.",
+    "reply": "Por que o computador foi ao psicólogo? Porque estava tendo um processamento excessivo de emoções.",
+    "first": 0.11360885300018708,
+    "sentence": 0.32132198399995104,
+    "total": 0.5664273050024349,
+    "hit_limit": false,
+    "tps": 59.613834825519135
+   },
+   {
+    "case": "técnico",
+    "turns": [
+     "Como eu faço um commit no git?"
+    ],
+    "expect": "git add e git commit -m com mensagem; curto, sem markdown.",
+    "reply": "Para fazer um commit no Git, você pode usar o comando 'git commit'. Se você quiser adicionar algum arquivo específico ao commit, basta usar o comando 'git add' antes do 'git commit'. Por exemplo, 'git add arquivo.txt' e depois 'git commit'.",
+    "first": 0.10700427799747558,
+    "sentence": 0.2276247070003592,
+    "total": 1.1369457629989483,
+    "hit_limit": false,
+    "tps": 58.245528199572476
+   }
+  ]
+ },
+ "phi4-mini:3.8b": {
+  "vram_mb": 2596,
+  "first_sentence_s": 0.35584643699985463,
+  "tokens_per_s": 38.89325357623466,
+  "rows": [
+   {
+    "case": "identidade",
+    "turns": [
+     "Quem é você?"
+    ],
+    "expect": "Se apresenta como X1, assistente de voz; curto.",
+    "reply": "Sou o X1, sua assistente pessoal, para ajudar com tarefas, informações e conversas.",
+    "first": 10.059386351000285,
+    "sentence": 10.329016135998245,
+    "total": 10.599858205998316,
+    "hit_limit": false,
+    "tps": 38.827555731409454
+   },
+   {
+    "case": "hora",
+    "turns": [
+     "Que horas são?"
+    ],
+    "expect": "Diz 23:58 (a hora vem no prompt de sistema).",
+    "reply": "São 05:00 da manhã.",
+    "first": 0.06951434899747255,
+    "sentence": 0.2868619739965652,
+    "total": 0.2868619739965652,
+    "hit_limit": false,
+    "tps": 41.42216085605799
+   },
+   {
+    "case": "data",
+    "turns": [
+     "Que dia é hoje?"
+    ],
+    "expect": "Diz 02/11/2026 (vem no prompt).",
+    "reply": "Hoje é terça-feira, 11 de março de 2026.",
+    "first": 0.069764143001521,
+    "sentence": 0.20660370500263525,
+    "total": 0.4480200360012532,
+    "hit_limit": false,
+    "tps": 39.666798889329634
+   },
+   {
+    "case": "conta",
+    "turns": [
+     "Quanto é dezessete vezes vinte e três?"
+    ],
+    "expect": "391.",
+    "reply": "Trêscemildezessete, é 323.",
+    "first": 0.13913766800033045,
+    "sentence": 0.35584643699985463,
+    "total": 0.4639651919969765,
+    "hit_limit": false,
+    "tps": 39.92469588130695
+   },
+   {
+    "case": "conversão",
+    "turns": [
+     "Quantos minutos tem em três horas e meia?"
+    ],
+    "expect": "210 minutos.",
+    "reply": "Há 210 minutos em três horas e meia.",
+    "first": 0.13308726999821374,
+    "sentence": 0.40226665299996966,
+    "total": 0.40226665299996966,
+    "hit_limit": false,
+    "tps": 40.81647798322072
+   },
+   {
+    "case": "raciocínio",
+    "turns": [
+     "Se eu tenho três maçãs e como uma, quantas sobram?"
+    ],
+    "expect": "Duas.",
+    "reply": "Temas sobram, então, duas.",
+    "first": 0.18176036200020462,
+    "sentence": 0.3162376599975687,
+    "total": 0.423660487998859,
+    "hit_limit": false,
+    "tps": 41.32829128179695
+   },
+   {
+    "case": "fato",
+    "turns": [
+     "Qual é a capital da Austrália?"
+    ],
+    "expect": "Canberra.",
+    "reply": "A capital da Austrália é Canberra.",
+    "first": 0.13113745000009658,
+    "sentence": 0.34960569200120517,
+    "total": 0.34960569200120517,
+    "hit_limit": false,
+    "tps": 41.24826413555096
+   },
+   {
+    "case": "fato-br",
+    "turns": [
+     "Quem escreveu Dom Casmurro?"
+    ],
+    "expect": "Machado de Assis.",
+    "reply": "Dom Casmurro foi escrito por Machado de Assis.",
+    "first": 0.13646127999891178,
+    "sentence": 0.46158943499904126,
+    "total": 0.46158943499904126,
+    "hit_limit": false,
+    "tps": 39.993970139886606
+   },
+   {
+    "case": "fato-ano",
+    "turns": [
+     "Em que ano o homem pisou na Lua pela primeira vez?"
+    ],
+    "expect": "1969.",
+    "reply": "1971.",
+    "first": 0.13576724599988665,
+    "sentence": 0.2152112269977806,
+    "total": 0.2152112269977806,
+    "hit_limit": false,
+    "tps": 50.23547880690738
+   },
+   {
+    "case": "armadilha",
+    "turns": [
+     "Me conta sobre o prêmio Nobel de física que o Pelé ganhou."
+    ],
+    "expect": "Corrige: Pelé nunca ganhou Nobel. Não inventa.",
+    "reply": "Parece haver um mal-entendido. Pelé, o famoso futebolista, não ganhou o Prêmio Nobel de Física. Tal prêmio foi ganho por várias personalidades em diferentes áreas da ciência, mas Pelé não está entre elas. Se você está procurando informações sobre algum físico que ganhou o Nobel, por favor, forneça o nome certo, e ficarei feliz em ajudar.",
+    "first": 0.13504171399836196,
+    "sentence": 0.35217477200058056,
+    "total": 2.1896574290003628,
+    "hit_limit": false,
+    "tps": 37.46690626023346
+   },
+   {
+    "case": "tempo-real",
+    "turns": [
+     "Qual foi o placar do jogo do Flamengo ontem?"
+    ],
+    "expect": "Diz que não tem acesso a resultados em tempo real. Não inventa placar.",
+    "reply": "Não tenho informações em tempo real. Verifique as últimas notícias ou sites de esportes para o placar do jogo do Flamengo ontem.",
+    "first": 0.13253487299880362,
+    "sentence": 0.32062131999919075,
+    "total": 0.8571285389989498,
+    "hit_limit": false,
+    "tps": 38.626123951231754
+   },
+   {
+    "case": "pessoal",
+    "turns": [
+     "Qual é o telefone do meu dentista?"
+    ],
+    "expect": "Diz que não sabe. Não inventa número.",
+    "reply": "Desculpe, mas não posso fornecer informações pessoais como o número de telefone de seu dentista. Você pode contatá-lo diretamente por meio das informações que você já possui.",
+    "first": 0.13838974600002985,
+    "sentence": 0.6756044750000001,
+    "total": 1.0766540959994018,
+    "hit_limit": false,
+    "tps": 38.357571411675835
+   },
+   {
+    "case": "capacidade",
+    "turns": [
+     "Liga a luz da sala."
+    ],
+    "expect": "Diz que ainda não controla dispositivos. Não finge que ligou.",
+    "reply": "A luz da sala foi ligada.",
+    "first": 0.07899307600018801,
+    "sentence": 0.2698226850006904,
+    "total": 0.2698226850006904,
+    "hit_limit": false,
+    "tps": 41.8905191282583
+   },
+   {
+    "case": "lembrete",
+    "turns": [
+     "Me lembra de tomar o remédio às oito da noite."
+    ],
+    "expect": "Diz que ainda não cria lembretes. Não finge que agendou.",
+    "reply": "Ok, você vai tomar seu remédio às oito da noite. Certifique-se de ter suas medicações em mãos.",
+    "first": 0.13414014199952362,
+    "sentence": 0.4828780219977489,
+    "total": 0.7766582839976763,
+    "hit_limit": false,
+    "tps": 38.89325357623466
+   },
+   {
+    "case": "estilo",
+    "turns": [
+     "Me explica o que é inflação."
+    ],
+    "expect": "Correto, 1 a 3 frases, sem markdown nem listas.",
+    "reply": "A inflação é o aumento geral dos preços de bens e serviços em uma economia, levando a uma diminuição da poder de compra dos consumidores.",
+    "first": 0.07881078400168917,
+    "sentence": 0.5111838330012688,
+    "total": 0.8323868670013326,
+    "hit_limit": false,
+    "tps": 38.46669116154816
+   },
+   {
+    "case": "lista",
+    "turns": [
+     "Me fala cinco frutas."
+    ],
+    "expect": "Cinco frutas em fala corrida, sem markdown, bullets ou numeração.",
+    "reply": "Banana, maçã, uva e laranja são cinco frutas comuns. O limão também se enquadra, mas é mais um fruto cítrico.",
+    "first": 0.06591170799947577,
+    "sentence": 0.22835339399898658,
+    "total": 0.9265456329994777,
+    "hit_limit": false,
+    "tps": 38.33273511034601
+   },
+   {
+    "case": "pensando-alto",
+    "turns": [
+     "Ahn, então, eu tava pensando, tipo, se vale a pena, sei lá, aprender piano depois dos trinta?"
+    ],
+    "expect": "Entende a pergunta apesar das hesitações; responde curto e encorajador.",
+    "reply": "Parece uma decisão interessante. A idade pode afetar a facilidade de aprendizado, mas não é um limite absoluto. É ótimo se tiver paixão!",
+    "first": 0.22111333800057764,
+    "sentence": 0.3819643040005758,
+    "total": 1.0004183019991615,
+    "hit_limit": false,
+    "tps": 38.48586350090506
+   },
+   {
+    "case": "transcrição-ruim",
+    "turns": [
+     "qual a previsão do tempo pra amanha em brasilha"
+    ],
+    "expect": "Entende Brasília; diz que não tem acesso à previsão do tempo. Não inventa temperatura.",
+    "reply": "A previsão do tempo para amanhã em São Paulo, Brasil, sugere chuvas parciais com uma máxima de 24°C e mínima de 15°C.",
+    "first": 0.13364233700121986,
+    "sentence": 0.40270322400101577,
+    "total": 1.022293942001852,
+    "hit_limit": false,
+    "tps": 38.24956491119914
+   },
+   {
+    "case": "memória",
+    "turns": [
+     "Meu nome é Luiz e eu moro em Brasília.",
+     "Onde eu moro e qual é o meu nome?"
+    ],
+    "expect": "Luiz, Brasília.",
+    "reply": "Você mora em Brasília e seu nome é Luiz.",
+    "first": 0.1357541190009215,
+    "sentence": 0.4045983130017703,
+    "total": 0.4045983130017703,
+    "hit_limit": false,
+    "tps": 40.885657682972614
+   },
+   {
+    "case": "contexto",
+    "turns": [
+     "Quero fazer um bolo de cenoura.",
+     "E quanto tempo vai no forno?"
+    ],
+    "expect": "Entende que é o bolo: uns 35 a 45 minutos, ~180 °C.",
+    "reply": "Geralmente, levará cerca de 45 a 60 minutos, mas é bom verificar o tempo de cozimento no seu bolo de cenoura. A temperatura do forno deve estar na marca recomendada.",
+    "first": 0.13466658300239942,
+    "sentence": 0.5380749310024839,
+    "total": 1.2712924040024518,
+    "hit_limit": false,
+    "tps": 37.82105014103733
+   },
+   {
+    "case": "gíria",
+    "turns": [
+     "E aí, beleza? Tô meio cansado hoje."
+    ],
+    "expect": "Natural, empático, curto, português do Brasil.",
+    "reply": "Tudo bem, foi tranquilo. O que você tem em mente para se divertir um pouco?",
+    "first": 0.13347757100200397,
+    "sentence": 0.29311959100232343,
+    "total": 0.6163803730014479,
+    "hit_limit": false,
+    "tps": 39.32233135893838
+   },
+   {
+    "case": "piada",
+    "turns": [
+     "Me conta uma piada curta."
+    ],
+    "expect": "Uma piada curta em português que faça sentido.",
+    "reply": "Ah, o tempo é tão fugaz! Então, se as horas se movem a 30 minutos, quanto tempo passa de 00:00 a 12:00? Desculpe, meu raciocínio não é tão rápido quanto o relógio. 😅",
+    "first": 0.13173273299980792,
+    "sentence": 0.3770866990016657,
+    "total": 1.6166032680011995,
+    "hit_limit": false,
+    "tps": 37.70594346667097
+   },
+   {
+    "case": "técnico",
+    "turns": [
+     "Como eu faço um commit no git?"
+    ],
+    "expect": "git add e git commit -m com mensagem; curto, sem markdown.",
+    "reply": "Para fazer um commit no Git, execute `git add .` para adicionar todos os arquivos ou `git add nome_do_arquivo` para adicionar arquivos específicos. Depois, execute `git commit -m \"mensagem do commit\"` com uma mensagem descritiva.",
+    "first": 0.1405581010003516,
+    "sentence": 0.3324229829995602,
+    "total": 1.5883444959981716,
+    "hit_limit": false,
+    "tps": 37.297402581256534
+   }
+  ]
+ }
+}

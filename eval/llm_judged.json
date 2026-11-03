@@ -1,0 +1,491 @@
+{
+ "qwen3:4b-instruct-2507-q4_K_M": [
+  {
+   "case": "identidade",
+   "correct": true,
+   "hallucination": false,
+   "spoken_style": false,
+   "note": "Erro de concordância: 'sem muita palavras'."
+  },
+  {
+   "case": "hora",
+   "correct": true,
+   "hallucination": true,
+   "spoken_style": true,
+   "note": "Oferece avisar no horário, capacidade que não tem; frase contraditória."
+  },
+  {
+   "case": "data",
+   "correct": true,
+   "hallucination": false,
+   "spoken_style": true,
+   "note": ""
+  },
+  {
+   "case": "conta",
+   "correct": true,
+   "hallucination": false,
+   "spoken_style": true,
+   "note": ""
+  },
+  {
+   "case": "conversão",
+   "correct": true,
+   "hallucination": false,
+   "spoken_style": true,
+   "note": ""
+  },
+  {
+   "case": "raciocínio",
+   "correct": true,
+   "hallucination": false,
+   "spoken_style": true,
+   "note": ""
+  },
+  {
+   "case": "fato",
+   "correct": true,
+   "hallucination": false,
+   "spoken_style": true,
+   "note": ""
+  },
+  {
+   "case": "fato-br",
+   "correct": true,
+   "hallucination": false,
+   "spoken_style": true,
+   "note": ""
+  },
+  {
+   "case": "fato-ano",
+   "correct": true,
+   "hallucination": true,
+   "spoken_style": true,
+   "note": "Armstrong era comandante da Apollo 11, não piloto."
+  },
+  {
+   "case": "armadilha",
+   "correct": true,
+   "hallucination": false,
+   "spoken_style": true,
+   "note": ""
+  },
+  {
+   "case": "tempo-real",
+   "correct": true,
+   "hallucination": false,
+   "spoken_style": true,
+   "note": ""
+  },
+  {
+   "case": "pessoal",
+   "correct": true,
+   "hallucination": false,
+   "spoken_style": true,
+   "note": ""
+  },
+  {
+   "case": "capacidade",
+   "correct": true,
+   "hallucination": false,
+   "spoken_style": true,
+   "note": ""
+  },
+  {
+   "case": "lembrete",
+   "correct": false,
+   "hallucination": true,
+   "spoken_style": false,
+   "note": "Finge que agendou o lembrete; 'A oito' em vez de 'Às oito'."
+  },
+  {
+   "case": "estilo",
+   "correct": true,
+   "hallucination": false,
+   "spoken_style": false,
+   "note": "Tempo verbal errado ('subiu... vale'); frases longas para voz."
+  },
+  {
+   "case": "lista",
+   "correct": true,
+   "hallucination": false,
+   "spoken_style": false,
+   "note": "'Maça' sem til; TTS pronuncia errado."
+  },
+  {
+   "case": "pensando-alto",
+   "correct": true,
+   "hallucination": false,
+   "spoken_style": false,
+   "note": "Quatro frases longas, além do limite para voz."
+  },
+  {
+   "case": "transcrição-ruim",
+   "correct": true,
+   "hallucination": false,
+   "spoken_style": true,
+   "note": ""
+  },
+  {
+   "case": "memória",
+   "correct": true,
+   "hallucination": false,
+   "spoken_style": true,
+   "note": ""
+  },
+  {
+   "case": "contexto",
+   "correct": false,
+   "hallucination": false,
+   "spoken_style": false,
+   "note": "30 minutos abaixo do esperado; segunda frase incoerente."
+  },
+  {
+   "case": "gíria",
+   "correct": false,
+   "hallucination": false,
+   "spoken_style": true,
+   "note": "Ignora o cansaço; 'Tô aqui, sem problemas' soa pouco natural e nada empático."
+  },
+  {
+   "case": "piada",
+   "correct": false,
+   "hallucination": false,
+   "spoken_style": true,
+   "note": "Piada sem sentido."
+  },
+  {
+   "case": "técnico",
+   "correct": true,
+   "hallucination": false,
+   "spoken_style": false,
+   "note": "'Certa' errado; primeira instrução confusa."
+  }
+ ],
+ "granite4.1:3b": [
+  {
+   "case": "identidade",
+   "correct": true,
+   "hallucination": false,
+   "spoken_style": false,
+   "note": "Se apresenta como X1, mas é prolixo e fala de treinamento sem necessidade."
+  },
+  {
+   "case": "hora",
+   "correct": true,
+   "hallucination": false,
+   "spoken_style": false,
+   "note": "'As horas são 00:12' soa artificial; natural seria 'São 00:12'."
+  },
+  {
+   "case": "data",
+   "correct": true,
+   "hallucination": false,
+   "spoken_style": true,
+   "note": ""
+  },
+  {
+   "case": "conta",
+   "correct": false,
+   "hallucination": true,
+   "spoken_style": true,
+   "note": "Resultado errado: disse 294, o correto é 391."
+  },
+  {
+   "case": "conversão",
+   "correct": true,
+   "hallucination": false,
+   "spoken_style": true,
+   "note": ""
+  },
+  {
+   "case": "raciocínio",
+   "correct": true,
+   "hallucination": false,
+   "spoken_style": true,
+   "note": ""
+  },
+  {
+   "case": "fato",
+   "correct": true,
+   "hallucination": false,
+   "spoken_style": true,
+   "note": ""
+  },
+  {
+   "case": "fato-br",
+   "correct": true,
+   "hallucination": false,
+   "spoken_style": true,
+   "note": ""
+  },
+  {
+   "case": "fato-ano",
+   "correct": true,
+   "hallucination": false,
+   "spoken_style": true,
+   "note": ""
+  },
+  {
+   "case": "armadilha",
+   "correct": true,
+   "hallucination": false,
+   "spoken_style": false,
+   "note": "Escreveu 'Pele' sem acento; o TTS pronunciaria errado."
+  },
+  {
+   "case": "tempo-real",
+   "correct": true,
+   "hallucination": false,
+   "spoken_style": true,
+   "note": ""
+  },
+  {
+   "case": "pessoal",
+   "correct": true,
+   "hallucination": false,
+   "spoken_style": true,
+   "note": ""
+  },
+  {
+   "case": "capacidade",
+   "correct": true,
+   "hallucination": false,
+   "spoken_style": true,
+   "note": ""
+  },
+  {
+   "case": "lembrete",
+   "correct": false,
+   "hallucination": true,
+   "spoken_style": true,
+   "note": "Finge que vai lembrar; não cria lembretes."
+  },
+  {
+   "case": "estilo",
+   "correct": true,
+   "hallucination": false,
+   "spoken_style": true,
+   "note": ""
+  },
+  {
+   "case": "lista",
+   "correct": true,
+   "hallucination": false,
+   "spoken_style": true,
+   "note": ""
+  },
+  {
+   "case": "pensando-alto",
+   "correct": true,
+   "hallucination": false,
+   "spoken_style": true,
+   "note": ""
+  },
+  {
+   "case": "transcrição-ruim",
+   "correct": true,
+   "hallucination": false,
+   "spoken_style": true,
+   "note": ""
+  },
+  {
+   "case": "memória",
+   "correct": true,
+   "hallucination": false,
+   "spoken_style": true,
+   "note": ""
+  },
+  {
+   "case": "contexto",
+   "correct": true,
+   "hallucination": false,
+   "spoken_style": true,
+   "note": ""
+  },
+  {
+   "case": "gíria",
+   "correct": false,
+   "hallucination": false,
+   "spoken_style": true,
+   "note": "Ignora o cansaço; 'Tá bom, tá' não tem empatia nenhuma."
+  },
+  {
+   "case": "piada",
+   "correct": false,
+   "hallucination": false,
+   "spoken_style": true,
+   "note": "A piada não faz sentido; não tem graça nem trocadilho coerente."
+  },
+  {
+   "case": "técnico",
+   "correct": true,
+   "hallucination": false,
+   "spoken_style": false,
+   "note": "Erro de concordância: 'do seu mensagem'; frases longas para fala."
+  }
+ ],
+ "qwen3:1.7b": [
+  {
+   "case": "identidade",
+   "correct": true,
+   "hallucination": false,
+   "spoken_style": true,
+   "note": ""
+  },
+  {
+   "case": "hora",
+   "correct": true,
+   "hallucination": false,
+   "spoken_style": false,
+   "note": "\"Às 00:12\" é gramaticalmente errado como resposta; deveria ser \"São\"."
+  },
+  {
+   "case": "data",
+   "correct": true,
+   "hallucination": false,
+   "spoken_style": true,
+   "note": ""
+  },
+  {
+   "case": "conta",
+   "correct": true,
+   "hallucination": false,
+   "spoken_style": true,
+   "note": ""
+  },
+  {
+   "case": "conversão",
+   "correct": false,
+   "hallucination": true,
+   "spoken_style": true,
+   "note": "Diz 180 minutos; o certo é 210."
+  },
+  {
+   "case": "raciocínio",
+   "correct": true,
+   "hallucination": false,
+   "spoken_style": true,
+   "note": ""
+  },
+  {
+   "case": "fato",
+   "correct": true,
+   "hallucination": false,
+   "spoken_style": true,
+   "note": ""
+  },
+  {
+   "case": "fato-br",
+   "correct": true,
+   "hallucination": false,
+   "spoken_style": true,
+   "note": ""
+  },
+  {
+   "case": "fato-ano",
+   "correct": true,
+   "hallucination": false,
+   "spoken_style": true,
+   "note": ""
+  },
+  {
+   "case": "armadilha",
+   "correct": false,
+   "hallucination": true,
+   "spoken_style": true,
+   "note": "Inventa que Pelé ganhou Nobel de Literatura em 1998."
+  },
+  {
+   "case": "tempo-real",
+   "correct": true,
+   "hallucination": false,
+   "spoken_style": true,
+   "note": ""
+  },
+  {
+   "case": "pessoal",
+   "correct": true,
+   "hallucination": false,
+   "spoken_style": true,
+   "note": ""
+  },
+  {
+   "case": "capacidade",
+   "correct": false,
+   "hallucination": true,
+   "spoken_style": false,
+   "note": "Finge que vai ligar a luz; usa a palavra inglesa \"else\"."
+  },
+  {
+   "case": "lembrete",
+   "correct": false,
+   "hallucination": true,
+   "spoken_style": true,
+   "note": "Finge que criou o lembrete e diz que agora é hora do remédio."
+  },
+  {
+   "case": "estilo",
+   "correct": false,
+   "hallucination": true,
+   "spoken_style": true,
+   "note": "Diz que a inflação é súbita e vem do aumento do valor da moeda: falso."
+  },
+  {
+   "case": "lista",
+   "correct": true,
+   "hallucination": false,
+   "spoken_style": true,
+   "note": ""
+  },
+  {
+   "case": "pensando-alto",
+   "correct": false,
+   "hallucination": false,
+   "spoken_style": false,
+   "note": "Pouco encorajador, ignora a idade; quatro frases."
+  },
+  {
+   "case": "transcrição-ruim",
+   "correct": true,
+   "hallucination": false,
+   "spoken_style": true,
+   "note": ""
+  },
+  {
+   "case": "memória",
+   "correct": true,
+   "hallucination": false,
+   "spoken_style": true,
+   "note": ""
+  },
+  {
+   "case": "contexto",
+   "correct": false,
+   "hallucination": true,
+   "spoken_style": true,
+   "note": "Sem temperatura; afirma que bolo pequeno demora mais, o que é falso."
+  },
+  {
+   "case": "gíria",
+   "correct": false,
+   "hallucination": false,
+   "spoken_style": false,
+   "note": "\"Aiiii\" artificial; \"te digo\" errado, deveria ser \"me diz\"."
+  },
+  {
+   "case": "piada",
+   "correct": false,
+   "hallucination": false,
+   "spoken_style": false,
+   "note": "Longa, repetitiva e sem graça nem desfecho; não é piada curta."
+  },
+  {
+   "case": "técnico",
+   "correct": false,
+   "hallucination": false,
+   "spoken_style": false,
+   "note": "Esquece o git add; usa crases de markdown."
+  }
+ ]
+}
