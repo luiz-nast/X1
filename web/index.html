@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>X1</title>
+<style>
+  :root { --bg: #04060b; --fg: #d6ecff; --dim: #5f7590; }
+  html, body { margin: 0; height: 100%; background: var(--bg); color: var(--fg); font: 16px/1.45 system-ui, sans-serif; overflow: hidden; }
+  canvas { position: fixed; inset: 0; width: 100%; height: 100%; cursor: pointer; outline: none; }
+  #reply { position: fixed; top: 7%; left: 50%; transform: translateX(-50%); width: min(720px, calc(100vw - 32px)); text-align: center; font-size: 1.15rem; max-height: 28vh; overflow: auto; }
+  #bottom { position: fixed; left: 0; right: 0; bottom: 0; padding: 16px; display: flex; flex-direction: column; align-items: center; gap: 10px; pointer-events: none; }
+  #you { min-height: 1.45em; max-width: 720px; text-align: center; }
+  #you.partial { color: var(--dim); font-style: italic; }
+  #status { font-size: .72rem; letter-spacing: .25em; text-transform: uppercase; color: var(--dim); }
+  form { pointer-events: auto; width: min(480px, calc(100vw - 32px)); }
+  input { width: 100%; box-sizing: border-box; background: #0a1220; border: 1px solid #1b2a3e; color: var(--fg); padding: 8px 14px; border-radius: 999px; font: inherit; }
+</style>
+</head>
+<body>
+<canvas id="orb" tabindex="0" role="button" aria-label="Ativar o X1 ou interromper a fala"></canvas>
+<div id="reply" aria-live="polite"></div>
+<div id="bottom">
+  <div id="you" aria-live="polite"></div>
+  <div id="status">toque para ativar</div>
+  <form id="form"><input id="text" placeholder="ou digite aqui…" autocomplete="off" aria-label="Mensagem de texto"></form>
+</div>
+<script>
+const $ = id => document.getElementById(id);
+const cv = $('orb'), g = cv.getContext('2d');
+const LABEL = { off: 'toque para ativar', listening: 'ouvindo', hearing: 'captando', waiting: 'pode continuar…', thinking: 'pensando', speaking: 'falando' };
+// mic -> 16 kHz Int16 frames of 512 samples (one Silero VAD window)
+const WORKLET = `registerProcessor('pcm', class extends AudioWorkletProcessor {
+  constructor() { super(); this.b = new Int16Array(512); this.n = 0; }
+  process([[ch]]) {
+    if (ch) for (const s of ch) {
+      this.b[this.n++] = Math.max(-1, Math.min(1, s)) * 32767;
+      if (this.n === 512) { this.port.postMessage(this.b.buffer.slice(0)); this.n = 0; }
+    }
+    return true;
+  }
+});`;
+
+let ws, out, outAn, micAn, state = 'off', rate = 22050, level = 0;
+let sources = [], endAt = 0, holdUntil = 0;
+
+async function start() {
+  setState('listening');
+  ws = new WebSocket(`ws://${location.host}/ws`);
+  ws.binaryType = 'arraybuffer';
+  ws.onmessage = e => typeof e.data === 'string' ? onEvent(JSON.parse(e.data)) : play(e.data);
+  ws.onclose = () => { setState('off'); $('status').textContent = 'desconectado — recarregue a página'; };
+  out = new AudioContext();
+  outAn = out.createAnalyser(); outAn.connect(out.destination);
+  const stream = await navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: true, noiseSuppression: true, autoGainControl: true } });
+  const mic = new AudioContext({ sampleRate: 16000 });
+  await mic.audioWorklet.addModule(URL.createObjectURL(new Blob([WORKLET], { type: 'text/javascript' })));
+  const src = mic.createMediaStreamSource(stream), node = new AudioWorkletNode(mic, 'pcm');
+  micAn = mic.createAnalyser();
+  src.connect(micAn); src.connect(node); node.connect(mic.destination); // node outputs silence; connected so it keeps rendering
+  // half-duplex: laptop speakers leak into the mic, so the mic is muted while X1 talks
+  node.port.onmessage = e => { if (ws.readyState === 1 && !sources.length && performance.now() > holdUntil) ws.send(e.data); };
+}
+
+function onEvent(m) {
+  if (m.type === 'hello') rate = m.rate;
+  else if (m.type === 'state') setState(m.state);
+  else if (m.type === 'partial') you(m.text, true);
+  else if (m.type === 'final') { you(m.text, false); $('reply').textContent = ''; }
+  else if (m.type === 'reply') $('reply').textContent += m.text + ' ';
+}
+
+function play(buf) {
+  const pcm = new Int16Array(buf), ab = out.createBuffer(1, pcm.length, rate), d = ab.getChannelData(0);
+  for (let i = 0; i < pcm.length; i++) d[i] = pcm[i] / 32768;
+  const s = out.createBufferSource();
+  s.buffer = ab; s.connect(outAn);
+  const t = Math.max(out.currentTime, endAt);
+  s.start(t); endAt = t + ab.duration;
+  sources.push(s);
+  s.onended = () => { sources = sources.filter(x => x !== s); holdUntil = performance.now() + 400; };
+}
+
+function interrupt() {
+  sources.forEach(s => { s.onended = null; s.stop(); });
+  sources = []; endAt = 0; holdUntil = performance.now() + 400;
+  ws.send(JSON.stringify({ type: 'stop' }));
+}
+
+function setState(s) { state = s; $('status').textContent = LABEL[s]; }
+function you(text, partial) { $('you').textContent = text; $('you').className = partial ? 'partial' : ''; }
+function toggle() { if (state === 'off' && !ws) start().catch(e => $('status').textContent = 'erro no microfone: ' + e.message); else if (sources.length) interrupt(); }
+
+cv.onclick = toggle;
+addEventListener('keydown', e => { if (e.code === 'Space' && e.target.tagName !== 'INPUT') { e.preventDefault(); toggle(); } });
+$('form').onsubmit = e => {
+  e.preventDefault();
+  const text = $('text').value.trim();
+  if (!text || !ws || ws.readyState !== 1) return;
+  ws.send(JSON.stringify({ type: 'text', text })); $('text').value = '';
+};
+
+// --- orb ---
+const buf = new Float32Array(2048);
+function rms(an) { an.getFloatTimeDomainData(buf); let s = 0; for (const v of buf) s += v * v; return Math.sqrt(s / buf.length); }
+function resize() { cv.width = innerWidth * devicePixelRatio; cv.height = innerHeight * devicePixelRatio; }
+addEventListener('resize', resize); resize();
+const calm = matchMedia('(prefers-reduced-motion: reduce)').matches ? 0.3 : 1;
+const LOOK = { off: [215, .015, .3], listening: [195, .03, .7], hearing: [180, .05, 1], waiting: [180, .02, .55], thinking: [270, .07, .9], speaking: [200, .06, 1] };
+
+function frame(t) {
+  requestAnimationFrame(frame);
+  const mode = sources.length ? 'speaking' : state;
+  const an = sources.length ? outAn : (state === 'off' ? null : micAn);
+  level += (Math.min(1, (an ? rms(an) : 0) * (sources.length ? 3 : 6)) - level) * 0.25;
+  const [hue, wob, light] = LOOK[mode], W = cv.width, H = cv.height, cx = W / 2, cy = H * .46;
+  const pulse = mode === 'thinking' ? .05 * Math.sin(t / 180) : mode === 'waiting' ? .04 * Math.sin(t / 500) : .015 * Math.sin(t / 900);
+  const R = Math.min(W, H) * .15 * (1 + pulse + level * .5), amp = (wob + level * .25) * calm, tt = t * calm;
+  g.clearRect(0, 0, W, H);
+  g.beginPath();
+  for (let i = 0; i <= 120; i++) {
+    const a = i / 120 * Math.PI * 2;
+    const r = R * (1 + amp * (Math.sin(3 * a + tt / 420) * .5 + Math.sin(5 * a - tt / 310) * .3 + Math.sin(8 * a + tt / 230) * .2));
+    g.lineTo(cx + r * Math.cos(a), cy + r * Math.sin(a));
+  }
+  const grad = g.createRadialGradient(cx - R * .3, cy - R * .3, R * .1, cx, cy, R * 1.2);
+  grad.addColorStop(0, `hsla(${hue},100%,${60 + 25 * light}%,1)`);
+  grad.addColorStop(.6, `hsla(${hue},90%,${35 + 20 * light}%,.95)`);
+  grad.addColorStop(1, `hsla(${hue + 20},90%,15%,.9)`);
+  g.fillStyle = grad;
+  g.shadowColor = `hsla(${hue},100%,60%,${.4 + .5 * light})`;
+  g.shadowBlur = R * (.4 + level * 1.2);
+  g.fill();
+  g.shadowBlur = 0;
+  if (mode === 'thinking') { // orbiting arc while the model thinks
+    g.strokeStyle = `hsla(${hue},100%,75%,.6)`; g.lineWidth = 3 * devicePixelRatio;
+    g.beginPath(); g.arc(cx, cy, R * 1.35, tt / 300, tt / 300 + 1.4); g.stroke();
+  }
+}
+requestAnimationFrame(frame);
+</script>
+</body>
+</html>
