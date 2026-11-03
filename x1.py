@@ -7,6 +7,7 @@ import re
 import shutil
 import subprocess
 import threading
+import time
 import webbrowser
 from collections import deque
 from datetime import datetime
@@ -39,6 +40,9 @@ DATA = Path.home() / ".local/share/x1"  # install.sh puts the app, Ollama and th
 SR, WIN = 16000, 512                  # Silero VAD window = 32 ms
 PAUSE = round(0.3 * SR / WIN)         # first short silence: judge the turn and start drafting the reply
 PARTIAL_EVERY = round(0.6 * SR / WIN) # live transcript refresh while the user talks
+# while X1 talks, the user cuts in with ~0.4 s of speech within 0.8 s: "não, não, não" (with gaps) counts, a quick "uhum"
+# doesn't. Measured on laptop speakers: X1's own voice after Chrome's echo canceller peaks at VAD 0.05 (p99 0.017).
+BARGE_P, BARGE, BARGE_WIN = 0.6, round(0.4 * SR / WIN), round(0.8 * SR / WIN)
 SYSTEM = (
     "Você é o X1, um assistente pessoal no estilo do J.A.R.V.I.S.: educado, calmo, eficiente e com um humor seco e sutil. "
     "Você conversa por voz, em português do Brasil. Responda curto, como numa conversa falada: uma a três frases, "
@@ -54,6 +58,7 @@ OPEN = re.compile(r"(\.\.\.|…|,|\b(e|ou|mas|que|porque|então|tipo|né|de|do|d
 # makes Whisper keep the hesitations (so OPEN can see them) and spell the assistant's name
 FILLERS = "Ahn... então, X1, eu acho que... hmm, tipo, sabe?"
 SENTENCE = re.compile(r"(?<=[.!?…:;])\s+|\n+")
+CLAUSE = re.compile(r"(?<=[,;:.!?…—])\s+|\n+")  # whitespace after the comma, so "3,5" never splits
 
 WEB = Path(__file__).parent / "web"
 READY = threading.Event()
@@ -104,6 +109,15 @@ def wait_for(p, text):
     return 1.0 if p > 0.7 else 2.0
 
 
+def next_chunk(text, first):
+    """Next speakable piece of the streamed reply, or None to wait for more tokens. The first piece may end at a
+    comma so X1 starts talking sooner; the rest are whole sentences, which Piper intones better."""
+    for m in (CLAUSE if first else SENTENCE).finditer(text):
+        if len(text[:m.start()].strip()) >= (12 if first else 20):
+            return text[:m.start()].strip(), text[m.end():]
+    return None
+
+
 def tts(text):
     return b"".join(c.audio_int16_bytes for c in voice.synthesize(text))
 
@@ -116,6 +130,8 @@ class Session:
         s.pre = deque(maxlen=10)  # ~320 ms of pre-roll so the first syllable isn't clipped
         s.buf, s.run, s.silence, s.since_partial = [], 0, 0, 0
         s.task, s.spoke, s.busy, s.prev, s.go, s.need, s.text = None, False, False, None, asyncio.Event(), PAUSE, ""
+        s.playing, s.voiced, s.recent = False, deque(maxlen=BARGE_WIN), deque(maxlen=BARGE_WIN + 10)  # browser reports playback
+        s.spoken, s.t_play = [], 0.0  # pieces sent to the speaker (text, seconds) and when the first one started
 
     async def send(s, **m):
         await s.ws.send_text(json.dumps(m))
@@ -127,8 +143,20 @@ class Session:
 
     async def on_audio(s, x):
         p = s.vad(x)
-        if s.task and s.spoke:
-            return  # X1 is talking; the browser mutes the mic too
+        if s.playing or (s.task and s.spoke):  # X1 is talking (echo-cancelled by the browser): the user has priority
+            s.recent.append(x)
+            s.voiced.append(p > BARGE_P)
+            if sum(s.voiced) >= BARGE:
+                await s.interrupt()
+                s.buf, s.run, s.silence, s.since_partial = list(s.recent), BARGE, 0, 0  # what they said over X1 starts their turn
+                s.recent.clear()
+                await s.send(type="interrupt")
+                await s.send(type="state", state="hearing")
+            return
+        if s.recent:  # X1 just finished: what overlapped its last words becomes pre-roll, and the barge-in count restarts
+            s.pre.extend(s.recent)
+            s.recent.clear()
+            s.voiced.clear()
         s.run = s.run + 1 if p > 0.5 else 0
         if p > 0.5:
             resumed = not s.buf or s.silence >= PAUSE
@@ -181,10 +209,30 @@ class Session:
         finally:
             s.busy = False
 
+    async def interrupt(s):
+        """Stop X1 mid-reply; its history keeps only what the user actually heard."""
+        task, talking = s.task, s.playing or (s.task and s.spoke)
+        s.task, s.playing = None, False
+        s.voiced.clear()
+        if task:
+            task.cancel()
+            await asyncio.wait([task])  # let it settle its history first
+        if talking and s.history and s.history[-1]["role"] == "assistant":
+            left, heard = time.monotonic() - s.t_play, []
+            for text, secs in s.spoken:
+                if left <= 0:
+                    break
+                heard.append(text)
+                left -= secs
+            s.history[-1]["content"] = " ".join(heard) + "…"
+
     async def on_text(s, m):
-        if s.task:
-            s.task.cancel()
-            s.task = None
+        if m.get("type") == "playing":
+            s.playing = bool(m.get("on"))
+            return
+        if m.get("type") not in ("stop", "text"):
+            return
+        await s.interrupt()
         if m.get("type") == "stop":
             await s.send(type="state", state="listening")
         elif m.get("type") == "text" and str(m.get("text", "")).strip():
@@ -197,7 +245,7 @@ class Session:
 
     async def reply(s, text):
         s.history.append({"role": "user", "content": text})
-        s.spoke, said, pending = False, "", ""
+        s.spoke, said, pending, s.spoken = False, "", "", []
         body = {"model": LLM, "think": False, "keep_alive": -1, "options": {"num_ctx": 4096},
                 "messages": [{"role": "system", "content": system_prompt()}, *s.history[-12:]]}
         try:
@@ -210,9 +258,9 @@ class Session:
                         if "error" in m:
                             raise httpx.HTTPError(m["error"])
                         pending += m.get("message", {}).get("content", "")
-                        *done, pending = SENTENCE.split(pending)  # speak each sentence as soon as it's complete
-                        for sentence in done:
-                            said += await s.say(sentence)
+                        while chunk := next_chunk(pending, not said):  # speak as soon as a piece is ready
+                            piece, pending = chunk
+                            said += await s.say(piece)
             said += await s.say(pending)
             await s.send(type="state", state="listening")
         except asyncio.CancelledError:
@@ -238,10 +286,11 @@ class Session:
         pcm = await asyncio.to_thread(tts, text)
         await s.go.wait()  # drafted early: speak only once the silence was long enough
         if not s.spoke:
-            s.spoke = True
+            s.spoke, s.t_play = True, time.monotonic()
             await s.send(type="state", state="speaking")
         await s.send(type="reply", text=text)
         await s.ws.send_bytes(pcm)
+        s.spoken.append((text, len(pcm) / 2 / voice.config.sample_rate))
         return text + " "
 
 

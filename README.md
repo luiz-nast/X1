@@ -7,7 +7,7 @@ Testado numa GTX 1650 (4 GB) com 7 GB de RAM, no Ubuntu. Com tudo carregado, usa
 ```
 navegador (microfone com cancelamento de eco + bolinha)  ⇄ WebSocket ⇄  x1.py
   mic 16 kHz → Silero VAD → pausa de 0,3 s → smart-turn v3.2 (entonação) + Whisper small (palavras)
-  → política de espera → Qwen3 1.7B (Ollama), frase a frase → Piper pt_BR (voz) → navegador
+  → política de espera → Qwen3 1.7B (Ollama), pedaço a pedaço → Piper pt_BR (voz) → navegador
 ```
 
 ## Instalar
@@ -32,7 +32,7 @@ Para desinstalar:
 rm -rf ~/.local/share/x1 ~/.local/share/applications/x1.desktop ~/.local/share/icons/hicolor/scalable/apps/x1.svg
 ```
 
-- **Interromper:** aperte Espaço ou clique na bolinha.
+- **Interromper:** fale por cima dele. Sua fala tem prioridade: ele para e passa a te ouvir. Espaço ou clique na bolinha também interrompe.
 - **Digitar:** o campo embaixo da bolinha também funciona.
 - **Testar a cadeia inteira (para desenvolvimento):** `uv run selftest.py`. Inclui uma fala com "ahn" e uma pausa de 1,2 s no meio, que precisa sair como um turno só.
 
@@ -86,6 +86,22 @@ O que os dados mostraram:
   - **voz de TTS engana:** nas amostras sintéticas o smart-turn sozinho erra só 5%;
   - **amostra pequena:** um único diálogo de entrevista, com mais monólogo que o uso de um assistente e só 25 fins de turno.
 
+## Sua fala tem prioridade
+
+Enquanto o X1 fala, o microfone continua ligado. O cancelamento de eco do Chrome tira a voz dele do microfone; isso cobre o áudio que a própria página toca. Medido nos alto-falantes deste notebook, o eco que sobra fica com probabilidade de fala de no máximo 0,05 no Silero (p99 de 0,017).
+
+- **Quando ele para:** se você fala uns 0,4 s dentro de 0,8 s (probabilidade acima de 0,6). Um "não, não, não", com as pausinhas entre as palavras, conta. Um "uhum" rápido, não.
+- **O que acontece com sua fala:** o que você disse por cima vira o começo do seu turno.
+- **O que ele lembra:** o histórico guarda só o que você chegou a ouvir dele, com "…".
+
+## Resposta em streaming
+
+O LLM gera token a token. A voz sai em pedaços:
+- o **primeiro pedaço** sai na primeira vírgula (com pelo menos 12 caracteres), para ele começar a falar mais cedo;
+- **o resto sai frase a frase**, porque o Piper entoa melhor frases inteiras.
+
+Uma vírgula sem espaço depois (como em "3,5") não corta.
+
 ## Por que esses modelos (medido nesta máquina)
 
 | peça | escolha | medido | descartado |
@@ -97,7 +113,8 @@ O que os dados mostraram:
 
 ## Limites deste kickoff
 
-- **Meia-duplex:** o microfone fica mudo enquanto o X1 fala, senão ele ouve a si mesmo pelo alto-falante do notebook. Para interromper, use Espaço ou clique.
+- **Outros áudios do computador:** o cancelamento de eco só remove a voz do próprio X1. Um vídeo tocando ao lado é ouvido como se fosse você (aconteceu na calibração). Isso só se resolve com uma wake word.
+- **Interromper falando foi calibrado só contra o eco.** Uma voz de "usuário" tocada pelo mesmo alto-falante foi suprimida junto com o eco, então só um teste com uma pessoa de verdade confirma os limiares. Se ele não parar quando você fala, os números são `BARGE_P`/`BARGE` em `x1.py`.
 - **Ainda não tem:**
   - wake word;
   - ferramentas (timer, busca, apps);
