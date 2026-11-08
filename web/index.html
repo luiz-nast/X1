@@ -57,7 +57,9 @@ function audioOut() { // browsers only allow audio after a click or key press
 
 async function startMic() {
   micOn = true; audioOut(); setState('listening');
-  const stream = await navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: true, noiseSuppression: true, autoGainControl: true } });
+  // echo cancellation for talking over X1; Chrome's noise suppression and auto gain hurt speech recognition (they eat the
+  // "s"/"t" of "sete" and pump the level), as Google, Deepgram and AssemblyAI all advise
+  const stream = await navigator.mediaDevices.getUserMedia({ audio: { channelCount: 1, echoCancellation: true, noiseSuppression: false, autoGainControl: false } });
   mic = new AudioContext({ sampleRate: 16000 });
   await mic.audioWorklet.addModule(URL.createObjectURL(new Blob([WORKLET], { type: 'text/javascript' })));
   const src = mic.createMediaStreamSource(stream), node = new AudioWorkletNode(mic, 'pcm');

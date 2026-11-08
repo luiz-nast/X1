@@ -8,6 +8,8 @@ APP="$X1/app"
 REPO="https://github.com/luiz-nast/X1"
 export UV_SYSTEM_CERTS=1  # trust the system CA store too (TLS-inspecting proxies)
 [ -f /etc/ssl/certs/ca-certificates.crt ] && export SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
+export HF_HUB_DISABLE_XET=1  # HF's xet downloader ignores the system CAs; plain HTTPS works everywhere
+export HF_HUB_DOWNLOAD_TIMEOUT=60  # the 2.4 GB speech model times out at the default 10 s
 
 step() { printf '\n\033[1;36m==> %s\033[0m\n' "$1"; }
 die() { printf '\n\033[1;31mX1: %s\033[0m\n' "$1" >&2; exit 1; }
@@ -42,7 +44,7 @@ fi
 MODEL="$(sed -n 's/^LLM = "\(.*\)"/\1/p' "$APP/x1.py")"
 "$OLLAMA" pull "$MODEL"
 
-step "Modelos de voz: Whisper, smart-turn e Piper (e um teste da GPU)"
+step "Modelos de voz: Parakeet pt-BR, smart-turn e Piper"
 (cd "$APP" && .venv/bin/python -c "import x1; x1.load()")
 
 step "Atalho no menu de aplicativos"
@@ -56,7 +58,7 @@ Comment=Assistente de voz local
 Exec="$APP/.venv/bin/python" "$APP/x1.py"
 Icon=x1
 Terminal=false
-Categories=Utility;AudioVideo;
+Categories=Utility;
 StartupNotify=true
 StartupWMClass=chrome-x1.localhost__-Default
 SingleMainWindow=true

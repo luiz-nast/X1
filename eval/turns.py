@@ -35,7 +35,7 @@ if not CACHE.exists():
         with wave.open(io.BytesIO(a["audio"]["bytes"])) as w:
             assert w.getframerate() == x1.SR and w.getnchannels() == 1
             audio = np.frombuffer(w.readframes(w.getnframes()), np.int16).astype(np.float32) / 32768
-        rows.append(dict(hold=a["speaker_id"] == b["speaker_id"], gap=gap, p=x1.turn_done(audio), text=x1.transcribe(audio, 5)))
+        rows.append(dict(hold=a["speaker_id"] == b["speaker_id"], gap=gap, p=x1.turn_done(audio), text=x1.transcribe(audio)))
     CACHE.write_text(json.dumps(rows, ensure_ascii=False))
 rows = json.loads(CACHE.read_text())
 

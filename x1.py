@@ -1,6 +1,5 @@
-"""X1 — mini Jarvis local: microfone -> Silero VAD + smart-turn -> Whisper -> LLM (Ollama) -> Piper -> alto-falante."""
+"""X1 — mini Jarvis local: microfone -> Silero VAD + smart-turn -> Parakeet pt-BR -> LLM (Ollama) -> Piper -> alto-falante."""
 import asyncio
-import ctypes
 import json
 import os
 import re
@@ -13,23 +12,16 @@ from collections import deque
 from datetime import datetime
 from pathlib import Path
 
-import nvidia.cublas.lib
-import nvidia.cudnn.lib
-
-# ctranslate2 needs CUDA 12 cuBLAS/cuDNN; load the pip wheels' copies so no system CUDA or LD_LIBRARY_PATH is needed
-for lib in ("cublas/lib/libcublasLt.so.12", "cublas/lib/libcublas.so.12", "cudnn/lib/libcudnn.so.9"):
-    ctypes.CDLL(str(Path(nvidia.cublas.lib.__path__[0]).parents[1] / lib), mode=ctypes.RTLD_GLOBAL)
-
 import httpx
 import numpy as np
+import onnx_asr
 import onnxruntime as ort
-import faster_whisper
+import faster_whisper  # only for its Silero VAD model and log-mel features (both CPU)
 import uvicorn
 from fastapi import FastAPI, WebSocket
 from fastapi.responses import FileResponse
-from faster_whisper import WhisperModel
 from faster_whisper.feature_extractor import FeatureExtractor
-from huggingface_hub import hf_hub_download
+from huggingface_hub import hf_hub_download, snapshot_download
 from piper import PiperVoice
 
 LLM = "qwen3:4b-instruct-2507-q4_K_M"
@@ -38,7 +30,7 @@ PORT = 8731
 URL = f"http://x1.localhost:{PORT}"  # its own host, so the window gets its own app id (and the X1 icon in the dock)
 MAX_TOKENS = 300  # spoken replies are short; also stops a small model that falls into a repetition loop
 # num_gpu 99 = every layer on the GPU: Ollama's auto-fit keeps ~1 GB spare and pushed 3-9 of the 4B's 37 layers to the CPU
-# (34 -> 45 tokens/s). Measured: Whisper + the 4B use 3.3 of the GTX 1650's 4 GB.
+# (34 -> 45 tokens/s). The 4B uses 2.9 of the GTX 1650's 4 GB; speech-to-text runs on the CPU.
 OPTIONS = {"num_ctx": 4096, "num_predict": MAX_TOKENS, "num_gpu": 99}
 DATA = Path.home() / ".local/share/x1"  # install.sh puts the app, Ollama and the browser profile here
 SR, WIN = 16000, 512                  # Silero VAD window = 32 ms
@@ -56,26 +48,28 @@ SYSTEM = (
     "se pedirem isso, diga com franqueza que ainda não consegue, sem inventar dados nem fingir que fez. "
     "Se não souber algo, diga que não sabe."
 )
-# Whisper's classic Portuguese hallucinations on silence/noise
+# speech-to-text: Parakeet TDT 0.6B v3 fine-tuned on Brazilian Portuguese (CC-BY-4.0), on the CPU: no VRAM, ~3 GB RAM.
+# eval/stt.py: 15% WER on real spontaneous speech (NURC-SP) vs 43% for Whisper small, in 0.3 s per phrase
+STT = "alefiury/parakeet-tdt-v3-ptBR-30s-onnx"
+# classic speech-to-text hallucinations on silence/noise (Whisper's above all; cheap to keep)
 JUNK = re.compile(r"obrigad[oa] por assistir|legendas? (pela|por)|amara\.org|inscreva-se|^\W*$", re.I)
 # a thought that ends on a connective, a filler or "..." is not finished yet
 OPEN = re.compile(r"(\.\.\.|…|,|\b(e|ou|mas|que|porque|então|tipo|né|de|do|da|dos|das|com|pra|para|um|uma|o|a|os|as|no|na|em|se|"
                   r"quando|como|mais|é|ahn*|ãh+|hã+|hum+|hm+|éh+|eh+|uh+))\W*$", re.I)
-# makes Whisper keep the hesitations (so OPEN can see them) and spell the assistant's name
-FILLERS = "Ahn... então, X1, eu acho que... hmm, tipo, sabe?"
 SENTENCE = re.compile(r"(?<=[.!?…:;])\s+|\n+")
 CLAUSE = re.compile(r"(?<=[,;:.!?…—])\s+|\n+")  # whitespace after the comma, so "3,5" never splits
 
 WEB = Path(__file__).parent / "web"
 READY = threading.Event()
-whisper = vad = turn = mel = voice = LOAD_ERROR = None
+stt = vad = turn = mel = voice = LOAD_ERROR = None
 
 
 def load():
     """Load the speech models (~15 s; downloads them on first run). The window opens before this finishes."""
-    global whisper, vad, turn, mel, voice, LOAD_ERROR
+    global stt, vad, turn, mel, voice, LOAD_ERROR
     try:
-        whisper = WhisperModel("small", device="cuda", compute_type="int8_float16")
+        local = DATA / "models" / STT.replace("/", "--")  # real files: onnxruntime refuses symlinked external weights
+        stt = onnx_asr.load_model("nemo-conformer-tdt", snapshot_download(STT, local_dir=local))
         vad = ort.InferenceSession(str(Path(faster_whisper.__file__).parent / "assets/silero_vad_v6.onnx"))
         turn = ort.InferenceSession(hf_hub_download("pipecat-ai/smart-turn-v3", "smart-turn-v3.2-cpu.onnx"))
         mel = FeatureExtractor(feature_size=80, chunk_length=8)
@@ -93,10 +87,9 @@ def system_prompt():
     return f"{SYSTEM} Agora são {now:%H:%M} de {now:%d/%m/%Y}."
 
 
-def transcribe(audio, beam=1):
-    segs, _ = whisper.transcribe(audio, language="pt", beam_size=beam, condition_on_previous_text=False, without_timestamps=True,
-                                 initial_prompt=FILLERS)
-    return " ".join(s.text.strip() for s in segs if s.no_speech_prob < 0.6 and not JUNK.search(s.text)).strip()
+def transcribe(audio):
+    text = " ".join(stt.recognize(audio, sample_rate=SR).replace("<unk>", " ").split())  # Parakeet emits a literal <unk> now and then
+    return "" if JUNK.search(text) else text
 
 
 def turn_done(audio):
@@ -111,8 +104,8 @@ def wait_for(p, text):
     """Seconds of silence before X1 may speak. Tuned on real NURC-SP dialogue, where smart-turn alone says
     "done" on 69% of mid-thought pauses: the words veto it, and its confidence only shortens the wait."""
     if not text or OPEN.search(text):
-        return 3.0  # "e…", "tipo", "ahn", "né", or a mumble Whisper couldn't read: still thinking out loud, keep the audio
-    return 1.0 if p > 0.7 else 2.0
+        return 3.0  # "e…", "tipo", "ahn", "né", or a mumble it couldn't read: still thinking out loud, keep the audio
+    return 1.0 if p > 0.9 else 2.5  # re-tuned for Parakeet's text (eval/turns.py): 14% talked over instead of 21%
 
 
 def next_chunk(text, first):
@@ -188,7 +181,7 @@ class Session:
             asyncio.create_task(s.partial())
         if s.silence == PAUSE:  # first short pause: hear the intonation, read the words, start drafting the reply
             audio = np.concatenate(s.buf)
-            p_done, s.text = await asyncio.gather(asyncio.to_thread(turn_done, audio), asyncio.to_thread(transcribe, audio, 5))
+            p_done, s.text = await asyncio.gather(asyncio.to_thread(turn_done, audio), asyncio.to_thread(transcribe, audio))
             s.need = round(wait_for(p_done, s.text) * SR / WIN)
             if s.text and not s.task:
                 await s.send(type="partial", text=s.text)
@@ -362,7 +355,7 @@ def start_ollama():
         return None
     except httpx.HTTPError:
         pass
-    env = {**os.environ, "OLLAMA_FLASH_ATTENTION": "1", "OLLAMA_KV_CACHE_TYPE": "q8_0"}  # smaller KV cache: room for Whisper in 4 GB
+    env = {**os.environ, "OLLAMA_FLASH_ATTENTION": "1", "OLLAMA_KV_CACHE_TYPE": "q8_0"}  # smaller KV cache: the 4B fits a 4 GB GPU
     return subprocess.Popen([ollama_exe(), "serve"], env=env, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 
@@ -386,6 +379,8 @@ def running():
 if __name__ == "__main__":  # the desktop app: server + Ollama + an app window; closing the window shuts it all down
     if Path("/etc/ssl/certs/ca-certificates.crt").exists():  # trust the system CAs (TLS-inspecting proxies) for model downloads
         os.environ.setdefault("SSL_CERT_FILE", "/etc/ssl/certs/ca-certificates.crt")
+    os.environ.setdefault("HF_HUB_DISABLE_XET", "1")  # HF's xet downloader ignores the system CAs; plain HTTPS works everywhere
+    os.environ.setdefault("HF_HUB_DOWNLOAD_TIMEOUT", "60")  # the 2.4 GB speech model times out at the default 10 s
     if running():  # already open (clicking the icon focuses that window); a second one would be a second listener
         raise SystemExit("O X1 já está aberto.")
     chrome = next(filter(None, map(shutil.which, ("google-chrome", "google-chrome-stable", "chromium", "chromium-browser"))), None)
