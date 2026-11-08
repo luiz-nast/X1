@@ -1,0 +1,3017 @@
+{
+ "fw:small": {
+  "vram_mb": 386,
+  "cmd": {
+   "wer": 0.0521415270018622,
+   "n": 108,
+   "lat_s": 0.4762312082773995,
+   "lat_p90_s": 0.5144521780021023,
+   "errors": [
+    [
+     "Sete.",
+     "SEDGE"
+    ],
+    [
+     "Seis.",
+     "Sim."
+    ],
+    [
+     "Seis.",
+     "Cease."
+    ],
+    [
+     "Dezessete.",
+     "Desiseite"
+    ],
+    [
+     "Quantos dias faltam pro Natal?",
+     "Quantos dias falta um pronatal?"
+    ],
+    [
+     "Valeu, X1.",
+     "Value X1"
+    ],
+    [
+     "Me acorda às sete da manhã.",
+     "Me acordas sete da manhã."
+    ],
+    [
+     "Aumenta o volume.",
+     "Aumento o volume."
+    ],
+    [
+     "Ahn, deixa eu pensar, pode ser às seis e meia.",
+     "Ah, deixa eu pensar. Pode ser a 6,5."
+    ],
+    [
+     "Liga pro Luiz Felipe.",
+     "Liga pro Luís Felipe."
+    ],
+    [
+     "Liga pro Luiz Felipe.",
+     "Liga pro Luís Felipe."
+    ],
+    [
+     "Liga pro Luiz Felipe.",
+     "Liga pro Luís Felipe."
+    ],
+    [
+     "A reunião é na quarta-feira às catorze horas.",
+     "A reunião é na quarta-feiras, 14 horas."
+    ],
+    [
+     "Toca uma música do Djavan.",
+     "Toca uma música do Javan."
+    ],
+    [
+     "Toca uma música do Djavan.",
+     "Toca uma música do Javan."
+    ],
+    [
+     "Toca uma música do Djavan.",
+     "Toca uma música do Diavan."
+    ],
+    [
+     "Pesquisa receita de pão de queijo.",
+     "Pesquisa a receita de pão de queijo"
+    ],
+    [
+     "Me acorda às sete da manhã.",
+     "Me acorda sete da manhã."
+    ],
+    [
+     "Me acorda às sete da manhã.",
+     "Me acorda sete da manhã."
+    ],
+    [
+     "Me lembra de ligar pra minha mãe amanhã.",
+     "Me lembro de ligar pra minha mãe amanhã."
+    ],
+    [
+     "Ahn, deixa eu pensar, pode ser às seis e meia.",
+     "Ah, deixa eu pensar, pode ser as 100 e meia."
+    ],
+    [
+     "Ahn, deixa eu pensar, pode ser às seis e meia.",
+     "Ah, deixa eu pensar, pode ser a 6 e meia."
+    ]
+   ],
+   "hyps": [
+    "Que horas são agora?",
+    "Que horas são agora?",
+    "Que horas são agora?",
+    "Valeu, X1!",
+    "Valeu, X1!",
+    "Value X1",
+    "Valeu, pode parar.",
+    "Valeu, pode parar.",
+    "Valeu, pode parar.",
+    "7.",
+    "7",
+    "SEDGE",
+    "Cease.",
+    "Seis",
+    "Sim.",
+    "17.",
+    "17.",
+    "Desiseite",
+    "89.",
+    "89.",
+    "Oitenta e nove",
+    "Me acordas sete da manhã.",
+    "Me acorda sete da manhã.",
+    "Me acorda sete da manhã.",
+    "Quanto é 7 vezes 8?",
+    "Quanto é 7 vezes 8?",
+    "Quanto é 7 vezes 8?",
+    "Coloca um timer de 15 minutos.",
+    "Coloca um timer de 15 minutos.",
+    "Coloca um timer de 15 minutos.",
+    "Liga a luz da sala.",
+    "Liga a luz da sala.",
+    "Liga a luz da sala.",
+    "Qual a previsão do tempo para amanhã em Brasília?",
+    "Qual a previsão do tempo para amanhã em Brasília?",
+    "Qual a previsão do tempo para amanhã em Brasília?",
+    "Beleza, entendi.",
+    "Beleza, entendi.",
+    "Beleza, entendi.",
+    "Não, não, para. Espera aí.",
+    "Não, não, para! Espera aí!",
+    "Não. Não. Para. Espera aí.",
+    "Toca uma música do Javan.",
+    "Toca uma música do Javan.",
+    "Toca uma música do Diavan.",
+    "Manda uma mensagem pro João dizendo que eu vou atrasar 10 minutos.",
+    "Manda uma mensagem pro João dizendo que eu vou atrasar 10 minutos.",
+    "Manda uma mensagem pro João dizendo que eu vou atrasar 10 minutos.",
+    "Quantos dias falta um pronatal?",
+    "Quantos dias faltam pro Natal?",
+    "Quantos dias faltam pro Natal?",
+    "Tô cansado hoje, cara.",
+    "Tô cansado hoje, cara.",
+    "Tô cansado hoje, cara.",
+    "Fala sério, mano.",
+    "Fala sério, mano.",
+    "Fala sério, mano.",
+    "Show de bola! Muito obrigado!",
+    "Show de bola, muito obrigado.",
+    "Show de bola. Muito obrigado.",
+    "Ah, deixa eu pensar, pode ser as 100 e meia.",
+    "Ah, deixa eu pensar, pode ser a 6 e meia.",
+    "Ah, deixa eu pensar. Pode ser a 6,5.",
+    "Qual é a raiz quadrada de 144?",
+    "Qual é a raiz quadrada de 144?",
+    "Qual é a raiz quadrada de 144?",
+    "Converte 50 dólares para reais.",
+    "Converte 50 dólares para reais.",
+    "Converte 50 dólares para reais.",
+    "A reunião é na quarta-feira às 14 horas.",
+    "A reunião é na quarta-feira às 14 horas.",
+    "A reunião é na quarta-feiras, 14 horas.",
+    "Quem ganhou a Copa do Mundo de 2002?",
+    "Quem ganhou a Copa do Mundo de 2002?",
+    "Quem ganhou a Copa do Mundo de 2002?",
+    "Aumento o volume.",
+    "Aumenta o volume.",
+    "Aumenta o volume.",
+    "Pesquisa a receita de pão de queijo",
+    "Pesquisa Receita de Pão de Queijo",
+    "Pesquisa Receita de Pão de Queijo",
+    "Sim.",
+    "Sim.",
+    "Sim.",
+    "Não.",
+    "Não.",
+    "Não.",
+    "Pode repetir, por favor?",
+    "Pode repetir, por favor?",
+    "Pode repetir, por favor?",
+    "Tá bom, valeu, tchau.",
+    "Tá bom, valeu, tchau.",
+    "Tá bom, valeu, tchau.",
+    "Me lembro de ligar pra minha mãe amanhã.",
+    "Me lembra de ligar pra minha mãe amanhã.",
+    "Me lembra de ligar pra minha mãe amanhã.",
+    "X1, você está me ouvindo?",
+    "X1, você está me ouvindo?",
+    "X1, você está me ouvindo?",
+    "6 ou 7. Tanto faz.",
+    "6 ou 7 tanto faz.",
+    "6 ou 7, tanto faz.",
+    "23 graus.",
+    "23 graus",
+    "23 graus.",
+    "Liga pro Luís Felipe.",
+    "Liga pro Luís Felipe.",
+    "Liga pro Luís Felipe."
+   ]
+  },
+  "noisy": {
+   "wer": 0.12104283054003724,
+   "n": 108,
+   "lat_s": 0.4786122041208458,
+   "lat_p90_s": 0.5199179719929816,
+   "errors": [
+    [
+     "Seis.",
+     "Sim."
+    ],
+    [
+     "Quanto é sete vezes oito?",
+     "1,7,2,18"
+    ],
+    [
+     "Dezessete.",
+     "Desistir!"
+    ],
+    [
+     "Quantos dias faltam pro Natal?",
+     "Quantos dias falta um pronatá-lo?"
+    ],
+    [
+     "Liga pro Luiz Felipe.",
+     "Vida pro Luís Henrique!"
+    ],
+    [
+     "Liga pro Luiz Felipe.",
+     "Liga pro Luís se liga."
+    ],
+    [
+     "Liga pro Luiz Felipe.",
+     "Liga pro Luís e Liga."
+    ],
+    [
+     "Oitenta e nove.",
+     "Foi 59."
+    ],
+    [
+     "Fala sério, mano.",
+     "Falcério, mano!"
+    ],
+    [
+     "Quantos dias faltam pro Natal?",
+     "Quantos dias falta um prão natal?"
+    ],
+    [
+     "Toca uma música do Djavan.",
+     "Tota uma música do Giovanna."
+    ],
+    [
+     "Toca uma música do Djavan.",
+     "Tota uma música do Diaban."
+    ],
+    [
+     "Quantos dias faltam pro Natal?",
+     "Todos os dias faltam pro Natal."
+    ],
+    [
+     "Valeu, X1.",
+     "Value X1."
+    ],
+    [
+     "Pesquisa receita de pão de queijo.",
+     "Pesquisa a receita de pão de quente."
+    ],
+    [
+     "Pesquisa receita de pão de queijo.",
+     "Esquisa a receita de pão de queijo."
+    ],
+    [
+     "Me acorda às sete da manhã.",
+     "Minha corda às 7 da manhã."
+    ],
+    [
+     "Fala sério, mano.",
+     "Pala sério, mano!"
+    ],
+    [
+     "Coloca um timer de quinze minutos.",
+     "Coloca em talha de 15 minutos."
+    ],
+    [
+     "Aumenta o volume.",
+     "Aumento o volume."
+    ],
+    [
+     "Vinte e três graus.",
+     "23 gramas."
+    ],
+    [
+     "Me lembra de ligar pra minha mãe amanhã.",
+     "Me lembra de ligar pra minha mãe a manhã?"
+    ],
+    [
+     "Qual a previsão do tempo pra amanhã em Brasília?",
+     "Qual é a visão do tempo para amanhã em Brasília?"
+    ],
+    [
+     "Ahn, deixa eu pensar, pode ser às seis e meia.",
+     "Ah, deixa pensar, pode ser a seis e meia."
+    ],
+    [
+     "Toca uma música do Djavan.",
+     "Toca uma música do Japão!"
+    ],
+    [
+     "Show de bola, muito obrigado.",
+     "Show de bola! Muito obrigada!"
+    ],
+    [
+     "Show de bola, muito obrigado.",
+     "Show de bola! Muito obrigada!"
+    ],
+    [
+     "Seis ou sete, tanto faz.",
+     "6 ou 7, tanto fácil."
+    ],
+    [
+     "Seis ou sete, tanto faz.",
+     "6 ou 7, tanto fácil!"
+    ],
+    [
+     "Liga a luz da sala.",
+     "Fique a luz da sala."
+    ],
+    [
+     "Quem ganhou a Copa do Mundo de dois mil e dois?",
+     "Interimou a Copa do Mundo de 2002."
+    ],
+    [
+     "Pesquisa receita de pão de queijo.",
+     "Pesquisa a receita de pão de queijo."
+    ],
+    [
+     "Me acorda às sete da manhã.",
+     "Me acorda sete da manhã."
+    ],
+    [
+     "Coloca um timer de quinze minutos.",
+     "Coloca um tiner de 15 minutos."
+    ],
+    [
+     "Qual a previsão do tempo pra amanhã em Brasília?",
+     "Qual a previsão do tempo pra manhã em Brasília?"
+    ],
+    [
+     "Ahn, deixa eu pensar, pode ser às seis e meia.",
+     "Ahn, deixa eu pensar, pode ser as 100 e meia."
+    ],
+    [
+     "Ahn, deixa eu pensar, pode ser às seis e meia.",
+     "Ah, deixa eu pensar, pode ser a seis e meia."
+    ]
+   ],
+   "hyps": [
+    "Que horas são agora?",
+    "Que horas são agora?",
+    "Que horas são agora?",
+    "Valeu, X1!",
+    "Valeu, X1!",
+    "Value X1.",
+    "Valeu! Pode parar!",
+    "Valeu, pode parar.",
+    "Valeu! Pode parar!",
+    "Sete.",
+    "Sete.",
+    "7.",
+    "Seis.",
+    "Seis.",
+    "Sim.",
+    "17.",
+    "17.",
+    "Desistir!",
+    "Foi 59.",
+    "89.",
+    "89.",
+    "Minha corda às 7 da manhã.",
+    "Me acorda às 7 da manhã.",
+    "Me acorda sete da manhã.",
+    "1,7,2,18",
+    "Quanto é 7 vezes 8?",
+    "Quanto é 7 vezes 8?",
+    "Coloca em talha de 15 minutos.",
+    "Coloca um tiner de 15 minutos.",
+    "Coloca um timer de 15 minutos.",
+    "Fique a luz da sala.",
+    "Liga a luz da sala!",
+    "Liga a luz da sala.",
+    "Qual a previsão do tempo pra manhã em Brasília?",
+    "Qual é a visão do tempo para amanhã em Brasília?",
+    "Qual a previsão do tempo para amanhã em Brasília?",
+    "Beleza! Entendi!",
+    "Beleza, entendi.",
+    "Beleza, entendi.",
+    "Não! Não! Para! Espera aí!",
+    "Não, não, para! Espera aí!",
+    "Não, não, para. Espera aí.",
+    "Tota uma música do Giovanna.",
+    "Tota uma música do Diaban.",
+    "Toca uma música do Japão!",
+    "Manda uma mensagem pro João dizendo que eu vou atrasar 10 minutos.",
+    "Manda uma mensagem pro João dizendo que eu vou atrasar 10 minutos.",
+    "Manda uma mensagem pro João dizendo que eu vou atrasar 10 minutos.",
+    "Todos os dias faltam pro Natal.",
+    "Quantos dias falta um prão natal?",
+    "Quantos dias falta um pronatá-lo?",
+    "Tô cansado hoje, cara.",
+    "Tô cansado hoje, cara.",
+    "Tô cansado hoje, cara.",
+    "Fala sério, mano.",
+    "Pala sério, mano!",
+    "Falcério, mano!",
+    "Show de bola! Muito obrigado!",
+    "Show de bola! Muito obrigada!",
+    "Show de bola! Muito obrigada!",
+    "Ahn, deixa eu pensar, pode ser as 100 e meia.",
+    "Ah, deixa pensar, pode ser a seis e meia.",
+    "Ah, deixa eu pensar, pode ser a seis e meia.",
+    "Qual é a raiz quadrada de 144?",
+    "Qual é a raiz quadrada de 144?",
+    "Qual é a raiz quadrada de 144?",
+    "Converte 50 dólares para reais.",
+    "Converte 50 dólares para reais.",
+    "Converte 50 dólares para reais.",
+    "A reunião é na quarta-feira às 14 horas.",
+    "A reunião é na quarta-feira às 14 horas.",
+    "A reunião é na quarta-feira, às 14h.",
+    "Quem ganhou a Copa do Mundo de 2002?",
+    "Interimou a Copa do Mundo de 2002.",
+    "Quem ganhou a Copa do Mundo de 2002?",
+    "Aumento o volume.",
+    "Aumenta o volume.",
+    "Aumenta o volume.",
+    "Esquisa a receita de pão de queijo.",
+    "Pesquisa a receita de pão de queijo.",
+    "Pesquisa a receita de pão de quente.",
+    "Sim.",
+    "Sim.",
+    "Sim.",
+    "Não.",
+    "Não.",
+    "Não.",
+    "Pode repetir, por favor?",
+    "Pode repetir, por favor?",
+    "Pode repetir, por favor?",
+    "Tá bom, valeu, tchau!",
+    "Tá bom, valeu, tchau!",
+    "Tá bom, valeu, tchau!",
+    "Me lembra de ligar pra minha mãe amanhã?",
+    "Me lembra de ligar pra minha mãe amanhã.",
+    "Me lembra de ligar pra minha mãe a manhã?",
+    "X1, você está me ouvindo?",
+    "X1, você está me ouvindo?",
+    "X1, você está me ouvindo?",
+    "6 ou 7, tanto faz.",
+    "6 ou 7, tanto fácil.",
+    "6 ou 7, tanto fácil!",
+    "23 graus.",
+    "23 graus.",
+    "23 gramas.",
+    "Liga pro Luís e Liga.",
+    "Vida pro Luís Henrique!",
+    "Liga pro Luís se liga."
+   ]
+  },
+  "nurc": {
+   "wer": 0.4290830945558739,
+   "n": 150,
+   "lat_s": 0.5840064220463197,
+   "lat_p90_s": 0.6601992869982496
+  }
+ },
+ "fw:small:noprompt": {
+  "vram_mb": 330,
+  "cmd": {
+   "wer": 0.0446927374301676,
+   "n": 108,
+   "lat_s": 0.47007116818591993,
+   "lat_p90_s": 0.5119314080075128,
+   "errors": [
+    [
+     "Sete.",
+     "SETCH"
+    ],
+    [
+     "Seis.",
+     "Sim."
+    ],
+    [
+     "Dezessete.",
+     "Desiseite."
+    ],
+    [
+     "Quantos dias faltam pro Natal?",
+     "Quantos dias falta um pronatal?"
+    ],
+    [
+     "Valeu, X1.",
+     "Value x1."
+    ],
+    [
+     "Aumenta o volume.",
+     "Aumento o volume."
+    ],
+    [
+     "Ahn, deixa eu pensar, pode ser às seis e meia.",
+     "Ah, deixa eu pensar. Pode ser a 6,5."
+    ],
+    [
+     "Liga pro Luiz Felipe.",
+     "Liga pro Luís Felipe."
+    ],
+    [
+     "Liga pro Luiz Felipe.",
+     "Liga pro Luís Felipe."
+    ],
+    [
+     "Liga pro Luiz Felipe.",
+     "Liga pro Luís Felipe."
+    ],
+    [
+     "A reunião é na quarta-feira às catorze horas.",
+     "A reunião é na quarta-feiras, 14 horas."
+    ],
+    [
+     "Toca uma música do Djavan.",
+     "Toca uma música do Javan."
+    ],
+    [
+     "Toca uma música do Djavan.",
+     "Toca uma música do Davan."
+    ],
+    [
+     "Pesquisa receita de pão de queijo.",
+     "Pesquisa a receita de pão de queijo."
+    ],
+    [
+     "Me acorda às sete da manhã.",
+     "Me acorda sete da manhã."
+    ],
+    [
+     "Me lembra de ligar pra minha mãe amanhã.",
+     "Me lembro de ligar pra minha mãe amanhã."
+    ],
+    [
+     "Ahn, deixa eu pensar, pode ser às seis e meia.",
+     "Ah, deixa eu pensar, pode ser as 100 e meia."
+    ],
+    [
+     "Ahn, deixa eu pensar, pode ser às seis e meia.",
+     "Ah, deixa eu pensar, pode ser a seis e meia."
+    ],
+    [
+     "Manda uma mensagem pro João dizendo que eu vou atrasar dez minutos.",
+     "Landa uma mensagem pro João dizendo que eu vou atrasar 10 minutos."
+    ]
+   ],
+   "hyps": [
+    "Que horas são agora?",
+    "Que horas são agora?",
+    "Que horas são agora?",
+    "Valeu, x1!",
+    "Valeu x1!",
+    "Value x1.",
+    "Valeu! Pode parar!",
+    "Valeu! Pode parar!",
+    "Valeu! Pode parar!",
+    "7.",
+    "7.",
+    "SETCH",
+    "Seis.",
+    "6.",
+    "Sim.",
+    "17.",
+    "17.",
+    "Desiseite.",
+    "89.",
+    "89.",
+    "89",
+    "Me acorda às 7 da manhã.",
+    "Me acorda às 7 da manhã.",
+    "Me acorda sete da manhã.",
+    "quanto é 7 vezes 8?",
+    "Quanto é 7 vezes 8?",
+    "quanto é 7 vezes 8?",
+    "Coloca um timer de 15 minutos.",
+    "Coloca um timer de 15 minutos.",
+    "Coloca um timer de 15 minutos.",
+    "Liga a luz da sala.",
+    "Liga a luz da sala.",
+    "Liga a luz da sala.",
+    "Qual a previsão do tempo para amanhã em Brasília?",
+    "Qual a previsão do tempo para amanhã em Brasília?",
+    "Qual a previsão do tempo para amanhã em Brasília?",
+    "Beleza. Entendi.",
+    "Beleza, entendi.",
+    "Beleza! Entendi!",
+    "Não! Não! Para! Espera aí!",
+    "Não, não para! Espera aí!",
+    "Não. Não. Para. Espera aí.",
+    "Toca uma música do Javan.",
+    "Toca uma música do Davan.",
+    "Toca uma música do Djavan.",
+    "Landa uma mensagem pro João dizendo que eu vou atrasar 10 minutos.",
+    "Manda uma mensagem pro João dizendo que eu vou atrasar 10 minutos.",
+    "Manda uma mensagem pro João dizendo que eu vou atrasar 10 minutos.",
+    "Quantos dias falta um pronatal?",
+    "Quantos dias faltam pro Natal?",
+    "Quantos dias faltam pro Natal?",
+    "Tô cansado hoje, cara.",
+    "Tô cansado hoje cara.",
+    "Tô cansado hoje, cara.",
+    "Fala sério, mano.",
+    "Fala sério, mano.",
+    "Fala sério, mano.",
+    "Show de bola! Muito obrigado!",
+    "Show de bola, muito obrigado.",
+    "Show de bola. Muito obrigado.",
+    "Ah, deixa eu pensar, pode ser as 100 e meia.",
+    "Ah, deixa eu pensar, pode ser a seis e meia.",
+    "Ah, deixa eu pensar. Pode ser a 6,5.",
+    "Qual é a raiz quadrada de 144?",
+    "Qual é a raiz quadrada de 144?",
+    "Qual é a raiz quadrada de 144?",
+    "Converte 50 dólares para reais.",
+    "Converte 50 dólares para reais.",
+    "Converte 50 dólares para reais.",
+    "A reunião é na quarta-feira às 14 horas.",
+    "A reunião é na quarta-feira às 14 horas.",
+    "A reunião é na quarta-feiras, 14 horas.",
+    "Quem ganhou a Copa do Mundo de 2002?",
+    "Quem ganhou a Copa do Mundo de 2002?",
+    "Quem ganhou a Copa do Mundo de 2002?",
+    "Aumento o volume.",
+    "Aumenta o volume.",
+    "Aumenta o volume.",
+    "Pesquisa a receita de pão de queijo.",
+    "Pesquisa receita de pão de queijo.",
+    "Pesquisa Receita de Pão de Queijo.",
+    "Sim.",
+    "Sim.",
+    "Sim.",
+    "Não.",
+    "Não.",
+    "Não.",
+    "Pode repetir, por favor?",
+    "Pode repetir, por favor.",
+    "Pode repetir, por favor?",
+    "Tá bom, valeu, tchau.",
+    "Tá bom, valeu, tchau.",
+    "Tá bom. Valeu. Tchau.",
+    "Me lembro de ligar pra minha mãe amanhã.",
+    "Me lembra de ligar para minha mãe amanhã.",
+    "Me lembra de ligar pra minha mãe amanhã.",
+    "X1, você está me ouvindo?",
+    "X1, você está me ouvindo?",
+    "X1, você está me ouvindo?",
+    "6 ou 7, tanto faz.",
+    "6 ou 7 tanto faz.",
+    "6 ou 7, tanto faz.",
+    "23 graus.",
+    "23 graus.",
+    "23 graus.",
+    "Liga pro Luís Felipe.",
+    "Liga pro Luís Felipe.",
+    "Liga pro Luís Felipe."
+   ]
+  },
+  "noisy": {
+   "wer": 0.1340782122905028,
+   "n": 108,
+   "lat_s": 0.4753850732505035,
+   "lat_p90_s": 0.510614134997013,
+   "errors": [
+    [
+     "Liga pro Luiz Felipe.",
+     "Liga para o Luís e liga."
+    ],
+    [
+     "Quanto é sete vezes oito?",
+     "0.7238"
+    ],
+    [
+     "Seis.",
+     "Sim."
+    ],
+    [
+     "Dezessete.",
+     "Desistir!"
+    ],
+    [
+     "Liga pro Luiz Felipe.",
+     "Vida pro Luís Henrique!"
+    ],
+    [
+     "Liga pro Luiz Felipe.",
+     "Liga pro Luís se liga."
+    ],
+    [
+     "Oitenta e nove.",
+     "Foi 59."
+    ],
+    [
+     "Fala sério, mano.",
+     "Faça o sério, mano!"
+    ],
+    [
+     "Aumenta o volume.",
+     "ao vento volume."
+    ],
+    [
+     "Quantos dias faltam pro Natal?",
+     "Quantos dias falta um prão natal?"
+    ],
+    [
+     "Me acorda às sete da manhã.",
+     "Minha corda é sete da manhã."
+    ],
+    [
+     "Ahn, deixa eu pensar, pode ser às seis e meia.",
+     "Ah, deixa pensar. Pode ser a 6,5."
+    ],
+    [
+     "Toca uma música do Djavan.",
+     "Tota uma música do Giovanna."
+    ],
+    [
+     "Toca uma música do Djavan.",
+     "Tota uma música do Diaban."
+    ],
+    [
+     "Quantos dias faltam pro Natal?",
+     "Todos os dias faltam pro Natal."
+    ],
+    [
+     "Quantos dias faltam pro Natal?",
+     "Quantos dias faltam para o natal?"
+    ],
+    [
+     "Valeu, X1.",
+     "Value x1."
+    ],
+    [
+     "Pesquisa receita de pão de queijo.",
+     "pesquisa a receita de pão de quente."
+    ],
+    [
+     "Pesquisa receita de pão de queijo.",
+     "Esquisa a receita de pão de queijo."
+    ],
+    [
+     "Fala sério, mano.",
+     "Pala sério, mano!"
+    ],
+    [
+     "Fala sério, mano.",
+     "Fala a sério, mano."
+    ],
+    [
+     "Coloca um timer de quinze minutos.",
+     "Coloca em talha de 15 minutos."
+    ],
+    [
+     "Vinte e três graus.",
+     "23 gramas."
+    ],
+    [
+     "Tá bom, valeu, tchau.",
+     "Dá bom, valeu, tchau!"
+    ],
+    [
+     "Qual a previsão do tempo pra amanhã em Brasília?",
+     "como a previsão do tempo pra manhã em Brasília."
+    ],
+    [
+     "Qual a previsão do tempo pra amanhã em Brasília?",
+     "Qual é a visão do tempo para amanhã em Brasília?"
+    ],
+    [
+     "Ahn, deixa eu pensar, pode ser às seis e meia.",
+     "Ah, deixa eu pensar, pode ser a 100 e meia."
+    ],
+    [
+     "Toca uma música do Djavan.",
+     "Toca uma música do Japão!"
+    ],
+    [
+     "Show de bola, muito obrigado.",
+     "Show de bola! Muito obrigada!"
+    ],
+    [
+     "Seis ou sete, tanto faz.",
+     "6 ou 7, tanto fácil."
+    ],
+    [
+     "Seis ou sete, tanto faz.",
+     "6 ou 7, tanto fácil."
+    ],
+    [
+     "Liga a luz da sala.",
+     "Fique à luz da sala."
+    ],
+    [
+     "Quem ganhou a Copa do Mundo de dois mil e dois?",
+     "Interimou a Copa do Mundo de 2002."
+    ],
+    [
+     "Pesquisa receita de pão de queijo.",
+     "Pesquisa a receita de pão de queijo."
+    ],
+    [
+     "Me acorda às sete da manhã.",
+     "Me acorda sete da manhã!"
+    ],
+    [
+     "Me acorda às sete da manhã.",
+     "E acorda às 7 da manhã."
+    ],
+    [
+     "Coloca um timer de quinze minutos.",
+     "Coloca um tiner de 15 minutos."
+    ],
+    [
+     "Ahn, deixa eu pensar, pode ser às seis e meia.",
+     "Ah, deixa eu pensar, pode ser a seis e meia."
+    ]
+   ],
+   "hyps": [
+    "Que horas são agora?",
+    "Que horas são agora?",
+    "Que horas são agora?",
+    "Valeu! X1!",
+    "Valeu X1!",
+    "Value x1.",
+    "Valeu. Pode parar.",
+    "Valeu! Pode parar!",
+    "Valeu! Pode parar!",
+    "Sete.",
+    "Sete.",
+    "Sete.",
+    "Seis.",
+    "seis.",
+    "Sim.",
+    "17",
+    "17.",
+    "Desistir!",
+    "Foi 59.",
+    "89.",
+    "89.",
+    "Minha corda é sete da manhã.",
+    "E acorda às 7 da manhã.",
+    "Me acorda sete da manhã!",
+    "0.7238",
+    "Quanto é 7 vezes 8?",
+    "quanto é 7 vezes 8.",
+    "Coloca em talha de 15 minutos.",
+    "Coloca um tiner de 15 minutos.",
+    "Coloca um timer de 15 minutos.",
+    "Fique à luz da sala.",
+    "Liga a luz da sala.",
+    "Liga a luz da sala.",
+    "como a previsão do tempo pra manhã em Brasília.",
+    "Qual é a visão do tempo para amanhã em Brasília?",
+    "Qual a previsão do tempo para amanhã em Brasília?",
+    "Beleza! Entendi!",
+    "Beleza, entendi!",
+    "Beleza! Entendi!",
+    "Não! Não! Para! Espera aí!",
+    "Não, não, para! Espera aí!",
+    "Não, não, para. Espera aí.",
+    "Tota uma música do Giovanna.",
+    "Tota uma música do Diaban.",
+    "Toca uma música do Japão!",
+    "Manda uma mensagem pro João dizendo que eu vou atrasar 10 minutos.",
+    "Manda uma mensagem pro João dizendo que eu vou atrasar 10 minutos.",
+    "Manda uma mensagem pro João dizendo que eu vou atrasar 10 minutos.",
+    "Todos os dias faltam pro Natal.",
+    "Quantos dias falta um prão natal?",
+    "Quantos dias faltam para o natal?",
+    "Tô cansado hoje, cara.",
+    "Tô cansado hoje, cara.",
+    "Tô cansado hoje, cara!",
+    "Fala a sério, mano.",
+    "Pala sério, mano!",
+    "Faça o sério, mano!",
+    "Show de bola! Muito obrigado!",
+    "Show de bola! Muito obrigada!",
+    "Show de bola! Muito obrigado!",
+    "Ah, deixa eu pensar, pode ser a 100 e meia.",
+    "Ah, deixa pensar. Pode ser a 6,5.",
+    "Ah, deixa eu pensar, pode ser a seis e meia.",
+    "Qual é a raiz quadrada de 144?",
+    "Qual é a raiz quadrada de 144?",
+    "Qual é a raiz quadrada de 144?",
+    "Converte 50 dólares para reais.",
+    "Converte 50 dólares para reais.",
+    "Converte 50 dólares para reais.",
+    "A reunião é na quarta-feira às 14 horas.",
+    "A reunião é na quarta-feira às 14 horas.",
+    "A reunião é na quarta-feira, às 14h.",
+    "Quem ganhou a Copa do Mundo de 2002?",
+    "Interimou a Copa do Mundo de 2002.",
+    "Quem ganhou a Copa do Mundo de 2002?",
+    "Aumenta o volume.",
+    "Aumenta o volume.",
+    "ao vento volume.",
+    "Esquisa a receita de pão de queijo.",
+    "Pesquisa a receita de pão de queijo.",
+    "pesquisa a receita de pão de quente.",
+    "Sim.",
+    "Sim.",
+    "Sim.",
+    "Não.",
+    "Não.",
+    "Não.",
+    "Pode repetir, por favor.",
+    "Pode repetir, por favor?",
+    "Pode repetir, por favor.",
+    "Tá bom. Valeu. Tchau.",
+    "Dá bom, valeu, tchau!",
+    "Tá bom, valeu, tchau.",
+    "Me lembra de ligar pra minha mãe amanhã?",
+    "Me lembra de ligar pra minha mãe amanhã.",
+    "Me lembra de ligar pra minha mãe amanhã.",
+    "X1, você está me ouvindo?",
+    "X1, você está me ouvindo?",
+    "X1, você está me ouvindo?",
+    "6 ou 7, tanto faz.",
+    "6 ou 7, tanto fácil.",
+    "6 ou 7, tanto fácil.",
+    "23 graus",
+    "23 graus.",
+    "23 gramas.",
+    "Liga para o Luís e liga.",
+    "Vida pro Luís Henrique!",
+    "Liga pro Luís se liga."
+   ]
+  },
+  "nurc": {
+   "wer": 0.44412607449856734,
+   "n": 150,
+   "lat_s": 0.5625507979400572,
+   "lat_p90_s": 0.6465729089977685
+  }
+ },
+ "fw:Jarbas/faster-whisper-small-pt-cv13:noprompt": {
+  "vram_mb": 330,
+  "cmd": {
+   "wer": 0.07262569832402235,
+   "n": 108,
+   "lat_s": 0.47676435064824074,
+   "lat_p90_s": 0.5238809120055521,
+   "errors": [
+    [
+     "Seis.",
+     "Sês"
+    ],
+    [
+     "Seis.",
+     "Sês"
+    ],
+    [
+     "Seis.",
+     "Sê."
+    ],
+    [
+     "Dezessete.",
+     "Dizecete"
+    ],
+    [
+     "Dezessete.",
+     "Dezesseite"
+    ],
+    [
+     "Dezessete.",
+     "Desecit"
+    ],
+    [
+     "Liga pro Luiz Felipe.",
+     "Liga para o Luís Felipe."
+    ],
+    [
+     "Valeu, X1.",
+     "Valeu xizum!"
+    ],
+    [
+     "Liga pro Luiz Felipe.",
+     "Liga para o Luiz Felipe."
+    ],
+    [
+     "Quantos dias faltam pro Natal?",
+     "Quantos dias faltam para o Natal?"
+    ],
+    [
+     "X1, você está me ouvindo?",
+     "Xizum, você está me ouvindo?"
+    ],
+    [
+     "X1, você está me ouvindo?",
+     "Xison, você está me ouvindo?"
+    ],
+    [
+     "Valeu, X1.",
+     "Value x1."
+    ],
+    [
+     "Pesquisa receita de pão de queijo.",
+     "Pesquise a receita de pão de queijo."
+    ],
+    [
+     "Me acorda às sete da manhã.",
+     "Me acordas sete da manhã."
+    ],
+    [
+     "Fala sério, mano.",
+     "Fala sério, humano."
+    ],
+    [
+     "Aumenta o volume.",
+     "Aumento o volume."
+    ],
+    [
+     "Liga pro Luiz Felipe.",
+     "Liga pro Luís Felipe."
+    ],
+    [
+     "Toca uma música do Djavan.",
+     "Toca uma música do Javan."
+    ],
+    [
+     "Toca uma música do Djavan.",
+     "Toca uma música do Javan"
+    ],
+    [
+     "Toca uma música do Djavan.",
+     "Toca uma música do Javan"
+    ],
+    [
+     "Pesquisa receita de pão de queijo.",
+     "Pesquisa a receita de pão de queijo."
+    ],
+    [
+     "Me acorda às sete da manhã.",
+     "Me acorda sete da manhã."
+    ],
+    [
+     "Me acorda às sete da manhã.",
+     "Me acorda sete da manhã."
+    ],
+    [
+     "Manda uma mensagem pro João dizendo que eu vou atrasar dez minutos.",
+     "Manda uma mensagem para o João dizendo que eu vou atrasar dez minutos."
+    ],
+    [
+     "Ahn, deixa eu pensar, pode ser às seis e meia.",
+     "Ah, deixa eu pensar, pode ser as cem e meia."
+    ],
+    [
+     "Ahn, deixa eu pensar, pode ser às seis e meia.",
+     "Ah, deixa eu pensar, pode ser a seis e meia."
+    ],
+    [
+     "Ahn, deixa eu pensar, pode ser às seis e meia.",
+     "Ah, deixa eu pensar, pode ser a seis e meia."
+    ],
+    [
+     "Manda uma mensagem pro João dizendo que eu vou atrasar dez minutos.",
+     "Landa uma mensagem pro João dizendo que eu vou atrasar dez minutos."
+    ]
+   ],
+   "hyps": [
+    "Que horas são agora?",
+    "Que horas são agora?",
+    "Que horas são agora?",
+    "Valeu, x1.",
+    "Valeu xizum!",
+    "Value x1.",
+    "Valeu, pode parar.",
+    "Valeu, pode parar.",
+    "Valeu, pode parar.",
+    "Sete",
+    "Sete",
+    "Sete",
+    "Sês",
+    "Sês",
+    "Sê.",
+    "Dizecete",
+    "Dezesseite",
+    "Desecit",
+    "Oitenta e nove.",
+    "Oitenta e nove.",
+    "Oitenta e nove.",
+    "Me acordas sete da manhã.",
+    "Me acorda sete da manhã.",
+    "Me acorda sete da manhã.",
+    "Quanto é sete vezes oito?",
+    "Quanto é sete vezes oito?",
+    "Quanto é sete vezes oito?",
+    "Coloca um timer de quinze minutos.",
+    "Coloca um timer de quinze minutos.",
+    "Coloca um timer de quinze minutos.",
+    "Liga a luz da sala.",
+    "Liga a luz da sala.",
+    "Liga a luz da sala.",
+    "Qual a previsão do tempo para amanhã em Brasília?",
+    "Qual a previsão do tempo para amanhã em Brasília?",
+    "Qual a previsão do tempo para amanhã em Brasília?",
+    "Beleza, entendi.",
+    "Beleza, entendi.",
+    "Beleza, entendi.",
+    "Não, não, para. Espera aí.",
+    "Não não para, espera aí!",
+    "Não, não, para. Espera aí.",
+    "Toca uma música do Javan",
+    "Toca uma música do Javan",
+    "Toca uma música do Javan.",
+    "Landa uma mensagem pro João dizendo que eu vou atrasar dez minutos.",
+    "Manda uma mensagem pro João dizendo que eu vou atrasar dez minutos",
+    "Manda uma mensagem para o João dizendo que eu vou atrasar dez minutos.",
+    "Quantos dias faltam pro Natal?",
+    "Quantos dias faltam pro Natal?",
+    "Quantos dias faltam para o Natal?",
+    "Tô cansado hoje, cara.",
+    "Tô cansado hoje, cara.",
+    "Tô cansado hoje, cara.",
+    "Fala sério, mano.",
+    "Fala sério, mano.",
+    "Fala sério, humano.",
+    "Show de bola, muito obrigado.",
+    "Show de bola, muito obrigado.",
+    "Show de bola, muito obrigado.",
+    "Ah, deixa eu pensar, pode ser as cem e meia.",
+    "Ah, deixa eu pensar, pode ser a seis e meia.",
+    "Ah, deixa eu pensar, pode ser a seis e meia.",
+    "Qual é a raiz quadrada de cento e quarenta e quatro?",
+    "Qual é a raiz quadrada de cento e quarenta e quatro?",
+    "Qual é a raiz quadrada de cento e quarenta e quatro?",
+    "Converte cinquenta dólares para reais.",
+    "Converte cinquenta dólares para reais.",
+    "Converte cinquenta dólares para reais.",
+    "A reunião é na quarta-feira às catorze horas.",
+    "A reunião é na quarta-feira às quatorze horas.",
+    "A reunião é na quarta-feira às catorze horas.",
+    "Quem ganhou a copa do mundo de dois mil e dois?",
+    "Quem ganhou a Copa do Mundo de 2002?",
+    "Quem ganhou a Copa do Mundo de dois mil e dois?",
+    "Aumento o volume.",
+    "Aumenta o volume.",
+    "Aumenta o volume.",
+    "Pesquisa a receita de pão de queijo.",
+    "Pesquise a receita de pão de queijo.",
+    "Pesquisa receita de pão de queijo.",
+    "Sim.",
+    "Sim.",
+    "Sim.",
+    "Não.",
+    "Não.",
+    "Não.",
+    "Pode repetir, por favor?",
+    "Pode repetir, por favor?",
+    "Pode repetir, por favor?",
+    "Tá bom, valeu, tchau.",
+    "Tá bom, valeu, tchau.",
+    "Tá bom, valeu, tchau.",
+    "Me lembra de ligar para minha mãe amanhã.",
+    "Me lembra de ligar para minha mãe amanhã.",
+    "Me lembra de ligar para minha mãe amanhã.",
+    "Xison, você está me ouvindo?",
+    "Xizum, você está me ouvindo?",
+    "X1, você está me ouvindo?",
+    "Seis ou sete, tanto faz.",
+    "Seis ou sete tanto faz.",
+    "Seis ou sete, tanto faz.",
+    "Vinte e três graus.",
+    "Vinte e três graus.",
+    "Vinte e três graus.",
+    "Liga para o Luís Felipe.",
+    "Liga pro Luís Felipe.",
+    "Liga para o Luiz Felipe."
+   ]
+  },
+  "noisy": {
+   "wer": 0.14711359404096835,
+   "n": 108,
+   "lat_s": 0.4741692538979502,
+   "lat_p90_s": 0.5215935839951271,
+   "errors": [
+    [
+     "Liga pro Luiz Felipe.",
+     "Liga para o Luís e liga"
+    ],
+    [
+     "Sete.",
+     "Sede"
+    ],
+    [
+     "Seis.",
+     "Sês."
+    ],
+    [
+     "Seis.",
+     "Sis"
+    ],
+    [
+     "Seis.",
+     "Sim."
+    ],
+    [
+     "Liga pro Luiz Felipe.",
+     "Liga pra Luísa e liga"
+    ],
+    [
+     "Fala sério, mano.",
+     "Palacério humano"
+    ],
+    [
+     "Fala sério, mano.",
+     "Falcério humano"
+    ],
+    [
+     "Dezessete.",
+     "desessete"
+    ],
+    [
+     "Dezessete.",
+     "Dizemsete"
+    ],
+    [
+     "Dezessete.",
+     "Desecit"
+    ],
+    [
+     "Valeu, pode parar.",
+     "Valeu, forte parado."
+    ],
+    [
+     "Valeu, X1.",
+     "Valeu, Xizo!"
+    ],
+    [
+     "Fala sério, mano.",
+     "Fala a sério, humano."
+    ],
+    [
+     "Aumenta o volume.",
+     "Albento volume"
+    ],
+    [
+     "Liga pro Luiz Felipe.",
+     "Liga pro Luís Benito"
+    ],
+    [
+     "Beleza, entendi.",
+     "Deleza, entendi."
+    ],
+    [
+     "Toca uma música do Djavan.",
+     "Tota uma música do Javan"
+    ],
+    [
+     "Toca uma música do Djavan.",
+     "Torta uma música do diabã"
+    ],
+    [
+     "Quantos dias faltam pro Natal?",
+     "Todos os dias faltam pro Natal."
+    ],
+    [
+     "Quantos dias faltam pro Natal?",
+     "Quantos dias faltam para o Natal?"
+    ],
+    [
+     "Quanto é sete vezes oito?",
+     "Contra sete vezes oito."
+    ],
+    [
+     "X1, você está me ouvindo?",
+     "Xizu, você está me ouvindo?"
+    ],
+    [
+     "X1, você está me ouvindo?",
+     "Xizu, você está me ouvindo?"
+    ],
+    [
+     "Valeu, X1.",
+     "Value x1."
+    ],
+    [
+     "Pesquisa receita de pão de queijo.",
+     "Exquisa a receita de pão de queijo"
+    ],
+    [
+     "Me acorda às sete da manhã.",
+     "Minha corda às sete da manhã."
+    ],
+    [
+     "Coloca um timer de quinze minutos.",
+     "Coloca em talha de quinze minutos."
+    ],
+    [
+     "Vinte e três graus.",
+     "Vinte e três gramas."
+    ],
+    [
+     "Me lembra de ligar pra minha mãe amanhã.",
+     "Me lembra de ligar pra minha mãe a manha"
+    ],
+    [
+     "Qual a previsão do tempo pra amanhã em Brasília?",
+     "Qual é a visão do tempo para amanhã em Brasília?"
+    ],
+    [
+     "Ahn, deixa eu pensar, pode ser às seis e meia.",
+     "Ah, deixa eu pensar, pode ser as cem de meia."
+    ],
+    [
+     "Ahn, deixa eu pensar, pode ser às seis e meia.",
+     "Ah, deixa a pensar, pode ser a seis e meia."
+    ],
+    [
+     "Toca uma música do Djavan.",
+     "Toca uma música do diabão!"
+    ],
+    [
+     "Seis ou sete, tanto faz.",
+     "Sês ou sete, tanto faz."
+    ],
+    [
+     "Quanto é sete vezes oito?",
+     "Quando é sete vezes oito"
+    ],
+    [
+     "Não, não, para. Espera aí.",
+     "Não, não, Tara, espera aí."
+    ],
+    [
+     "Liga a luz da sala.",
+     "Lica a luz da sala"
+    ],
+    [
+     "Quem ganhou a Copa do Mundo de dois mil e dois?",
+     "Interno a Copa do Mundo de dois mil e dois"
+    ],
+    [
+     "Pesquisa receita de pão de queijo.",
+     "Pesquisa a receita de pão de queijo"
+    ]
+   ],
+   "hyps": [
+    "Que horas são agora?",
+    "Que horas são agora?",
+    "Que horas são agora?",
+    "Valeu, Xizo!",
+    "Valeu, x1!",
+    "Value x1.",
+    "Valeu, pode parar.",
+    "Valeu, forte parado.",
+    "Valeu, pode parar.",
+    "Sete.",
+    "Sete.",
+    "Sede",
+    "Sis",
+    "Sês.",
+    "Sim.",
+    "Dizemsete",
+    "desessete",
+    "Desecit",
+    "Oitenta e nove.",
+    "Oitenta e nove.",
+    "Oitenta e nove.",
+    "Minha corda às sete da manhã.",
+    "Me acorda às sete da manhã.",
+    "Me acorda sete da manhã.",
+    "Contra sete vezes oito.",
+    "Quanto é sete vezes oito?",
+    "Quando é sete vezes oito",
+    "Coloca em talha de quinze minutos.",
+    "Coloca um tiner de quinze minutos.",
+    "Coloca o timer de quinze minutos.",
+    "Lica a luz da sala",
+    "Liga a luz da sala.",
+    "Liga a luz da sala.",
+    "Qual a previsão do tempo para manhã em Brasília?",
+    "Qual é a visão do tempo para amanhã em Brasília?",
+    "Qual a previsão do tempo para amanhã em Brasília?",
+    "Beleza, entendi.",
+    "Beleza, entendi.",
+    "Deleza, entendi.",
+    "Não, não, para. Espera aí.",
+    "Não, não, Tara, espera aí.",
+    "Não, não, para. Espera aí.",
+    "Tota uma música do Javan",
+    "Torta uma música do diabã",
+    "Toca uma música do diabão!",
+    "Manda uma mensagem pro João dizendo que eu vou atrasar dez minutos.",
+    "Manda uma mensagem pro João dizendo que eu vou atrasar dez minutos.",
+    "Manda uma mensagem para o João dizendo que eu vou atrasar dez minutos.",
+    "Todos os dias faltam pro Natal.",
+    "Quantos dias faltam para o Natal?",
+    "Quantos dias faltam pro Natal?",
+    "Tô cansado hoje, cara.",
+    "Tô cansado hoje, cara.",
+    "Tô cansado hoje, cara.",
+    "Fala a sério, humano.",
+    "Palacério humano",
+    "Falcério humano",
+    "Show de bola, muito obrigado.",
+    "Show de bola, muito obrigado.",
+    "Show de bola, muito obrigado.",
+    "Ah, deixa eu pensar, pode ser as cem de meia.",
+    "Ah, deixa a pensar, pode ser a seis e meia.",
+    "Ah, deixa eu pensar, pode ser a seis e meia.",
+    "Qual é a raiz quadrada de cento e quarenta e quatro?",
+    "Qual é a raiz quadrada de cento e quarenta e quatro?",
+    "Qual é a raiz quadrada de cento e quarenta e quatro?",
+    "Converte cinquenta dólares para reais.",
+    "Converte cinquenta dólares para reais",
+    "Converte cinquenta dólares para reais",
+    "A reunião é na quarta-feira às catorze horas.",
+    "A reunião é na quarta-feira às catorze horas.",
+    "A reunião é na quarta-feira às catorze horas.",
+    "Quem ganhou a Copa do Mundo de 2002?",
+    "Interno a Copa do Mundo de dois mil e dois",
+    "Quem ganhou a Copa do Mundo de dois mil e dois?",
+    "Aumenta o volume.",
+    "Aumenta o volume.",
+    "Albento volume",
+    "Exquisa a receita de pão de queijo",
+    "Pesquisa a receita de pão de queijo",
+    "Pesquisa a receita de pão de queijo",
+    "Sim",
+    "Sim.",
+    "Sim.",
+    "Não.",
+    "Não.",
+    "Não.",
+    "Pode repetir, por favor?",
+    "Pode repetir, por favor?",
+    "Pode repetir, por favor?",
+    "Tá bom, valeu, tchau.",
+    "Tá bom, valeu, tchau.",
+    "Tá bom, valeu, tchau.",
+    "Me lembra de ligar pra minha mãe amanhã.",
+    "Me lembra de ligar para minha mãe amanhã.",
+    "Me lembra de ligar pra minha mãe a manha",
+    "Xizu, você está me ouvindo?",
+    "X1, você está me ouvindo?",
+    "Xizu, você está me ouvindo?",
+    "Sês ou sete, tanto faz.",
+    "Seis ou sete, tanto faz.",
+    "Seis ou sete, tanto faz.",
+    "Vinte e três graus?",
+    "Vinte e três graus.",
+    "Vinte e três gramas.",
+    "Liga para o Luís e liga",
+    "Liga pro Luís Benito",
+    "Liga pra Luísa e liga"
+   ]
+  },
+  "nurc": {
+   "wer": 0.37034383954154726,
+   "n": 150,
+   "lat_s": 0.5126731993464637,
+   "lat_p90_s": 0.585886365006445
+  }
+ },
+ "fw:mobiuslabsgmbh/faster-whisper-large-v3-turbo:noprompt": {
+  "vram_mb": 1066,
+  "cmd": {
+   "wer": 0.0223463687150838,
+   "n": 108,
+   "lat_s": 1.8145800702965331,
+   "lat_p90_s": 1.860652517003473,
+   "errors": [
+    [
+     "Seis.",
+     "Sei."
+    ],
+    [
+     "Dezessete.",
+     "Desecite."
+    ],
+    [
+     "Quantos dias faltam pro Natal?",
+     "Quantos dias faltam para o Natal?"
+    ],
+    [
+     "Valeu, X1.",
+     "Value, x1"
+    ],
+    [
+     "Show de bola, muito obrigado.",
+     "Show de bola! Muito obrigada!"
+    ],
+    [
+     "Pesquisa receita de pão de queijo.",
+     "Pesquisa a receita de pão de queijo."
+    ],
+    [
+     "Me acorda às sete da manhã.",
+     "Me acordo às sete da manhã."
+    ],
+    [
+     "Manda uma mensagem pro João dizendo que eu vou atrasar dez minutos.",
+     "Manda uma mensagem para o João dizendo que eu vou atrasar 10 minutos."
+    ],
+    [
+     "Manda uma mensagem pro João dizendo que eu vou atrasar dez minutos.",
+     "Manda uma mensagem para o João dizendo que eu vou atrasar 10 minutos."
+    ]
+   ],
+   "hyps": [
+    "Que horas são agora?",
+    "Que horas são agora?",
+    "Que horas são agora?",
+    "Valeu, x1.",
+    "Valeu, x1!",
+    "Value, x1",
+    "Valeu! Pode parar!",
+    "Valeu, pode parar.",
+    "Valeu! Pode parar!",
+    "7.",
+    "7.",
+    "7.",
+    "6.",
+    "Seis",
+    "Sei.",
+    "17.",
+    "17.",
+    "Desecite.",
+    "89.",
+    "89.",
+    "89.",
+    "Me acordo às sete da manhã.",
+    "Me acorda às 7 da manhã.",
+    "Me acorda às sete da manhã.",
+    "Quanto é 7 vezes 8?",
+    "Quanto é 7 vezes 8?",
+    "Quanto é 7 vezes 8?",
+    "Coloca um timer de 15 minutos.",
+    "Coloca um timer de 15 minutos.",
+    "Coloca um timer de 15 minutos.",
+    "Liga a luz da sala.",
+    "Liga a luz da sala.",
+    "Liga a luz da sala.",
+    "Qual a previsão do tempo para amanhã em Brasília?",
+    "Qual a previsão do tempo para amanhã em Brasília?",
+    "Qual a previsão do tempo para amanhã em Brasília?",
+    "Beleza, entendi.",
+    "Beleza entendi.",
+    "Beleza, entendi.",
+    "Não, não, para. Espera aí.",
+    "Não, não, para, espera aí.",
+    "Não, não, para. Espera aí.",
+    "Toca uma música do Djavan.",
+    "Toca uma música do Djavan.",
+    "Toca uma música do Djavan.",
+    "Manda uma mensagem para o João dizendo que eu vou atrasar 10 minutos.",
+    "Manda uma mensagem pro João dizendo que eu vou atrasar 10 minutos.",
+    "Manda uma mensagem para o João dizendo que eu vou atrasar 10 minutos.",
+    "Quantos dias faltam para o Natal?",
+    "Quantos dias faltam pro Natal?",
+    "Quantos dias faltam pro Natal?",
+    "Tô cansado hoje, cara.",
+    "Tô cansado hoje, cara.",
+    "Tô cansado hoje, cara.",
+    "Fala sério, mano.",
+    "Fala sério, mano!",
+    "Fala sério, mano.",
+    "Show de bola! Muito obrigado!",
+    "Show de bola! Muito obrigado!",
+    "Show de bola! Muito obrigada!",
+    "Ah, deixa eu pensar, pode ser às seis e meia.",
+    "Ah, deixa eu pensar, pode ser às seis e meia.",
+    "Ah, deixa eu pensar, pode ser às seis e meia.",
+    "Qual é a raiz quadrada de 144?",
+    "Qual é a raiz quadrada de 144?",
+    "Qual é a raiz quadrada de 144?",
+    "Converte 50 dólares para reais.",
+    "Converte 50 dólares para reais.",
+    "Converte 50 dólares para reais.",
+    "A reunião é na quarta-feira às 14 horas.",
+    "A reunião é na quarta-feira às 14h.",
+    "A reunião é na quarta-feira às 14 horas.",
+    "Quem ganhou a Copa do Mundo de 2002?",
+    "Quem ganhou a Copa do Mundo de 2002?",
+    "Quem ganhou a Copa do Mundo de 2002?",
+    "Aumenta o volume.",
+    "Aumenta o volume.",
+    "Aumenta o volume.",
+    "Pesquisa a receita de pão de queijo.",
+    "Pesquisa receita de pão de queijo.",
+    "Pesquisa receita de pão de queijo.",
+    "Sim.",
+    "Sim.",
+    "Sim.",
+    "Não.",
+    "Não.",
+    "Não.",
+    "Pode repetir, por favor?",
+    "Pode repetir, por favor?",
+    "pode repetir por favor",
+    "Tá bom, valeu, tchau.",
+    "Tá bom, valeu, tchau.",
+    "Tá bom, valeu, tchau.",
+    "Me lembra de ligar para minha mãe amanhã.",
+    "Me lembra de ligar pra minha mãe amanhã.",
+    "Me lembra de ligar para minha mãe amanhã.",
+    "X1, você está me ouvindo?",
+    "X1, você está me ouvindo?",
+    "X1, você está me ouvindo?",
+    "6 ou 7, tanto faz.",
+    "6 ou 7, tanto faz.",
+    "Seis ou sete, tanto faz.",
+    "23 graus.",
+    "23 graus.",
+    "23 graus.",
+    "Liga pro Luiz Felipe.",
+    "Liga pro Luiz Felipe.",
+    "Liga pro Luiz Felipe."
+   ]
+  },
+  "noisy": {
+   "wer": 0.0670391061452514,
+   "n": 108,
+   "lat_s": 1.8168815520931039,
+   "lat_p90_s": 1.8555914220050909,
+   "errors": [
+    [
+     "Dezessete.",
+     "Desi-seit."
+    ],
+    [
+     "Liga pro Luiz Felipe.",
+     "Liga a prova e se liga."
+    ],
+    [
+     "Seis.",
+     "Seguindo."
+    ],
+    [
+     "Valeu, X1.",
+     "Valeu! Shizu!"
+    ],
+    [
+     "Liga pro Luiz Felipe.",
+     "Liga pro Luizini."
+    ],
+    [
+     "Quantos dias faltam pro Natal?",
+     "Quantos dias faltam para o Natal?"
+    ],
+    [
+     "Quantos dias faltam pro Natal?",
+     "Quantos dias faltam para o Natal?"
+    ],
+    [
+     "Quantos dias faltam pro Natal?",
+     "Quantos dias faltam para o Natal?"
+    ],
+    [
+     "Quanto é sete vezes oito?",
+     "Conta 7 vezes 8."
+    ],
+    [
+     "Valeu, X1.",
+     "Value x1."
+    ],
+    [
+     "Vinte e três graus.",
+     "22 graus"
+    ],
+    [
+     "Me lembra de ligar pra minha mãe amanhã.",
+     "E me lembre de ligar para minha mãe amanhã."
+    ],
+    [
+     "Show de bola, muito obrigado.",
+     "Show de bola! Muito obrigada!"
+    ],
+    [
+     "Show de bola, muito obrigado.",
+     "Show de bola! Muito obrigada!"
+    ],
+    [
+     "Liga a luz da sala.",
+     "Clica a luz da sala."
+    ],
+    [
+     "Me acorda às sete da manhã.",
+     "E acorda às sete da manhã."
+    ],
+    [
+     "Manda uma mensagem pro João dizendo que eu vou atrasar dez minutos.",
+     "Manda uma mensagem para o João dizendo que eu vou atrasar 10 minutos."
+    ],
+    [
+     "Manda uma mensagem pro João dizendo que eu vou atrasar dez minutos.",
+     "Manda uma mensagem para o João dizendo que eu vou atrasar 10 minutos."
+    ],
+    [
+     "Coloca um timer de quinze minutos.",
+     "Coloque um timer de 15 minutos."
+    ],
+    [
+     "Coloca um timer de quinze minutos.",
+     "Coloque um timer de 15 minutos."
+    ],
+    [
+     "Coloca um timer de quinze minutos.",
+     "Coloca um diner de 15 minutos."
+    ],
+    [
+     "Quem ganhou a Copa do Mundo de dois mil e dois?",
+     "E ganhou a Copa do Mundo de 2002."
+    ]
+   ],
+   "hyps": [
+    "Que horas são agora?",
+    "Que horas são agora?",
+    "Que horas são agora?",
+    "Valeu! Shizu!",
+    "Valeu, X1!",
+    "Value x1.",
+    "Valeu! Pode parar!",
+    "Valeu, pode parar!",
+    "Valeu! Pode parar!",
+    "Sete.",
+    "Sete.",
+    "Sete.",
+    "Seis.",
+    "Seis",
+    "Seguindo.",
+    "17.",
+    "17.",
+    "Desi-seit.",
+    "89.",
+    "89",
+    "89",
+    "Me acorda às sete da manhã.",
+    "E acorda às sete da manhã.",
+    "Me acorda às sete da manhã.",
+    "Conta 7 vezes 8.",
+    "Quanto é 7 vezes 8?",
+    "Quanto é 7 vezes 8?",
+    "Coloque um timer de 15 minutos.",
+    "Coloca um diner de 15 minutos.",
+    "Coloque um timer de 15 minutos.",
+    "Clica a luz da sala.",
+    "Liga a luz da sala.",
+    "Liga a luz da sala.",
+    "Qual a previsão do tempo para amanhã em Brasília?",
+    "Qual a previsão do tempo para amanhã em Brasília?",
+    "Qual a previsão do tempo para amanhã em Brasília?",
+    "Beleza, entendi",
+    "Beleza, entendi",
+    "Beleza, entendi",
+    "Não, não, para. Espera aí.",
+    "Não, não, para. Espera aí.",
+    "Não, não, para. Espera aí.",
+    "toca uma música do Djavan.",
+    "Toca uma música do Djavan.",
+    "Toca uma música do Djavan.",
+    "Manda uma mensagem para o João dizendo que eu vou atrasar 10 minutos.",
+    "Manda uma mensagem pro João dizendo que eu vou atrasar 10 minutos.",
+    "Manda uma mensagem para o João dizendo que eu vou atrasar 10 minutos.",
+    "Quantos dias faltam para o Natal?",
+    "Quantos dias faltam para o Natal?",
+    "Quantos dias faltam para o Natal?",
+    "Tô cansado hoje, cara.",
+    "Tô cansado hoje, cara.",
+    "Tô cansado hoje, cara.",
+    "Fala sério, mano!",
+    "Fala sério mano!",
+    "Fala sério, mano.",
+    "Show de bola! Muito obrigado!",
+    "Show de bola! Muito obrigada!",
+    "Show de bola! Muito obrigada!",
+    "Ah, deixa eu pensar. Pode ser às seis e meia.",
+    "Ah, deixa eu pensar. Pode ser às seis e meia.",
+    "Ah, deixa eu pensar, pode ser às seis e meia.",
+    "Qual é a raiz quadrada de 144?",
+    "Qual é a raiz quadrada de 144?",
+    "Qual é a raiz quadrada de 144?",
+    "Converte 50 dólares para reais.",
+    "Converte 50 dólares para reais.",
+    "Converte 50 dólares para reais.",
+    "A reunião é na quarta-feira às 14 horas.",
+    "A reunião é na quarta-feira, às 14h.",
+    "A reunião é na quarta-feira às 14h.",
+    "Quem ganhou a Copa do Mundo de 2002?",
+    "E ganhou a Copa do Mundo de 2002.",
+    "Quem ganhou a Copa do Mundo de 2002?",
+    "Aumenta o volume.",
+    "Aumenta o volume.",
+    "aumenta o volume.",
+    "Pesquisa receita de pão de queijo.",
+    "Pesquisa receita de pão de queijo.",
+    "Pesquisa receita de pão de queijo.",
+    "Sim.",
+    "Sim.",
+    "Sim.",
+    "Não.",
+    "Não.",
+    "Não.",
+    "Pode repetir, por favor.",
+    "Pode repetir, por favor?",
+    "Pode repetir, por favor?",
+    "Tá bom. Valeu. Tchau.",
+    "Tá bom, valeu, tchau!",
+    "Tá bom. Valeu. Tchau.",
+    "E me lembre de ligar para minha mãe amanhã.",
+    "Me lembra de ligar pra minha mãe amanhã.",
+    "Me lembra de ligar para minha mãe amanhã.",
+    "X1, você está me ouvindo?",
+    "X1, você está me ouvindo?",
+    "X1, você está me ouvindo?",
+    "Seis ou sete, tanto faz.",
+    "6 ou 7, tanto faz.",
+    "Seis ou sete, tanto faz.",
+    "22 graus",
+    "23 graus.",
+    "23 graus.",
+    "Liga a prova e se liga.",
+    "Liga pro Luiz Felipe.",
+    "Liga pro Luizini."
+   ]
+  },
+  "nurc": {
+   "wer": 0.27650429799426934,
+   "n": 150,
+   "lat_s": 1.843780074393823,
+   "lat_p90_s": 1.8971160070068436
+  }
+ },
+ "onnx:nemo-parakeet-tdt-0.6b-v3:int8": {
+  "vram_mb": 0,
+  "cmd": {
+   "wer": 0.05772811918063315,
+   "n": 108,
+   "lat_s": 0.504910866778152,
+   "lat_p90_s": 0.7019093959970633,
+   "errors": [
+    [
+     "Seis.",
+     "See."
+    ],
+    [
+     "Dezessete.",
+     "Dessessete"
+    ],
+    [
+     "Dezessete.",
+     "Desaceat"
+    ],
+    [
+     "Toca uma música do Djavan.",
+     "Tocam a música do Javan."
+    ],
+    [
+     "Liga pro Luiz Felipe.",
+     "Liga para o Luiz Felipe."
+    ],
+    [
+     "Liga pro Luiz Felipe.",
+     "Liga para o Luiz Felipe."
+    ],
+    [
+     "Liga pro Luiz Felipe.",
+     "Liga para o Luiz Felipe."
+    ],
+    [
+     "Toca uma música do Djavan.",
+     "Tocam a música do Djavan."
+    ],
+    [
+     "Quantos dias faltam pro Natal?",
+     "Quantos dias faltam para o Natal?"
+    ],
+    [
+     "Quantos dias faltam pro Natal?",
+     "Quantos dias faltam para o Natal?"
+    ],
+    [
+     "Valeu, X1.",
+     "Value, x1"
+    ],
+    [
+     "Oitenta e nove.",
+     "Oitenta nove."
+    ],
+    [
+     "Vinte e três graus.",
+     "Vinte três graus."
+    ],
+    [
+     "Tô cansado hoje, cara.",
+     "Estou cansado hoje, cara."
+    ],
+    [
+     "Toca uma música do Djavan.",
+     "Toca uma música do Javan."
+    ],
+    [
+     "Pesquisa receita de pão de queijo.",
+     "Pesquisa Receita de Pão de Quijo."
+    ],
+    [
+     "Me acorda às sete da manhã.",
+     "Me acorda sete da manhã."
+    ],
+    [
+     "Manda uma mensagem pro João dizendo que eu vou atrasar dez minutos.",
+     "Manda uma mensagem para o João dizendo que eu vou atrasar 10 minutos."
+    ],
+    [
+     "Manda uma mensagem pro João dizendo que eu vou atrasar dez minutos.",
+     "Manda uma mensagem para o João dizendo que eu vou atrasar 10 minutos."
+    ],
+    [
+     "Coloca um timer de quinze minutos.",
+     "Coloque um timer de 15 minutos."
+    ],
+    [
+     "Coloca um timer de quinze minutos.",
+     "Coloque um timer de 15 minutos."
+    ]
+   ],
+   "hyps": [
+    "Que horas são agora?",
+    "Que horas são agora?",
+    "Que horas são agora?",
+    "Valeu, X1!",
+    "Valeu, X1!",
+    "Value, x1",
+    "Valeu. Pode parar.",
+    "Valeu, pode parar.",
+    "Valeu, pode parar.",
+    "Sete",
+    "Sete",
+    "Sete",
+    "Seis",
+    "seis",
+    "See.",
+    "Dessessete",
+    "Dezessete.",
+    "Desaceat",
+    "Oitenta nove.",
+    "Oitenta e nove.",
+    "Oitenta e nove",
+    "Me acorda às sete da manhã.",
+    "Me acorda às 7 da manhã.",
+    "Me acorda sete da manhã.",
+    "Quanto é 7 vezes 8?",
+    "Quanto é 7 vezes 8?",
+    "Quanto é 7 vezes 8?",
+    "Coloque um timer de 15 minutos.",
+    "Coloca um timer de 15 minutos.",
+    "Coloque um timer de 15 minutos.",
+    "Liga a luz da sala.",
+    "Liga a luz da sala.",
+    "Liga a luz da sala.",
+    "Qual a previsão do tempo para amanhã em Brasília?",
+    "Qual a previsão do tempo para amanhã em Brasília?",
+    "Qual a previsão do tempo para amanhã em Brasília?",
+    "Beleza, entendi.",
+    "Beleza, entendi.",
+    "Beleza, entendi.",
+    "Não, não, para. Espera aí.",
+    "Não, não para. Espera aí.",
+    "Não, não, para. Espera aí.",
+    "Tocam a música do Djavan.",
+    "Toca uma música do Javan.",
+    "Tocam a música do Javan.",
+    "Manda uma mensagem para o João dizendo que eu vou atrasar 10 minutos.",
+    "Manda uma mensagem pro João dizendo que eu vou atrasar 10 minutos.",
+    "Manda uma mensagem para o João dizendo que eu vou atrasar 10 minutos.",
+    "Quantos dias faltam para o Natal?",
+    "Quantos dias faltam pro Natal?",
+    "Quantos dias faltam para o Natal?",
+    "Estou cansado hoje, cara.",
+    "Tô cansado hoje, cara.",
+    "Tô cansado hoje, cara.",
+    "Fala sério, mano.",
+    "Fala sério, mano.",
+    "Fala sério, mano.",
+    "Show de bola! Muito obrigado!",
+    "Show de bola! Muito obrigado!",
+    "Show de bola! Muito obrigado!",
+    "Ah, deixa eu pensar. Pode ser às seis e meia.",
+    "Ah, deixa eu pensar. Pode ser às seis e meia.",
+    "Ah, deixa eu pensar. Pode ser às seis e meia.",
+    "Qual é a raiz quadrada de 144?",
+    "Qual é a raiz quadrada de 144?",
+    "Qual é a raiz quadrada de 144?",
+    "Converte 50 dólares para reais.",
+    "Converte 50 dólares para reais.",
+    "Converte 50 dólares para reais.",
+    "A reunião é na quarta-feira às 14 horas.",
+    "A reunião é na quarta-feira às 14 horas.",
+    "A reunião é na quarta-feira às 14 horas.",
+    "Quem ganhou a Copa do Mundo de 2002?",
+    "Quem ganhou a Copa do Mundo de 2002?",
+    "Quem ganhou a Copa do Mundo de 2002?",
+    "Aumenta o volume.",
+    "Aumenta o volume.",
+    "Aumenta o volume.",
+    "Pesquisa receita de pão de queijo.",
+    "Pesquisa receita de pão de queijo.",
+    "Pesquisa Receita de Pão de Quijo.",
+    "Sim.",
+    "Sim.",
+    "Sim.",
+    "Não.",
+    "Não.",
+    "Não.",
+    "Pode repetir, por favor?",
+    "Pode repetir, por favor?",
+    "Pode repetir, por favor?",
+    "Tá bom. Valeu. Tchau.",
+    "Tá bom, valeu, tchau.",
+    "Tá bom, valeu tchau.",
+    "Me lembra de ligar para minha mãe amanhã.",
+    "Me lembra de ligar para minha mãe amanhã.",
+    "Me lembra de ligar para minha mãe amanhã.",
+    "X1, você está me ouvindo?",
+    "X1, você está me ouvindo?",
+    "X1, você está me ouvindo?",
+    "6 ou 7, tanto faz.",
+    "6 ou 7, tanto faz.",
+    "6 ou 7, tanto faz.",
+    "Vinte e três graus.",
+    "Vinte três graus.",
+    "Vinte e três graus.",
+    "Liga para o Luiz Felipe.",
+    "Liga para o Luiz Felipe.",
+    "Liga para o Luiz Felipe."
+   ]
+  },
+  "noisy": {
+   "wer": 0.12104283054003724,
+   "n": 108,
+   "lat_s": 0.48744728710112717,
+   "lat_p90_s": 0.6824917030025972,
+   "errors": [
+    [
+     "Dezessete.",
+     "There's a seed."
+    ],
+    [
+     "Dezessete.",
+     "Deses sete."
+    ],
+    [
+     "Sim.",
+     "See."
+    ],
+    [
+     "Seis.",
+     "See."
+    ],
+    [
+     "Quantos dias faltam pro Natal?",
+     "Todos os dias falta um pronatal."
+    ],
+    [
+     "Não.",
+     "No."
+    ],
+    [
+     "Liga pro Luiz Felipe.",
+     "Liga para o Luiz e Lim."
+    ],
+    [
+     "Dezessete.",
+     "Dizessete."
+    ],
+    [
+     "Liga pro Luiz Felipe.",
+     "Liga pro isso e liga."
+    ],
+    [
+     "Liga pro Luiz Felipe.",
+     "Liga para o Luiz Feliz."
+    ],
+    [
+     "Valeu, X1.",
+     "Valeu, Tiso!"
+    ],
+    [
+     "Pesquisa receita de pão de queijo.",
+     "Receita de bom de vídeo."
+    ],
+    [
+     "Me acorda às sete da manhã.",
+     "E agora das 7 da manhã."
+    ],
+    [
+     "Quantos dias faltam pro Natal?",
+     "Quantos dias faltam para o Natal?"
+    ],
+    [
+     "Quantos dias faltam pro Natal?",
+     "Quantos dias faltam para o Natal?"
+    ],
+    [
+     "Quanto é sete vezes oito?",
+     "Puta, sete vezes oito."
+    ],
+    [
+     "Valeu, X1.",
+     "Value X1."
+    ],
+    [
+     "Oitenta e nove.",
+     "Oito e nove."
+    ],
+    [
+     "Me acorda às sete da manhã.",
+     "Me acordas 7 da manhã."
+    ],
+    [
+     "Aumenta o volume.",
+     "Aumendo o volume."
+    ],
+    [
+     "Tô cansado hoje, cara.",
+     "Tô cansada hoje, cara."
+    ],
+    [
+     "Tô cansado hoje, cara.",
+     "Estou cansado hoje, cara."
+    ],
+    [
+     "Me lembra de ligar pra minha mãe amanhã.",
+     "E me lembra de ligar para minha mãe e amanhã."
+    ],
+    [
+     "Qual a previsão do tempo pra amanhã em Brasília?",
+     "Qual a previsão do tempo para mim Brasília?"
+    ],
+    [
+     "Toca uma música do Djavan.",
+     "Toca uma música do diabo."
+    ],
+    [
+     "Toca uma música do Djavan.",
+     "Toca uma música do Diaban."
+    ],
+    [
+     "Show de bola, muito obrigado.",
+     "Show de bola! Muito obrigada!"
+    ],
+    [
+     "Show de bola, muito obrigado.",
+     "Show de bola! Muito obrigada!"
+    ],
+    [
+     "Quem ganhou a Copa do Mundo de dois mil e dois?",
+     "Quem ganhou a Copa do Mundo de 2022?"
+    ],
+    [
+     "Me acorda às sete da manhã.",
+     "Me acorda sete da manhã."
+    ],
+    [
+     "Manda uma mensagem pro João dizendo que eu vou atrasar dez minutos.",
+     "Manda uma mensagem para o João dizendo que eu vou atrasar 10 minutos."
+    ],
+    [
+     "Manda uma mensagem pro João dizendo que eu vou atrasar dez minutos.",
+     "Manda uma mensagem para o João dizendo que eu vou atrasar 10 minutos."
+    ],
+    [
+     "Manda uma mensagem pro João dizendo que eu vou atrasar dez minutos.",
+     "Manda uma mensagem para o João dizendo que eu vou atrasar 10 minutos."
+    ],
+    [
+     "Coloca um timer de quinze minutos.",
+     "Coloca um time de 15 minutos."
+    ],
+    [
+     "Ahn, deixa eu pensar, pode ser às seis e meia.",
+     "Ah, deixa eu pensar. Pode ser as seis e meio."
+    ]
+   ],
+   "hyps": [
+    "Que horas são agora?",
+    "Que horas são agora?",
+    "Que horas são agora?",
+    "Valeu, X1.",
+    "Valeu, Tiso!",
+    "Value X1.",
+    "Valeu, pode parar.",
+    "Valeu, pode parar.",
+    "Valeu, pode parar.",
+    "Sete.",
+    "Sete.",
+    "Sete.",
+    "Seis",
+    "Seis",
+    "See.",
+    "Dizessete.",
+    "Deses sete.",
+    "There's a seed.",
+    "Oitenta e nove.",
+    "Oito e nove.",
+    "Oitenta e nove.",
+    "Me acordas 7 da manhã.",
+    "E agora das 7 da manhã.",
+    "Me acorda sete da manhã.",
+    "Puta, sete vezes oito.",
+    "Quanto é 7 vezes 8?",
+    "Quanto é 7 vezes 8?",
+    "Coloca um time de 15 minutos.",
+    "Coloca um timer de 15 minutos.",
+    "Coloca um timer de 15 minutos.",
+    "Liga a luz da sala.",
+    "Liga a luz da sala.",
+    "Liga a luz da sala.",
+    "Qual a previsão do tempo para mim Brasília?",
+    "Qual a previsão do tempo para amanhã em Brasília?",
+    "Qual a previsão do tempo para amanhã em Brasília?",
+    "Beleza, entendi.",
+    "Beleza, entendi.",
+    "Beleza, entendi.",
+    "Não, não para. Espera aí.",
+    "Não, não, para. Espera aí.",
+    "Não, não para. Espera aí.",
+    "Toca uma música do Djavan.",
+    "Toca uma música do Diaban.",
+    "Toca uma música do diabo.",
+    "Manda uma mensagem para o João dizendo que eu vou atrasar 10 minutos.",
+    "Manda uma mensagem para o João dizendo que eu vou atrasar 10 minutos.",
+    "Manda uma mensagem para o João dizendo que eu vou atrasar 10 minutos.",
+    "Todos os dias falta um pronatal.",
+    "Quantos dias faltam para o Natal?",
+    "Quantos dias faltam para o Natal?",
+    "Estou cansado hoje, cara.",
+    "Tô cansado hoje, cara.",
+    "Tô cansada hoje, cara.",
+    "Fala sério, mano.",
+    "Fala sério, mano.",
+    "Fala sério, mano.",
+    "Show de bola! Muito obrigado!",
+    "Show de bola! Muito obrigada!",
+    "Show de bola! Muito obrigada!",
+    "Ah, deixa eu pensar. Pode ser as seis e meio.",
+    "Ah, deixa eu pensar. Pode ser às seis e meia.",
+    "Ah, deixa eu pensar. Pode ser às seis e meia.",
+    "Qual é a raiz quadrada de 144?",
+    "Qual é a raiz quadrada de 144?",
+    "Qual é a raiz quadrada de 144?",
+    "converte 50 dólares para reais.",
+    "Converte 50 dólares para reais.",
+    "Converte 50 dólares para reais.",
+    "A reunião é na quarta-feira às 14 horas.",
+    "A reunião é na quarta-feira, às 14 horas.",
+    "A reunião é na quarta-feira às 14 horas.",
+    "Quem ganhou a Copa do Mundo de 2002?",
+    "Quem ganhou a Copa do Mundo de 2022?",
+    "Quem ganhou a Copa do Mundo de 2002?",
+    "Aumendo o volume.",
+    "Aumenta o volume.",
+    "Aumenta o volume.",
+    "Receita de bom de vídeo.",
+    "Pesquisa receita de pão de queijo.",
+    "Pesquisa receita de pão de queijo.",
+    "Sim.",
+    "Sim.",
+    "See.",
+    "Não.",
+    "Não",
+    "No.",
+    "Pode repetir, por favor.",
+    "Pode repetir, por favor?",
+    "Pode repetir, por favor.",
+    "Tá bom. Valeu. Tchau.",
+    "Tá bom, valeu, tchau.",
+    "Tá bom, valeu, tchau.",
+    "E me lembra de ligar para minha mãe e amanhã.",
+    "Me lembra de ligar para minha mãe amanhã.",
+    "Me lembra de ligar para minha mãe amanhã.",
+    "X1, você está me ouvindo?",
+    "X1, você está me ouvindo?",
+    "X1, você está me ouvindo?",
+    "Seis ou sete? Tanto faz.",
+    "Seis ou sete, tanto faz.",
+    "Seis ou sete, tanto faz.",
+    "23 graus.",
+    "23 graus.",
+    "23 graus.",
+    "Liga pro isso e liga.",
+    "Liga para o Luiz Feliz.",
+    "Liga para o Luiz e Lim."
+   ]
+  },
+  "nurc": {
+   "wer": 0.3946991404011461,
+   "n": 150,
+   "lat_s": 0.4141131158124578,
+   "lat_p90_s": 0.635716146993218
+  }
+ },
+ "onnx:nemo-conformer-tdt@calneymgp/parakeet-tdt-0.6b-v3-ptBR-TAGARELA-onnx-int8:int8": {
+  "vram_mb": 0,
+  "cmd": {
+   "wer": 0.0297951582867784,
+   "n": 108,
+   "lat_s": 0.2572268710093879,
+   "lat_p90_s": 0.3303198079956928,
+   "errors": [
+    [
+     "Seis.",
+     "sei"
+    ],
+    [
+     "Dezessete.",
+     "Desacet"
+    ],
+    [
+     "Quantos dias faltam pro Natal?",
+     "Quantos dias faltam pronatal?"
+    ],
+    [
+     "Quantos dias faltam pro Natal?",
+     "Quantos dias faltam pronatal?"
+    ],
+    [
+     "X1, você está me ouvindo?",
+     "Xum, você está me ouvindo?"
+    ],
+    [
+     "X1, você está me ouvindo?",
+     "Xum, você está me ouvindo?"
+    ],
+    [
+     "Valeu, X1.",
+     "Value, x1."
+    ],
+    [
+     "Toca uma música do Djavan.",
+     "Toca uma música do Javan"
+    ],
+    [
+     "Toca uma música do Djavan.",
+     "Toca uma música do Diavan"
+    ],
+    [
+     "Pesquisa receita de pão de queijo.",
+     "Pesquisa a receita de pão de queijo"
+    ],
+    [
+     "Manda uma mensagem pro João dizendo que eu vou atrasar dez minutos.",
+     "Manda uma mensagem Projoon dizendo que eu vou atrasar dez minutos."
+    ]
+   ],
+   "hyps": [
+    "Que horas são agora?",
+    "Que horas são agora?",
+    "Que horas são agora?",
+    "Valeu, X um.",
+    "Valeu, X um",
+    "Value, x1.",
+    "Valeu, pode parar.",
+    "Valeu, pode parar.",
+    "Valeu, pode parar.",
+    "sete",
+    "sete",
+    "sete",
+    "seis",
+    "seis",
+    "sei",
+    "dezessete",
+    "dezessete",
+    "Desacet",
+    "oitenta e nove",
+    "oitenta e nove",
+    "oitenta e nove",
+    "Me acorda às sete da manhã.",
+    "Me acorda às sete da manhã.",
+    "Me acorda às sete da manhã.",
+    "Quanto é sete vezes oito?",
+    "Quanto é sete vezes oito?",
+    "Quanto é sete vezes oito?",
+    "Coloca um timer de quinze minutos",
+    "Coloca um timer de quinze minutos.",
+    "Coloca um timer de quinze minutos",
+    "Liga a luz da sala",
+    "Liga a luz da sala",
+    "Liga a luz da sala",
+    "Qual a previsão do tempo para amanhã em Brasília?",
+    "Qual a previsão do tempo pra amanhã em Brasília?",
+    "Qual a previsão do tempo para amanhã em Brasília?",
+    "Beleza, entendi.",
+    "Beleza, entendi.",
+    "Beleza, entendi.",
+    "Não, não, para. Espera aí",
+    "Não, não, para. Espera aí.",
+    "Não, não, para. Espera aí.",
+    "Toca uma música do Djavan",
+    "Toca uma música do Diavan",
+    "Toca uma música do Javan",
+    "Manda uma mensagem pro João dizendo que eu vou atrasar dez minutos.",
+    "Manda uma mensagem Projoon dizendo que eu vou atrasar dez minutos.",
+    "Manda uma mensagem pro João dizendo que eu vou atrasar dez minutos.",
+    "Quantos dias faltam pronatal?",
+    "Quantos dias faltam pro Natal?",
+    "Quantos dias faltam pronatal?",
+    "Tô cansado hoje, cara.",
+    "Tô cansado hoje, cara.",
+    "Tô cansado hoje, cara.",
+    "Fala sério, mano.",
+    "Fala sério, mano!",
+    "Fala sério, mano.",
+    "Show de bola, muito obrigado!",
+    "Show de bola, muito obrigado!",
+    "Show de bola, muito obrigado.",
+    "Ah, deixa eu pensar, pode ser às seis e meia.",
+    "Ah, deixa eu pensar, pode ser às seis e meia.",
+    "Ah, deixa eu pensar, pode ser às seis e meia.",
+    "Qual é a raiz quadrada de cento e quarenta e quatro?",
+    "Qual é a raiz quadrada de cento e quarenta e quatro?",
+    "Qual é a raiz quadrada de cento e quarenta e quatro?",
+    "Converte cinquenta dólares para reais",
+    "Converte cinquenta dólares pra reais.",
+    "Converte cinquenta dólares para reais",
+    "A reunião é na quarta-feira às quatorze horas.",
+    "A reunião é na quarta-feira às quatorze horas.",
+    "A reunião é na quarta-feira às quatorze horas.",
+    "Quem ganhou a Copa do Mundo de dois mil e dois?",
+    "Quem ganhou a Copa do Mundo de dois mil e dois?",
+    "Quem ganhou a Copa do Mundo de dois mil e dois?",
+    "Aumenta o volume",
+    "Aumenta o volume",
+    "Aumenta o volume",
+    "Pesquisa a receita de pão de queijo",
+    "Pesquisa receita de pão de queijo.",
+    "Pesquisa receita de pão de queijo",
+    "Sim.",
+    "Sim",
+    "Sim",
+    "Não.",
+    "Não.",
+    "Não",
+    "Pode repetir, por favor?",
+    "Pode repetir, por favor?",
+    "Pode repetir, por favor?",
+    "Tá bom, valeu, tchau.",
+    "Tá bom, valeu, tchau!",
+    "Tá bom, valeu, tchau.",
+    "Me lembra de ligar para minha mãe amanhã.",
+    "Me lembra de ligar pra minha mãe amanhã.",
+    "Me lembra de ligar para minha mãe amanhã.",
+    "Xum, você está me ouvindo?",
+    "Xum, você está me ouvindo?",
+    "X um, você está me ouvindo?",
+    "Seis ou sete, tanto faz.",
+    "Seis ou sete, tanto faz!",
+    "Seis ou sete, tanto faz.",
+    "vinte e três graus",
+    "vinte e três graus",
+    "vinte e três graus",
+    "Liga Pro Luiz Felipe",
+    "Liga Pro Luiz Felipe",
+    "Liga Pro Luiz Felipe"
+   ]
+  },
+  "noisy": {
+   "wer": 0.05027932960893855,
+   "n": 108,
+   "lat_s": 0.2648446341853641,
+   "lat_p90_s": 0.3369005590066081,
+   "errors": [
+    [
+     "Dezessete.",
+     "Já é o seed."
+    ],
+    [
+     "Valeu, X1.",
+     "value xone"
+    ],
+    [
+     "Seis.",
+     "Sei."
+    ],
+    [
+     "Quantos dias faltam pro Natal?",
+     "Todos os dias faltam pronatal."
+    ],
+    [
+     "Liga pro Luiz Felipe.",
+     "Liga pro Luiz e liga."
+    ],
+    [
+     "Liga pro Luiz Felipe.",
+     "Liga para o Luiz Felipe."
+    ],
+    [
+     "Quantos dias faltam pro Natal?",
+     "Quantos dias faltam para o Natal?"
+    ],
+    [
+     "Toca uma música do Djavan.",
+     "Toca uma música do diaban."
+    ],
+    [
+     "Toca uma música do Djavan.",
+     "Toca uma música do diaban."
+    ],
+    [
+     "Pesquisa receita de pão de queijo.",
+     "Pesquisa a receita de pão de queijo."
+    ],
+    [
+     "Pesquisa receita de pão de queijo.",
+     "Pesquisa a receita de pão de queijo."
+    ],
+    [
+     "Manda uma mensagem pro João dizendo que eu vou atrasar dez minutos.",
+     "Manda uma mensagem para o João dizendo que eu vou atrasar dez minutos."
+    ],
+    [
+     "Manda uma mensagem pro João dizendo que eu vou atrasar dez minutos.",
+     "Manda uma mensagem para o João dizendo que eu vou atrasar dez minutos."
+    ],
+    [
+     "Coloca um timer de quinze minutos.",
+     "Coloque um timer de quinze minutos."
+    ]
+   ],
+   "hyps": [
+    "Que horas são agora?",
+    "Que horas são agora?",
+    "Que horas são agora?",
+    "Valeu x um.",
+    "Valeu x um.",
+    "value xone",
+    "Valeu, pode parar.",
+    "Valeu, pode parar.",
+    "Valeu, pode parar.",
+    "sete",
+    "sete",
+    "sete",
+    "seis",
+    "seis",
+    "Sei.",
+    "dezessete",
+    "dezessete",
+    "Já é o seed.",
+    "oitenta e nove",
+    "oitenta e nove",
+    "oitenta e nove",
+    "Me acorda às sete da manhã.",
+    "Me acorda às sete da manhã.",
+    "Me acorda às sete da manhã.",
+    "Quanto é sete vezes oito?",
+    "Quanto é sete vezes oito?",
+    "Quanto é sete vezes oito?",
+    "Coloque um timer de quinze minutos.",
+    "Coloca um timer de quinze minutos.",
+    "Coloca um timer de 15 minutos.",
+    "Liga a luz da sala.",
+    "Liga a luz da sala.",
+    "Liga a luz da sala.",
+    "Qual a previsão do tempo para amanhã em Brasília?",
+    "Qual a previsão do tempo para amanhã em Brasília?",
+    "Qual a previsão do tempo para amanhã em Brasília?",
+    "Beleza, entendi.",
+    "Beleza, entendi.",
+    "Beleza, entendi.",
+    "Não, não, para. Espera aí.",
+    "Não, não para. Espera aí.",
+    "Não, não, para. Espera aí.",
+    "Toca uma música do Djavan.",
+    "Toca uma música do diaban.",
+    "Toca uma música do diaban.",
+    "Manda uma mensagem para o João dizendo que eu vou atrasar dez minutos.",
+    "Manda uma mensagem pro João dizendo que eu vou atrasar dez minutos.",
+    "Manda uma mensagem para o João dizendo que eu vou atrasar dez minutos.",
+    "Todos os dias faltam pronatal.",
+    "Quantos dias faltam para o Natal?",
+    "Quantos dias faltam pro Natal?",
+    "Tô cansado hoje, cara.",
+    "Tô cansado hoje, cara.",
+    "Tô cansado hoje, cara.",
+    "Fala sério, mano.",
+    "Fala sério, mano.",
+    "Fala sério, mano.",
+    "Show de bola. Muito obrigado.",
+    "Show de bola, muito obrigado.",
+    "Show de bola, muito obrigado.",
+    "Ah, deixa eu pensar. Pode ser às seis e meia.",
+    "Ah, deixa eu pensar. Pode ser às seis e meia.",
+    "Ah, deixa eu pensar, pode ser às seis e meia.",
+    "Qual é a raiz quadrada de cento e quarenta e quatro?",
+    "Qual é a raiz quadrada de 144?",
+    "Qual é a raiz quadrada de cento e quarenta e quatro?",
+    "Converte cinquenta dólares para reais.",
+    "Converte cinquenta dólares para reais.",
+    "Converte cinquenta dólares para reais.",
+    "A reunião é na quarta-feira às quatorze horas.",
+    "A reunião é na quarta-feira, às quatorze horas.",
+    "A reunião é na quarta-feira às 14h.",
+    "Quem ganhou a Copa do Mundo de dois mil e dois?",
+    "Quem ganhou a Copa do Mundo de dois mil e dois?",
+    "Quem ganhou a Copa do Mundo de dois mil e dois?",
+    "Aumenta o volume.",
+    "Aumenta o volume.",
+    "Aumenta o volume.",
+    "Pesquisa a receita de pão de queijo.",
+    "Pesquisa a receita de pão de queijo.",
+    "Pesquisa receita de pão de queijo.",
+    "Sim.",
+    "Sim",
+    "Sim.",
+    "Não",
+    "Não.",
+    "Não.",
+    "Pode repetir, por favor?",
+    "Pode repetir, por favor?",
+    "Pode repetir, por favor?",
+    "Tá bom, valeu, tchau.",
+    "Tá bom, valeu, tchau.",
+    "Tá bom, valeu, tchau.",
+    "Me lembra de ligar para minha mãe amanhã.",
+    "Me lembra de ligar para minha mãe amanhã.",
+    "Me lembra de ligar para minha mãe amanhã.",
+    "X1, você está me ouvindo?",
+    "X um, você está me ouvindo?",
+    "X1, você está me ouvindo?",
+    "Seis ou sete, tanto faz.",
+    "Seis ou sete, tanto faz.",
+    "Seis ou sete tanto faz.",
+    "vinte e três graus",
+    "vinte e três graus",
+    "vinte e três graus",
+    "Liga pro Luiz e liga.",
+    "Liga pro Luiz Felipe.",
+    "Liga para o Luiz Felipe."
+   ]
+  },
+  "nurc": {
+   "wer": 0.2020057306590258,
+   "n": 150,
+   "lat_s": 0.27250784664065575,
+   "lat_p90_s": 0.39090881499578245
+  }
+ },
+ "onnx:nemo-conformer-tdt@alefiury/parakeet-tdt-v3-ptBR-30s-onnx": {
+  "vram_mb": 0,
+  "cmd": {
+   "wer": 0.0260707635009311,
+   "n": 108,
+   "lat_s": 0.2950874235935367,
+   "lat_p90_s": 0.37879867300216574,
+   "errors": [
+    [
+     "Seis.",
+     "C."
+    ],
+    [
+     "Dezessete.",
+     "Desacet."
+    ],
+    [
+     "Quantos dias faltam pro Natal?",
+     "Quantos dias faltam para o Natal?"
+    ],
+    [
+     "Valeu, X1.",
+     "Value, X1."
+    ],
+    [
+     "Liga pro Luiz Felipe.",
+     "Liga pro luís felipe."
+    ],
+    [
+     "Pesquisa receita de pão de queijo.",
+     "Pesquisa a receita de pão de queijo."
+    ],
+    [
+     "Pesquisa receita de pão de queijo.",
+     "Pesquisa a receita de pão de queijo."
+    ],
+    [
+     "Manda uma mensagem pro João dizendo que eu vou atrasar dez minutos.",
+     "Manda uma mensagem para o João dizendo que eu vou atrasar dez minutos."
+    ],
+    [
+     "Coloca um timer de quinze minutos.",
+     "Coloque um timer de quinze minutos."
+    ],
+    [
+     "Coloca um timer de quinze minutos.",
+     "Coloque um timer de quinze minutos."
+    ],
+    [
+     "Ahn, deixa eu pensar, pode ser às seis e meia.",
+     "Ah, deixe eu pensar, pode ser às seis e meia."
+    ],
+    [
+     "Ahn, deixa eu pensar, pode ser às seis e meia.",
+     "Ah! Deixa-o pensar, pode ser ás seis e meia."
+    ]
+   ],
+   "hyps": [
+    "Que horas são agora?",
+    "Que horas são agora?",
+    "Que horas são agora?",
+    "Valeu, X1!",
+    "Valeu, X1!",
+    "Value, X1.",
+    "Valeu, pode parar.",
+    "Valeu, pode parar.",
+    "Valeu, pode parar.",
+    "sete",
+    "sete",
+    "sete",
+    "seis",
+    "seis",
+    "C.",
+    "dezessete",
+    "dezessete",
+    "Desacet.",
+    "oitenta e nove.",
+    "oitenta e nove",
+    "oitenta e nove",
+    "Me acorda às sete da manhã.",
+    "Me acorda às sete da manhã.",
+    "Me acorda às sete da manhã.",
+    "Quanto é sete vezes oito?",
+    "Quanto é sete vezes oito?",
+    "Quanto é sete vezes oito?",
+    "Coloque um timer de quinze minutos.",
+    "Coloque um timer de quinze minutos.",
+    "Coloca um timer de quinze minutos.",
+    "Liga a luz da sala.",
+    "Liga a luz da sala.",
+    "Liga a luz da sala.",
+    "Qual a previsão do tempo para amanhã em Brasília?",
+    "Qual a previsão do tempo para amanhã em Brasília?",
+    "qual a previsão do tempo para amanhã em brasília",
+    "Beleza, entendi.",
+    "Beleza, entendi.",
+    "Beleza, entendi.",
+    "Não, não, para. Espera aí.",
+    "Não, não, para. Espera aí.",
+    "Não, não, para. Espera aí.",
+    "Toca uma música do Djavan.",
+    "Toca uma música do Djavan.",
+    "Toca uma música do Djavan.",
+    "Manda uma mensagem para o João dizendo que eu vou atrasar dez minutos.",
+    "Manda uma mensagem pro João dizendo que eu vou atrasar dez minutos.",
+    "manda uma mensagem pro joão dizendo que eu vou atrasar dez minutos",
+    "Quantos dias faltam pro Natal?",
+    "Quantos dias faltam pro Natal?",
+    "Quantos dias faltam para o Natal?",
+    "Tô cansado hoje, cara.",
+    "Tô cansado hoje, cara.",
+    "Tô cansado hoje, cara.",
+    "Fala sério, mano.",
+    "Fala sério, mano.",
+    "Fala sério, mano.",
+    "Show de bola! Muito obrigado!",
+    "Show de bola, muito obrigado!",
+    "Show de bola! Muito obrigado!",
+    "Ah, deixe eu pensar, pode ser às seis e meia.",
+    "Ah, deixa eu pensar, pode ser às seis e meia.",
+    "Ah! Deixa-o pensar, pode ser ás seis e meia.",
+    "Qual é a raiz quadrada de cento e quarenta e quatro?",
+    "Qual é a raiz quadrada de cento e quarenta e quatro?",
+    "Qual é a raiz quadrada de cento e quarenta e quatro?",
+    "Converte cinquenta dólares para reais.",
+    "Converte cinquenta dólares para reais.",
+    "Converte cinquenta dólares para reais.",
+    "A reunião é na quarta-feira às catorze horas.",
+    "A reunião é na quarta-feira, às 14h.",
+    "a reunião é na quarta-feira às quatorze horas",
+    "Quem ganhou a Copa do Mundo de dois mil e dois?",
+    "Quem ganhou a Copa do Mundo de dois mil e dois?",
+    "Quem ganhou a Copa do Mundo de dois mil e dois?",
+    "Aumenta o volume.",
+    "Aumenta o volume.",
+    "Aumenta o volume.",
+    "Pesquisa a receita de pão de queijo.",
+    "Pesquisa a receita de pão de queijo.",
+    "pesquisa receita de pão de queijo",
+    "Sim.",
+    "Sim.",
+    "Sim.",
+    "Não.",
+    "Não.",
+    "Não.",
+    "Pode repetir, por favor?",
+    "Pode repetir, por favor?",
+    "Pode repetir, por favor?",
+    "Tá bom, valeu, tchau.",
+    "Tá bom, valeu, tchau!",
+    "Tá bom, valeu, tchau.",
+    "Me lembra de ligar para minha mãe amanhã.",
+    "Me lembra de ligar pra minha mãe amanhã.",
+    "Me lembra de ligar para minha mãe amanhã.",
+    "X1, você está me ouvindo?",
+    "X1, você está me ouvindo?",
+    "X1, você está me ouvindo?",
+    "Seis ou sete, tanto faz.",
+    "seis ou sete, tanto faz.",
+    "seis ou sete, tanto faz.",
+    "vinte e três graus.",
+    "vinte e três graus.",
+    "vinte e três graus",
+    "Liga pro Luiz Felipe.",
+    "Liga pro Luiz Felipe.",
+    "Liga pro luís felipe."
+   ]
+  },
+  "noisy": {
+   "wer": 0.040968342644320296,
+   "n": 108,
+   "lat_s": 0.2883674741106343,
+   "lat_p90_s": 0.3714802220056299,
+   "errors": [
+    [
+     "Dezessete.",
+     "Jesus seed"
+    ],
+    [
+     "Seis.",
+     "sei"
+    ],
+    [
+     "Liga pro Luiz Felipe.",
+     "Liga pro Luiz e Liga."
+    ],
+    [
+     "Liga pro Luiz Felipe.",
+     "Liga para o Luiz Felipe."
+    ],
+    [
+     "Quantos dias faltam pro Natal?",
+     "Quantos dias faltam para o Natal?"
+    ],
+    [
+     "Quantos dias faltam pro Natal?",
+     "Quantos dias faltam para o Natal?"
+    ],
+    [
+     "Valeu, X1.",
+     "valeu xis um"
+    ],
+    [
+     "Valeu, X1.",
+     "valeu xis um"
+    ],
+    [
+     "Valeu, X1.",
+     "Value, X1."
+    ],
+    [
+     "Me lembra de ligar pra minha mãe amanhã.",
+     "E me lembro de ligar para minha mãe amanhã."
+    ],
+    [
+     "Show de bola, muito obrigado.",
+     "Show de bola! Muito obrigada!"
+    ],
+    [
+     "Liga a luz da sala.",
+     "Ligue a luz da sala."
+    ],
+    [
+     "Pesquisa receita de pão de queijo.",
+     "pesquisa a receita de pão de queijo"
+    ],
+    [
+     "Pesquisa receita de pão de queijo.",
+     "Pesquisa a receita de pão de queijo."
+    ],
+    [
+     "Me acorda às sete da manhã.",
+     "E acorda às sete da manhã."
+    ],
+    [
+     "Coloca um timer de quinze minutos.",
+     "Coloque um timer de quinze minutos."
+    ]
+   ],
+   "hyps": [
+    "Que horas são agora?",
+    "Que horas são agora?",
+    "Que horas são agora?",
+    "valeu xis um",
+    "valeu xis um",
+    "Value, X1.",
+    "Valeu, pode parar.",
+    "Valeu, pode parar.",
+    "Valeu, pode parar.",
+    "sete",
+    "sete",
+    "sete",
+    "seis",
+    "seis",
+    "sei",
+    "dezessete",
+    "dezessete",
+    "Jesus seed",
+    "oitenta e nove",
+    "oitenta e nove",
+    "oitenta e nove",
+    "Me acorda às sete da manhã.",
+    "E acorda às sete da manhã.",
+    "Me acorda às sete da manhã.",
+    "Quanto é sete vezes oito?",
+    "quanto é sete vezes oito",
+    "quanto é sete vezes oito",
+    "Coloque um timer de quinze minutos.",
+    "Coloca um timer de quinze minutos.",
+    "Coloca um timer de quinze minutos.",
+    "Liga a luz da sala.",
+    "Ligue a luz da sala.",
+    "Liga a luz da sala.",
+    "Qual a previsão do tempo para amanhã em Brasília?",
+    "Qual a previsão do tempo para amanhã em Brasília?",
+    "qual a previsão do tempo para amanhã em brasília",
+    "beleza entendi",
+    "beleza entendi",
+    "Beleza, entendi.",
+    "não não para espera aí",
+    "Não, não, para. Espera aí.",
+    "Não, não, para. Espera aí.",
+    "Toca uma música do Djavan.",
+    "Toca uma música do Djavan.",
+    "Toca uma música do Djavan.",
+    "manda uma mensagem pro joão dizendo que eu vou atrasar dez minutos",
+    "manda uma mensagem pro joão dizendo que eu vou atrasar dez minutos",
+    "manda uma mensagem pro joão dizendo que eu vou atrasar dez minutos",
+    "Quantos dias faltam para o Natal?",
+    "Quantos dias faltam para o Natal?",
+    "Quantos dias faltam pro Natal?",
+    "Tô cansado hoje, cara.",
+    "tô cansado hoje cara",
+    "tô cansado hoje cara",
+    "Fala sério, mano.",
+    "Fala sério, mano.",
+    "Fala sério, mano.",
+    "Show de bola. Muito obrigado.",
+    "Show de bola! Muito obrigado!",
+    "Show de bola! Muito obrigada!",
+    "Ah, deixa eu pensar, pode ser às seis e meia.",
+    "Ah, deixa eu pensar. Pode ser às seis e meia.",
+    "ah deixa eu pensar pode ser às seis e meia",
+    "Qual é a raiz quadrada de cento e quarenta e quatro?",
+    "Qual é a raiz quadrada de cento e quarenta e quatro?",
+    "qual é a raiz quadrada de cento e quarenta e quatro",
+    "converte cinquenta dólares para reais",
+    "Converte cinquenta dólares para reais.",
+    "converte cinquenta dólares para reais",
+    "a reunião é na quarta-feira às quatorze horas",
+    "a reunião é na quarta-feira às catorze horas",
+    "A reunião é na quarta-feira, às catorze horas.",
+    "Quem ganhou a Copa do Mundo de dois mil e dois?",
+    "quem ganhou a copa do mundo de dois mil e dois",
+    "Quem ganhou a Copa do Mundo de dois mil e dois?",
+    "Aumenta o volume.",
+    "Aumenta o volume.",
+    "Aumenta o volume.",
+    "Pesquisa a receita de pão de queijo.",
+    "pesquisa a receita de pão de queijo",
+    "Pesquisa receita de pão de queijo.",
+    "sim",
+    "sim",
+    "sim",
+    "não",
+    "Não.",
+    "não",
+    "Pode repetir, por favor.",
+    "Pode repetir, por favor?",
+    "Pode repetir, por favor?",
+    "Tá bom, valeu, tchau.",
+    "Tá bom, valeu, tchau.",
+    "Tá bom, valeu, tchau.",
+    "E me lembro de ligar para minha mãe amanhã.",
+    "me lembra de ligar para minha mãe amanhã",
+    "Me lembra de ligar para minha mãe amanhã.",
+    "X1, você está me ouvindo?",
+    "X1, você está me ouvindo?",
+    "X1, você está me ouvindo?",
+    "seis ou sete tanto faz",
+    "Seis ou sete, tanto faz.",
+    "seis ou sete tanto faz",
+    "vinte e três graus",
+    "vinte e três graus",
+    "vinte e três graus",
+    "Liga pro Luiz e Liga.",
+    "Liga pro Luiz Felipe.",
+    "Liga para o Luiz Felipe."
+   ]
+  },
+  "nurc": {
+   "wer": 0.1518624641833811,
+   "n": 150,
+   "lat_s": 0.34817704171398267,
+   "lat_p90_s": 0.5023964369902387
+  }
+ }
+}

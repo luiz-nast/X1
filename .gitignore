@@ -2,3 +2,4 @@
 __pycache__/
 .claude/
 eval/nurc.json
+eval/stt_data/
